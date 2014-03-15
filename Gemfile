@@ -38,6 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'foundation-rails'
+gem 'simple_form'
+
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
