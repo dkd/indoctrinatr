@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
-  gem 'guard-rspec'
+  gem 'guard-rspec', require: false
 end
 
 group :development do
