@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 
 gem 'foundation-rails'
 gem 'simple_form'
+gem 'nested_form'
 
 group :development, :test do
   gem 'spring-commands-rspec'

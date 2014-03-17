@@ -88,6 +88,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.3.1)
     multi_json (1.9.0)
+    nested_form (0.3.2)
     nio4r (1.0.0)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -190,6 +191,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
+  nested_form
   quiet_assets
   rails (= 4.1.0.rc1)
   rails_layout
