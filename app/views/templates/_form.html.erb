@@ -1,0 +1,20 @@
+<%= simple_nested_form_for(@template) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :content %>
+  </div>
+
+  <%= f.fields_for :template_fields do |template_fields_form| %>
+    <%= template_fields_form.input :name %>
+    <%= template_fields_form.input :default_value %>
+    <%= template_fields_form.input :presentation %>
+    <%= template_fields_form.link_to_remove "Remove this template field" %>
+  <% end %>
+  <p><%= f.link_to_add "Add a template field", :template_fields %></p>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
