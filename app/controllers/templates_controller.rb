@@ -27,7 +27,7 @@ class TemplatesController < ApplicationController
     @template = Template.new(template_params)
 
     respond_to do |format|
-      if @template.save
+      if @template.save!
         format.html { redirect_to @template, notice: 'Template was successfully created.' }
         format.json { render action: 'show', status: :created, location: @template }
       else

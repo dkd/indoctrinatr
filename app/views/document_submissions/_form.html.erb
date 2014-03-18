@@ -1,0 +1,15 @@
+<%= simple_form_for(@document_submission) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :template_id, as: :hidden %>
+  </div>
+
+  <%= f.fields_for :submitted_template_fields do |submitted_template_fields_form| %>
+    <%= submitted_template_fields_form.input :value %>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

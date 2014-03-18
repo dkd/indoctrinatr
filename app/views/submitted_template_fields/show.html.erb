@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Document submission:</strong>
+  <%= @submitted_template_field.document_submission %>
+</p>
+
+<p>
+  <strong>Template field:</strong>
+  <%= @submitted_template_field.template_field %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @submitted_template_field.value %>
+</p>
+
+<%= link_to 'Edit', edit_submitted_template_field_path(@submitted_template_field) %> |
+<%= link_to 'Back', submitted_template_fields_path %>
