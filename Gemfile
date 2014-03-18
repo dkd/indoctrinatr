@@ -58,4 +58,5 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda'
+  gem 'terminal-notifier-guard'
 end
