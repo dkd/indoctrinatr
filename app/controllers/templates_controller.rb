@@ -7,11 +7,6 @@ class TemplatesController < ApplicationController
     @templates = Template.all
   end
 
-  # GET /templates/1
-  # GET /templates/1.json
-  def show
-  end
-
   # GET /templates/new
   def new
     @template = Template.new
@@ -27,7 +22,7 @@ class TemplatesController < ApplicationController
     @template = Template.new(template_params)
 
     if @template.save
-      redirect_to @template, notice: 'Template was successfully created.'
+      redirect_to templates_url, notice: 'Template was successfully created.'
     else
       render action: 'new'
     end
@@ -37,7 +32,7 @@ class TemplatesController < ApplicationController
   # PATCH/PUT /templates/1.json
   def update
     if @template.update(template_params)
-      redirect_to @template, notice: 'Template was successfully updated.'
+      redirect_to templates_url, notice: 'Template was successfully updated.'
     else
       render action: 'edit'
     end

@@ -12,7 +12,6 @@
     <% @document_submissions.each do |document_submission| %>
       <tr>
         <td><%= document_submission.template_name %></td>
-        <td><%= link_to 'Show', document_submission %></td>
         <td><%= link_to 'Edit', edit_document_submission_path(document_submission) %></td>
         <td><%= link_to 'Destroy', document_submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

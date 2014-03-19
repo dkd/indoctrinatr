@@ -11,10 +11,6 @@ describe TemplatesController do
       get("/templates/new").should route_to("templates#new")
     end
 
-    it "routes to #show" do
-      get("/templates/1").should route_to("templates#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/templates/1/edit").should route_to("templates#edit", :id => "1")
     end

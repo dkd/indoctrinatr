@@ -38,14 +38,6 @@ describe TemplatesController do
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested template as @template" do
-      template = Template.create! valid_attributes
-      get :show, {:id => template.to_param}, valid_session
-      assigns(:template).should eq(template)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new template as @template" do
       get :new, {}, valid_session
@@ -75,9 +67,9 @@ describe TemplatesController do
         assigns(:template).should be_persisted
       end
 
-      it "redirects to the created template" do
+      it "redirects to the list of templates" do
         post :create, {:template => valid_attributes}, valid_session
-        response.should redirect_to(Template.last)
+        response.should redirect_to(templates_url)
       end
     end
 
@@ -116,10 +108,10 @@ describe TemplatesController do
         assigns(:template).should eq(template)
       end
 
-      it "redirects to the template" do
+      it "redirects to the list of templates" do
         template = Template.create! valid_attributes
         put :update, {:id => template.to_param, :template => valid_attributes}, valid_session
-        response.should redirect_to(template)
+        response.should redirect_to(templates_url)
       end
     end
 

@@ -6,10 +6,6 @@ class DocumentSubmissionsController < ApplicationController
     @document_submissions = DocumentSubmission.all
   end
 
-  # GET /document_submissions/1
-  def show
-  end
-
   # GET /document_submissions/new
   def new
     @template = Template.find(params[:template_id]) 
@@ -25,7 +21,7 @@ class DocumentSubmissionsController < ApplicationController
     @document_submission = DocumentSubmission.new(document_submission_params)
 
     if @document_submission.save
-      redirect_to @document_submission, notice: 'Document submission was successfully created.'
+      redirect_to document_submissions_url, notice: 'Document submission was successfully created.'
     else
       render action: 'new'
     end
@@ -34,7 +30,7 @@ class DocumentSubmissionsController < ApplicationController
   # PATCH/PUT /document_submissions/1
   def update
     if @document_submission.update(document_submission_params)
-      redirect_to @document_submission, notice: 'Document submission was successfully updated.'
+      redirect_to document_submissions_url, notice: 'Document submission was successfully updated.'
     else
       render action: 'edit'
     end
