@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe TemplateField do
   it { should belong_to(:template) }
-  it { should validate_presence_of :template }
 
   it { should validate_presence_of :name }
   it { should validate_uniqueness_of(:name).scoped_to(:template_id) }
