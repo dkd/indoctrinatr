@@ -5,4 +5,6 @@ class DocumentSubmission < ActiveRecord::Base
   has_many :template_fields, through: :submitted_template_fields
 
   accepts_nested_attributes_for :submitted_template_fields
+
+  delegate :name, to: :template, prefix: :template
 end

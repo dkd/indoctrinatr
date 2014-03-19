@@ -85,14 +85,14 @@ describe TemplatesController do
       it "assigns a newly created but unsaved template as @template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Template.any_instance.stub(:save).and_return(false)
-        post :create, {:template => { "name" => "invalid value" }}, valid_session
+        post :create, { template: FactoryGirl.build(:template).attributes }, valid_session
         assigns(:template).should be_a_new(Template)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Template.any_instance.stub(:save).and_return(false)
-        post :create, {:template => { "name" => "invalid value" }}, valid_session
+        post :create, { template: FactoryGirl.build(:template).attributes }, valid_session
         response.should render_template("new")
       end
     end

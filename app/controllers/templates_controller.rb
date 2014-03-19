@@ -26,28 +26,20 @@ class TemplatesController < ApplicationController
   def create
     @template = Template.new(template_params)
 
-    respond_to do |format|
-      if @template.save!
-        format.html { redirect_to @template, notice: 'Template was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @template }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @template.errors, status: :unprocessable_entity }
-      end
+    if @template.save
+      redirect_to @template, notice: 'Template was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /templates/1
   # PATCH/PUT /templates/1.json
   def update
-    respond_to do |format|
-      if @template.update(template_params)
-        format.html { redirect_to @template, notice: 'Template was successfully updated.' }
-        format.json { render action: 'show', status: :ok, location: @template }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @template.errors, status: :unprocessable_entity }
-      end
+    if @template.update(template_params)
+      redirect_to @template, notice: 'Template was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
@@ -55,10 +47,7 @@ class TemplatesController < ApplicationController
   # DELETE /templates/1.json
   def destroy
     @template.destroy
-    respond_to do |format|
-      format.html { redirect_to templates_url }
-      format.json { head :no_content }
-    end
+    redirect_to templates_url, notice: 'Template was successfully destroyed.'
   end
 
   private

@@ -13,7 +13,7 @@ class DocumentSubmissionsController < ApplicationController
   # GET /document_submissions/new
   def new
     @template = Template.find(params[:template_id]) 
-    @document_submission = DocumentSubmission.new template: @template, template_fields: @template.template_fields
+    @document_submission = DocumentSubmissionBuilder.build_from_template @template
   end
 
   # GET /document_submissions/1/edit

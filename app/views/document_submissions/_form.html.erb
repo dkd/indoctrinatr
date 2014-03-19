@@ -6,6 +6,7 @@
   </div>
 
   <%= f.fields_for :submitted_template_fields do |submitted_template_fields_form| %>
+    <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
     <%= submitted_template_fields_form.input :value %>
   <% end %>
 
