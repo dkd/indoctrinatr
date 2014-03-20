@@ -62,3 +62,6 @@ group :development do
   gem 'quiet_assets'
   gem 'sqlite3'
 end
+
+gem "rails-latex"
+# gem "to_latex"

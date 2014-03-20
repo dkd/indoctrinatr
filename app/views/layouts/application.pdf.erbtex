@@ -1,0 +1,2 @@
+<% @latex_config = { command: "xelatex" } -%>
+<%= yield -%>
