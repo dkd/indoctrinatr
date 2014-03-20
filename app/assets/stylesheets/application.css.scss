@@ -12,9 +12,14 @@
  *= require_tree .
  */
 
+@import 'foundation-icons';
 
 table {
   &.wide{
     width: 100%;
   }
+}
+a.close-icon {
+  margin-top: -15px;
+  margin-right: -12px;
 }

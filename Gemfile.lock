@@ -59,6 +59,9 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    foundation-icons-sass-rails (3.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     foundation-rails (5.2.1.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -197,6 +200,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 4.0.0)
   factory_girl_rails
+  foundation-icons-sass-rails
   foundation-rails
   guard-rspec
   jquery-rails
