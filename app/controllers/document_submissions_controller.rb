@@ -1,5 +1,5 @@
 class DocumentSubmissionsController < ApplicationController
-  before_action :set_document_submission, only: [:show, :edit, :update, :destroy]
+  before_action :set_document_submission, only: [:edit, :update, :destroy]
 
   # GET /document_submissions
   def index
