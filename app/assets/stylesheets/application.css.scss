@@ -23,3 +23,13 @@ a.close-icon {
   margin-top: -15px;
   margin-right: -12px;
 }
+#add-panel {
+  text-align: center;
+  .panel {
+    border-style: dashed;
+    border-width: 3px;
+  }
+  .fi-plus {
+    font-size: 45px;
+  }
+}

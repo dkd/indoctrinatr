@@ -1,20 +1,44 @@
 <%= simple_nested_form_for(@template) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :content %>
+  <div class="row">
+    <div class="form-inputs large-12 columns">
+      <%= f.input :name %>
+      <%= f.input :content %>
+    </div>
   </div>
+  <div class="row" >
+      <div id="field-wrapper">
+    <%= f.fields_for :template_fields do |template_fields_form| %>
+      <div class="large-6 columns">
+        <div class="panel">
+          <%= template_fields_form.link_to_remove class: "right close-icon" do %>
+            <i class="fi-x"></i>
+          <% end %>
+          <%= template_fields_form.input :name %>
+          <%= template_fields_form.input :default_value %>
+          <%= template_fields_form.input :presentation %>
+        </div>
+      </div>
+    <% end %>
+      </div>
+    <div class="large-6 columns" id="add-panel">
+      <div class="panel">
+          <%= f.link_to_add :template_fields, data: { target: "#field-wrapper"}, class: "" do %>
+            <i class="fi-plus"></i>
 
-  <%= f.fields_for :template_fields do |template_fields_form| %>
-    <%= template_fields_form.input :name %>
-    <%= template_fields_form.input :default_value %>
-    <%= template_fields_form.input :presentation %>
-    <%= template_fields_form.link_to_remove "Remove this template field" %>
-  <% end %>
-  <p><%= f.link_to_add "Add a template field", :template_fields %></p>
+          <% end %>
+          <p>add a new field</p>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: "success"%>
+
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+
+      <div class="form-actions">
+        <%= f.button :submit, class: "success"%>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -19,3 +19,6 @@
 $(function() {
   $(document).foundation();
 });
+$(document).on('nested:fieldAdded', function(event){
+  $('#add-panel').show();
+})
