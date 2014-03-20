@@ -11,12 +11,25 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+
+    <!-- Header and Nav -->
+    <%= render 'layouts/header' %>
+    <!-- End Header and Nav -->
+    <div class="row">
+        <div class="large-12 columns">
+            <%= render 'layouts/messages' %>
+        </div>
+    </div>
+
+    <!-- Main Grid Section -->
+    <%= yield %>
+
+    <!-- End Grid Section -->
+
+
+    <!-- Footer -->
+    <%= render 'layouts/footer' %>
+
+
   </body>
 </html>

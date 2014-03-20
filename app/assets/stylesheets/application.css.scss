@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+
+
+table {
+  &.wide{
+    width: 100%;
+  }
+}
