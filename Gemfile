@@ -37,26 +37,27 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Frontend stuff
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'nested_form'
+gem 'kaminari'
 
+# Testing tools
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
+  gem 'factory_girl_rails'
+  gem 'shoulda'
+  gem 'terminal-notifier-guard'
 end
 
+# Development tools
 group :development do
   gem 'rails_layout'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
-end
-
-group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'shoulda'
-  gem 'terminal-notifier-guard'
 end

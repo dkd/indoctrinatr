@@ -77,6 +77,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     listen (2.7.1)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
@@ -200,6 +203,7 @@ DEPENDENCIES
   foundation-rails
   guard-rspec
   jquery-rails
+  kaminari
   nested_form
   quiet_assets
   rails (= 4.1.0.rc1)
