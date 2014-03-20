@@ -1,13 +1,9 @@
 class DocumentSubmissionsController < ApplicationController
-  before_action :set_document_submission, only: [:show, :edit, :update, :destroy]
+  before_action :set_document_submission, only: [:edit, :update, :destroy]
 
   # GET /document_submissions
   def index
-    @document_submissions = DocumentSubmission.all
-  end
-
-  # GET /document_submissions/1
-  def show
+    @document_submissions = DocumentSubmission.all.page params[:page]
   end
 
   # GET /document_submissions/new
@@ -25,7 +21,7 @@ class DocumentSubmissionsController < ApplicationController
     @document_submission = DocumentSubmission.new(document_submission_params)
 
     if @document_submission.save
-      redirect_to @document_submission, notice: 'Document submission was successfully created.'
+      redirect_to document_submissions_url, notice: 'Document submission was successfully created.'
     else
       render action: 'new'
     end
@@ -34,7 +30,7 @@ class DocumentSubmissionsController < ApplicationController
   # PATCH/PUT /document_submissions/1
   def update
     if @document_submission.update(document_submission_params)
-      redirect_to @document_submission, notice: 'Document submission was successfully updated.'
+      redirect_to document_submissions_url, notice: 'Document submission was successfully updated.'
     else
       render action: 'edit'
     end

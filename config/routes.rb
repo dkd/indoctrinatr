@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :submitted_template_fields
+  resources :document_submissions, except: [:show]
 
-  resources :document_submissions
-
-  resources :templates
+  resources :templates, except: [:show]
 
   root to: "home#index"
 end

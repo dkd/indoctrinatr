@@ -13,7 +13,7 @@
             <% @templates.each do |template| %>
               <tr>
                   <td><%= template.name %></td>
-                  <td><%= template.content %></td>
+                  <td><%= truncate template.content %></td>
                   <td>
                     <ul class="button-group">
                       <li><%= link_to 'Show', template, class: "button tiny" %></li>
@@ -27,9 +27,9 @@
             </tbody>
         </table>
 
-        <br>
 
         <%= link_to 'New Template', new_template_path, class: "button success" %>
-
     </div>
 </div>
+
+<%= paginate @templates %>

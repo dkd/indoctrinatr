@@ -2,7 +2,10 @@
 
 FactoryGirl.define do
   factory :template do
-    name "MyString"
+    sequence :name do |n|
+      "Name #{n}"
+    end 
     content "MyText"
   end
 end
+    

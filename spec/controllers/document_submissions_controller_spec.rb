@@ -39,14 +39,6 @@ describe DocumentSubmissionsController do
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested document_submission as @document_submission" do
-      document_submission = DocumentSubmission.create! valid_attributes
-      get :show, {:id => document_submission.to_param}, valid_session
-      assigns(:document_submission).should eq(document_submission)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new document_submission as @document_submission" do
       get :new, { template_id: template }, valid_session
@@ -76,9 +68,9 @@ describe DocumentSubmissionsController do
         assigns(:document_submission).should be_persisted
       end
 
-      it "redirects to the created document_submission" do
+      it "redirects to the list of document submissions" do
         post :create, {:document_submission => valid_attributes}, valid_session
-        response.should redirect_to(DocumentSubmission.last)
+        response.should redirect_to(document_submissions_url)
       end
     end
 
@@ -102,7 +94,6 @@ describe DocumentSubmissionsController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested document_submission" do
-        pending
         document_submission = DocumentSubmission.create! valid_attributes
         # Assuming there are no other document_submissions in the database, this
         # specifies that the DocumentSubmission created on the previous line
@@ -118,10 +109,10 @@ describe DocumentSubmissionsController do
         assigns(:document_submission).should eq(document_submission)
       end
 
-      it "redirects to the document_submission" do
+      it "redirects to the list of document submissions" do
         document_submission = DocumentSubmission.create! valid_attributes
         put :update, {:id => document_submission.to_param, :document_submission => valid_attributes}, valid_session
-        response.should redirect_to(document_submission)
+        response.should redirect_to(document_submissions_url)
       end
     end
 

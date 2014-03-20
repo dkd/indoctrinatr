@@ -11,10 +11,6 @@ describe DocumentSubmissionsController do
       get("/document_submissions/new").should route_to("document_submissions#new")
     end
 
-    it "routes to #show" do
-      get("/document_submissions/1").should route_to("document_submissions#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/document_submissions/1/edit").should route_to("document_submissions#edit", :id => "1")
     end
