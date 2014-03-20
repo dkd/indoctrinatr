@@ -94,7 +94,6 @@ describe DocumentSubmissionsController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested document_submission" do
-        pending
         document_submission = DocumentSubmission.create! valid_attributes
         # Assuming there are no other document_submissions in the database, this
         # specifies that the DocumentSubmission created on the previous line
