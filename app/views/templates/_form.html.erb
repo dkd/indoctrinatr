@@ -3,10 +3,10 @@
   <div class="row">
     <div class="form-inputs large-12 columns">
       <%= f.input :name %>
-      <%= f.input :content %>
+      <%= f.input :content, input_html: { rows: 10 } %>
     </div>
   </div>
-  <div class="row" >
+  <div class="row">
       <div id="field-wrapper">
     <%= f.fields_for :template_fields do |template_fields_form| %>
       <div class="large-6 columns">
