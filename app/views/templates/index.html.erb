@@ -12,15 +12,15 @@
             <tbody>
             <% @templates.each do |template| %>
               <tr>
-                  <td><%= template.name %></td>
-                  <td><%= truncate template.content %></td>
-                  <td>
-                    <ul class="button-group">
-                      <li><%= link_to_form_or_document template %></li>
-                      <li><%= link_to 'Edit', edit_template_path(template), class: "button tiny" %></li>
-                      <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" %></li>
-                    </ul>
-                  </td>
+                <td><%= template.name %></td>
+                <td><%= truncate template.content %></td>
+                <td>
+                  <ul class="button-group">
+                    <li><%= link_to_form_or_document template %></li>
+                    <li><%= link_to 'Edit', edit_template_path(template), class: "button tiny" %></li>
+                    <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" %></li>
+                  </ul>
+                </td>
 
               </tr>
             <% end %>
