@@ -1,5 +1,5 @@
 class TemplateField < ActiveRecord::Base
-  VALID_PRESENTATIONS = %w[text textarea]
+  VALID_PRESENTATIONS = %w[text textarea checkbox radio-button]
 
   belongs_to :template
   has_many :submitted_template_fields
