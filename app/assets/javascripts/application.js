@@ -16,9 +16,11 @@
 //= require turbolinks
 //= require foundation
 //= require_tree .
+
 $(function() {
   $(document).foundation();
 });
 $(document).on('nested:fieldAdded', function(event){
   $('#add-panel').show();
 })
+$(function(){ $(document).foundation(); });
