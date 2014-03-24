@@ -15,5 +15,8 @@
 /log/*.log
 /tmp
 
+# editor files
+/.idea
 
-app/assets/stylesheets/scaffolds*
+# default Rails scaffold
+/app/assets/stylesheets/scaffolds*
