@@ -46,13 +46,13 @@ class DocumentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_document
-      @document = Document.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_document
+    @document = Document.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def document_params
-      params.require(:document).permit(:document_submission_id)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def document_params
+    params.require(:document).permit(:document_submission_id)
+  end
 end
