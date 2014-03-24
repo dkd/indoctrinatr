@@ -10,6 +10,10 @@
     <%= submitted_template_fields_form.input :value %>
   <% end %>
 
+  <%= render 'radio_buttons' %>
+  <%= render 'checkbox' %>
+  <%= render 'dropdown' %>
+
   <div class="form-actions">
     <%= f.button :submit, class: "success button" %>
   </div>
