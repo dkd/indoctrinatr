@@ -4,10 +4,12 @@ describe "document_submissions/index" do
   before(:each) do
     assign(:document_submissions, Kaminari.paginate_array([
       stub_model(DocumentSubmission,
-        template: FactoryGirl.build(:template)
+        template: FactoryGirl.create(:template),
+        document: FactoryGirl.create(:document)
       ),
       stub_model(DocumentSubmission,
-        template: FactoryGirl.build(:template)
+        template: FactoryGirl.build(:template),
+        document: FactoryGirl.create(:document)
       )
     ]).page(1))
   end
