@@ -64,4 +64,5 @@ group :development do
 end
 
 gem "rails-latex"
+gem "erubis"
 # gem "to_latex"
