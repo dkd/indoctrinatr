@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :document do
-    document_submission nil
+    document_submission factory: :document_submission
   end
 end

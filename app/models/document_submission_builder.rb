@@ -7,4 +7,10 @@ class DocumentSubmissionBuilder
 
     document_submission
   end
+
+  def self.build_from_params document_submission_params
+    document_submission = DocumentSubmission.new document_submission_params
+    document_submission.content = document_submission.try(:template).try(:content)
+    document_submission
+  end
 end

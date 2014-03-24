@@ -24,7 +24,7 @@ describe DocumentSubmissionsController do
   # DocumentSubmission. As you add validations to DocumentSubmission, be sure to
   # adjust the attributes here as well.
   let(:template) { FactoryGirl.create(:template) }
-  let(:valid_attributes) { { "template" => template } }
+  let(:valid_attributes) { { "template_id" => template.id } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -43,14 +43,6 @@ describe DocumentSubmissionsController do
     it "assigns a new document_submission as @document_submission" do
       get :new, { template_id: template }, valid_session
       assigns(:document_submission).should be_a_new(DocumentSubmission)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested document_submission as @document_submission" do
-      document_submission = DocumentSubmission.create! valid_attributes
-      get :edit, {:id => document_submission.to_param}, valid_session
-      assigns(:document_submission).should eq(document_submission)
     end
   end
 
@@ -78,59 +70,15 @@ describe DocumentSubmissionsController do
       it "assigns a newly created but unsaved document_submission as @document_submission" do
         # Trigger the behavior that occurs when invalid params are submitted
         DocumentSubmission.any_instance.stub(:save).and_return(false)
-        post :create, {:document_submission => { "template" => "invalid value" }}, valid_session
+        post :create, {:document_submission => { "template_id" => nil }}, valid_session
         assigns(:document_submission).should be_a_new(DocumentSubmission)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         DocumentSubmission.any_instance.stub(:save).and_return(false)
-        post :create, {:document_submission => { "template" => "invalid value" }}, valid_session
+        post :create, {:document_submission => { "template_id" => nil }}, valid_session
         response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested document_submission" do
-        document_submission = DocumentSubmission.create! valid_attributes
-        # Assuming there are no other document_submissions in the database, this
-        # specifies that the DocumentSubmission created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        DocumentSubmission.any_instance.should_receive(:update)
-        put :update, {:id => document_submission.to_param, :document_submission => { "template" => "" }}, valid_session
-      end
-
-      it "assigns the requested document_submission as @document_submission" do
-        document_submission = DocumentSubmission.create! valid_attributes
-        put :update, {:id => document_submission.to_param, :document_submission => valid_attributes}, valid_session
-        assigns(:document_submission).should eq(document_submission)
-      end
-
-      it "redirects to the list of document submissions" do
-        document_submission = DocumentSubmission.create! valid_attributes
-        put :update, {:id => document_submission.to_param, :document_submission => valid_attributes}, valid_session
-        response.should redirect_to(document_submissions_url)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the document_submission as @document_submission" do
-        document_submission = DocumentSubmission.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        DocumentSubmission.any_instance.stub(:save).and_return(false)
-        put :update, {:id => document_submission.to_param, :document_submission => { "template" => "invalid value" }}, valid_session
-        assigns(:document_submission).should eq(document_submission)
-      end
-
-      it "re-renders the 'edit' template" do
-        document_submission = DocumentSubmission.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        DocumentSubmission.any_instance.stub(:save).and_return(false)
-        put :update, {:id => document_submission.to_param, :document_submission => { "template" => "invalid value" }}, valid_session
-        response.should render_template("edit")
       end
     end
   end

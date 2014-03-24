@@ -14,7 +14,7 @@ class DocumentSubmissionsController < ApplicationController
 
   # POST /document_submissions
   def create
-    @document_submission = DocumentSubmission.new(document_submission_params)
+    @document_submission = DocumentSubmissionBuilder.build_from_params document_submission_params
 
     if @document_submission.save
       redirect_to document_submissions_url, notice: 'Document submission was successfully created.'

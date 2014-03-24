@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :document_submission do
-    template nil
+    template factory: :template
   end
 end
