@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: document_submissions
+#
+#  id          :integer          not null, primary key
+#  template_id :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  content     :text             default(""), not null
+#
+
 class DocumentSubmission < ActiveRecord::Base
   belongs_to :template
 

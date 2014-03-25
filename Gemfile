@@ -61,6 +61,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
+  gem "rails-erd"
+  gem "annotate"
 end
 
 gem "rails-latex"

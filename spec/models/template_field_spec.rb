@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: template_fields
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  default_value :string(255)
+#  presentation  :string(255)
+#  template_id   :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 require 'spec_helper'
 
 describe TemplateField do
