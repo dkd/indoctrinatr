@@ -6,8 +6,7 @@
   </div>
 
   <%= f.fields_for :submitted_template_fields do |submitted_template_fields_form| %>
-    <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
-    <%= submitted_template_fields_form.input :value, label: submitted_template_fields_form.object.to_form_label %>
+    <%= render submitted_template_fields_form.object.template_field.presentation, submitted_template_fields_form: submitted_template_fields_form %>
   <% end %>
 
   <%= render 'radio_buttons' %>
