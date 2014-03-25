@@ -16,6 +16,7 @@
           <% end %>
           <%= template_fields_form.input :name %>
           <%= template_fields_form.input :default_value %>
+          <%= template_fields_form.input :available_options %>
           <%= template_fields_form.input :presentation, collection: TemplateField::VALID_PRESENTATIONS, include_blank: false %>
         </div>
       </div>

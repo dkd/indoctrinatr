@@ -3,7 +3,7 @@
 # Table name: document_submissions
 #
 #  id          :integer          not null, primary key
-#  template_id :integer
+#  template_id :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime
 #  content     :text             default(""), not null

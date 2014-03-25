@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324093724) do
+ActiveRecord::Schema.define(version: 20140325134333) do
 
   create_table "document_submissions", force: true do |t|
-    t.integer  "template_id"
+    t.integer  "template_id",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "content",     default: "", null: false
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20140324093724) do
   add_index "documents", ["document_submission_id"], name: "index_documents_on_document_submission_id"
 
   create_table "submitted_template_fields", force: true do |t|
-    t.integer  "document_submission_id"
-    t.integer  "template_field_id"
-    t.string   "value"
+    t.integer  "document_submission_id",              null: false
+    t.integer  "template_field_id",                   null: false
+    t.string   "value",                  default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,19 +42,20 @@ ActiveRecord::Schema.define(version: 20140324093724) do
   add_index "submitted_template_fields", ["template_field_id"], name: "index_submitted_template_fields_on_template_field_id"
 
   create_table "template_fields", force: true do |t|
-    t.string   "name"
-    t.string   "default_value"
-    t.string   "presentation"
-    t.integer  "template_id"
+    t.string   "name",              default: "",     null: false
+    t.string   "default_value",     default: "",     null: false
+    t.string   "presentation",      default: "text", null: false
+    t.integer  "template_id",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "available_options"
   end
 
   add_index "template_fields", ["template_id"], name: "index_template_fields_on_template_id"
 
   create_table "templates", force: true do |t|
-    t.string   "name"
-    t.text     "content"
+    t.string   "name",       default: "", null: false
+    t.text     "content",    default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

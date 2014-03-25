@@ -3,8 +3,8 @@
 # Table name: templates
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
-#  content    :text
+#  name       :string(255)      default(""), not null
+#  content    :text             default(""), not null
 #  created_at :datetime
 #  updated_at :datetime
 #
