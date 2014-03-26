@@ -222,6 +222,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   kaminari
+  minitest
   nested_form
   quiet_assets
   rails (= 4.1.0.rc2)
