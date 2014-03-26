@@ -6,10 +6,20 @@ class DocumentSubmissionsController < ApplicationController
     @document_submissions = DocumentSubmission.all.page params[:page]
   end
 
+  # POST /document_submissions/with_defaults
+  def with_defaults
+    @document_submission = DocumentSubmissionBuilder.build_with_defaults params[:template_id]
+
+    if @document_submission.save
+      redirect_to document_submissions_url, notice: 'Document submission was successfully created.'
+    else
+      render action: 'new'
+    end
+  end
+
   # GET /document_submissions/new
   def new
-    @template = Template.find(params[:template_id]) 
-    @document_submission = DocumentSubmissionBuilder.build_from_template @template
+    @document_submission = DocumentSubmissionBuilder.build_from_template params[:template_id]
   end
 
   # POST /document_submissions

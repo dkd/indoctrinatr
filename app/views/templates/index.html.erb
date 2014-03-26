@@ -6,7 +6,7 @@
               <tr>
                   <th>Name</th>
                   <th>Content</th>
-                  <th >Actions</th>
+                  <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -16,9 +16,10 @@
                 <td><%= truncate template.content %></td>
                 <td>
                   <ul class="button-group">
-                    <li><%= link_to_form_or_document template %></li>
+                    <li><%= link_to "Fill in form", new_document_submission_url(template_id: template), class: "button tiny success" %></li>
+                    <li><%= link_to "Generate with defaults", with_defaults_document_submissions_url(template_id: template), class: "button tiny secondary", method: :post %></li>
                     <li><%= link_to 'Edit', edit_template_path(template), class: "button tiny secondary" %></li>
-                    <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button secondary tiny" %></li>
+                    <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button tiny secondary" %>
                   </ul>
                 </td>
 
