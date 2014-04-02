@@ -16,18 +16,18 @@
                 <td><%= truncate template.content %></td>
                 <td>
                   <ul class="button-group">
-                    <%= if template.template_fields.any?
-                      c = content_tag(:li) do
+                    <% if template.template_fields.any? %>
+                      <%= content_tag(:li) do
                         link_to("Fill in form", new_document_submission_url(template_id: template), class: "button tiny success")
-                      end
-                      c << content_tag(:li) do
+                      end %>
+                      <%= content_tag(:li) do
                         link_to("Generate with defaults", with_defaults_document_submissions_url(template_id: template), class: "button tiny secondary", method: :post)
-                      end
-                    else
-                      content_tag(:li) do
+                      end %>
+                    <% else %>
+                      <%= content_tag(:li) do
                         link_to("Generate", with_defaults_document_submissions_url(template_id: template), class: "button tiny success", method: :post)
-                      end
-                    end %>
+                      end %>
+                    <% end %>
                     <li><%= link_to 'Edit', edit_template_path(template), class: "button tiny secondary" %></li>
                     <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" %></li>
                   </ul>
