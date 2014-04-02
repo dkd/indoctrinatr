@@ -17,8 +17,8 @@
                 <td>
                   <ul class="button-group">
                     <li><%= link_to_form_or_document template %></li>
-                    <li><%= link_to 'Edit', edit_template_path(template), class: "button tiny" %></li>
-                    <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" %></li>
+                    <li><%= link_to 'Edit', edit_template_path(template), class: "button tiny secondary" %></li>
+                    <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button secondary tiny" %></li>
                   </ul>
                 </td>
 
@@ -28,7 +28,7 @@
         </table>
 
 
-        <%= link_to 'New Template', new_template_path, class: "button success" %>
+        <%= link_to 'New Template', new_template_path, class: "button" %>
     </div>
 </div>
 
