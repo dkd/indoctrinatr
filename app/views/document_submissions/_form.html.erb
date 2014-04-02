@@ -4,10 +4,21 @@
   <div class="form-inputs">
     <%= f.input :template_id, as: :hidden %>
   </div>
-
-  <%= f.fields_for :submitted_template_fields do |submitted_template_fields_form| %>
-    <%= render submitted_template_fields_form.object.template_field.presentation, submitted_template_fields_form: submitted_template_fields_form %>
-  <% end %>
+  <div class="row">
+    <div class="large-3 columns">
+      <ul class="side-nav">
+        <%= f.fields_for :submitted_template_fields do |submitted_template_fields_form| %>
+            <%#= raise "Error!" %>
+          <li><a href="#<%=submitted_template_fields_form.object.template_field.id%>"><%= submitted_template_fields_form.object.template_field.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="large-9 columns">
+      <%= f.fields_for :submitted_template_fields do |submitted_template_fields_form| %>
+        <%= render submitted_template_fields_form.object.template_field.presentation, submitted_template_fields_form: submitted_template_fields_form %>
+      <% end %>
+    </div>
+  </div>
 
   <div class="row">
     <div class="large-12 columns">
