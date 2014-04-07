@@ -11,5 +11,6 @@
 require 'spec_helper'
 
 describe Document do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to :document_submission }
+  it { should validate_presence_of :document_submission }
 end
