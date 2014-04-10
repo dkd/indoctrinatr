@@ -1,2 +1,2 @@
-<% @latex_config = { command: "xelatex" } -%>
+<% @latex_config = { command: "xelatex", parse_twice: true } -%>
 <%= yield -%>
