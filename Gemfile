@@ -47,8 +47,9 @@ gem 'kaminari'
 # Testing tools
 group :development, :test do
   gem 'spring-commands-rspec'
-  gem 'rspec-rails'
-  gem 'guard-rspec', require: false
+  gem 'rspec-rails', '~> 3.0.0.beta2'
+  gem "rspec", '~> 3.0.0.beta2'
+  gem 'guard-rspec', '~> 4.2.8', require: false
   gem 'factory_girl_rails'
   gem 'shoulda'
   gem 'terminal-notifier-guard'
