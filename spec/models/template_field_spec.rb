@@ -24,7 +24,7 @@ describe TemplateField do
 
     it "includes text, textarea, checkbox, radiobutton dropdown" do
       ["text", "textarea", "checkbox", "radiobutton", "dropdown"].each do |expected_presentation|
-        valid_presentations.should include expected_presentation
+        expect(valid_presentations).to include expected_presentation
       end
     end
   end
@@ -48,7 +48,7 @@ describe TemplateField do
 
     expect(tf.available_options_as_collection.size).to eql 3
     ["aa", "bb", "cc"].each do |expected_option|
-      tf.available_options_as_collection.should include expected_option
+      expect(tf.available_options_as_collection).to include expected_option
     end
   end
 end

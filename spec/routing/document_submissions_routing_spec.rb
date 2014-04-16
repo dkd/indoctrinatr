@@ -4,19 +4,19 @@ describe DocumentSubmissionsController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/document_submissions").should route_to("document_submissions#index")
+      expect(get("/document_submissions")).to route_to("document_submissions#index")
     end
 
     it "routes to #new" do
-      get("/document_submissions/new").should route_to("document_submissions#new")
+      expect(get("/document_submissions/new")).to route_to("document_submissions#new")
     end
 
     it "routes to #create" do
-      post("/document_submissions").should route_to("document_submissions#create")
+      expect(post("/document_submissions")).to route_to("document_submissions#create")
     end
 
     it "routes to #destroy" do
-      delete("/document_submissions/1").should route_to("document_submissions#destroy", :id => "1")
+      expect(delete("/document_submissions/1")).to route_to("document_submissions#destroy", :id => "1")
     end
 
   end

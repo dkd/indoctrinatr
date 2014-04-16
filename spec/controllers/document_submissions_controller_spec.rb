@@ -35,14 +35,14 @@ describe DocumentSubmissionsController do
     it "assigns all document_submissions as @document_submissions" do
       document_submission = DocumentSubmission.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:document_submissions).should eq([document_submission])
+      expect(assigns(:document_submissions)).to eq([document_submission])
     end
   end
 
   describe "GET new" do
     it "assigns a new document_submission as @document_submission" do
       get :new, { template_id: template }, valid_session
-      assigns(:document_submission).should be_a_new(DocumentSubmission)
+      expect(assigns(:document_submission)).to be_a_new(DocumentSubmission)
     end
   end
 
@@ -56,29 +56,29 @@ describe DocumentSubmissionsController do
 
       it "assigns a newly created document_submission as @document_submission" do
         post :create, {:document_submission => valid_attributes}, valid_session
-        assigns(:document_submission).should be_a(DocumentSubmission)
-        assigns(:document_submission).should be_persisted
+        expect(assigns(:document_submission)).to be_a(DocumentSubmission)
+        expect(assigns(:document_submission)).to be_persisted
       end
 
       it "redirects to the list of document submissions" do
         post :create, {:document_submission => valid_attributes}, valid_session
-        response.should redirect_to(document_submissions_url)
+        expect(response).to redirect_to(document_submissions_url)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved document_submission as @document_submission" do
         # Trigger the behavior that occurs when invalid params are submitted
-        DocumentSubmission.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(DocumentSubmission).to receive(:save).and_return(false)
         post :create, {:document_submission => { "template_id" => nil }}, valid_session
-        assigns(:document_submission).should be_a_new(DocumentSubmission)
+        expect(assigns(:document_submission)).to be_a_new(DocumentSubmission)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        DocumentSubmission.any_instance.stub(:save).and_return(false)
+        allow_any_instance_of(DocumentSubmission).to receive(:save).and_return(false)
         post :create, {:document_submission => { "template_id" => nil }}, valid_session
-        response.should render_template("new")
+        expect(response).to render_template("new")
       end
     end
   end
@@ -94,7 +94,7 @@ describe DocumentSubmissionsController do
     it "redirects to the document_submissions list" do
       document_submission = DocumentSubmission.create! valid_attributes
       delete :destroy, {:id => document_submission.to_param}, valid_session
-      response.should redirect_to(document_submissions_url)
+      expect(response).to redirect_to(document_submissions_url)
     end
   end
 
