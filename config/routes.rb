@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :templates, except: [:show]
   resources :documents
 
   resources :document_submissions, except: [:show, :edit, :update] do
@@ -6,8 +7,6 @@ Rails.application.routes.draw do
       post :with_defaults
     end
   end
-
-  resources :templates, except: [:show]
 
   root to: "home#index"
 end
