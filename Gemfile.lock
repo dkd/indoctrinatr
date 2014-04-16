@@ -68,6 +68,7 @@ GEM
     foundation-rails (5.2.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    growl (1.0.3)
     guard (2.6.0)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -225,6 +226,7 @@ DEPENDENCIES
   factory_girl_rails
   foundation-icons-sass-rails
   foundation-rails
+  growl
   guard-rspec (~> 4.2.8)
   jquery-rails
   kaminari
