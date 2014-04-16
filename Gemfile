@@ -50,10 +50,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta2'
   gem "rspec", '~> 3.0.0.beta2'
   gem 'guard-rspec', '~> 4.2.8', require: false
-  gem 'growl'
+  gem 'growl' # OR use: gem 'terminal-notifier-guard'
   gem 'factory_girl_rails'
   gem 'shoulda'
-  gem 'terminal-notifier-guard'
 end
 
 # Development tools
