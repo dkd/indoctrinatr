@@ -229,6 +229,7 @@ DEPENDENCIES
   guard-rspec (~> 4.2.8)
   jquery-rails
   kaminari
+  listen
   nested_form
   quiet_assets
   rails (= 4.1.0)
@@ -241,7 +242,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   shoulda
   simple_form
-  spring
   spring-commands-rspec
   sqlite3
   turbolinks

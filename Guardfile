@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard :rspec, cmd: "spring rspec", all_on_start: true, all_after_pass: true do
+guard :rspec, cmd: "spring rspec spec", all_on_start: true, all_after_pass: true do
   notification :growl
 
   watch(%r{^spec/.+_spec\.rb$})
