@@ -1,4 +1,5 @@
 class TemplatesController < ApplicationController
+
   before_action :set_template, only: [:edit, :update, :destroy]
 
   # GET /templates
@@ -14,6 +15,12 @@ class TemplatesController < ApplicationController
 
   # GET /templates/1/edit
   def edit
+  end
+
+  # GET /templates/1/document_submission
+  def document_submissions
+    @template = Template.find params[:id]
+    @document_submissions = @template.document_submissions
   end
 
   # POST /templates
@@ -53,6 +60,6 @@ class TemplatesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def template_params
-    params.require(:template).permit(:name, :content, template_fields_attributes: [:id, :name, :default_value, :available_options, :presentation, :_destroy])
+    params.require(:template).permit(:name, :content, template_fields_attributes: [:id, :name, :start_of_range, :end_of_range, :default_value, :available_options, :presentation, :_destroy])
   end
 end

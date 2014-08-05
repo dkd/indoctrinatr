@@ -47,6 +47,6 @@ class DocumentSubmissionsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def document_submission_params
-    params.require(:document_submission).permit(:template_id, submitted_template_fields_attributes: [:id, :value, :template_field_id])
+    params.require(:document_submission).permit(:template_id, submitted_template_fields_attributes: [:id, :value, :template_field_id, :end_of_range])
   end
 end

@@ -5,6 +5,12 @@
       <%= f.input :name %>
       <%= f.input :content, input_html: { rows: 10 } %>
     </div>
+    <div class="large-12 columns">
+      <div class="form-actions">
+        <%= f.button :submit, class: "secondary-btn"%>
+      </div>
+      <h1>Template attributes</h1>
+    </div>
   </div>
   <div class="row">
       <div id="field-wrapper">
@@ -12,31 +18,29 @@
       <div class="large-6 columns">
         <div class="panel">
           <%= template_fields_form.link_to_remove class: "right close-icon" do %>
-            <i class="fi-x"></i>
+            <i class="remove-icon"></i>
           <% end %>
           <%= template_fields_form.input :name %>
           <%= template_fields_form.input :default_value %>
-          <%= template_fields_form.input :available_options %>
-          <%= template_fields_form.input :presentation, collection: TemplateField::VALID_PRESENTATIONS, include_blank: false %>
+          <%= template_fields_form.input :presentation, collection: TemplateField::VALID_PRESENTATIONS, include_blank: false, :input_html => { :class => "presentation" } %>
+          <%= render 'available_options', template_fields_form: template_fields_form %>
+          <%= render 'range', template_fields_form: template_fields_form %>
         </div>
       </div>
     <% end %>
       </div>
     <div class="large-6 columns" id="add-panel">
       <div class="panel">
-          <%= f.link_to_add :template_fields, data: { target: "#field-wrapper"}, class: "" do %>
-            <i class="fi-plus"></i>
-
-          <% end %>
-          <p>add a new field</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-
-      <div class="form-actions right">
-        <%= f.button :submit, class: "success"%>
+        <div class="row collapse">
+          <div class="small-10 columns">
+            <input id="attr-name" type="text" placeholder="Attribute name" />
+          </div>
+          <div class="small-2 columns">
+            <%= f.link_to_add :template_fields, data: { target: "#field-wrapper" }, class: "button postfix" do %>
+              <i class="fi-plus"></i>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

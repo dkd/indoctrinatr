@@ -40,12 +40,14 @@ gem 'simple_form'
 gem 'nested_form'
 gem 'foundation-icons-sass-rails'
 gem 'kaminari'
+gem 'jquery-ui-rails', '~> 5.0.0'
+gem 'jquery-turbolinks'
 
 # Testing tools
 group :development, :test do
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.0.0.beta2'
-  gem "rspec", '~> 3.0.0.beta2'
+  gem 'rspec-rails', '~> 3.1.0'
+  gem "rspec", '~> 3.1.0'
   gem 'guard-rspec', '~> 4.2.8', require: false
   gem 'growl' # OR use: gem 'terminal-notifier-guard'
   gem 'factory_girl_rails'
@@ -66,4 +68,6 @@ end
 
 gem "rails-latex"
 gem "erubis"
+gem "paperclip", "~> 3.0"
+gem "rubyzip"
 # gem "to_latex"

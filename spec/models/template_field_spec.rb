@@ -3,13 +3,15 @@
 # Table name: template_fields
 #
 #  id                :integer          not null, primary key
-#  name              :string(255)      default(""), not null
-#  default_value     :string(255)      default(""), not null
-#  presentation      :string(255)      default("text"), not null
-#  template_id       :integer          not null
+#  name              :string(255)
+#  default_value     :string(255)
+#  presentation      :string(255)
+#  template_id       :integer
 #  created_at        :datetime
 #  updated_at        :datetime
-#  available_options :text
+#  available_options :text             default("")
+#  start_of_range    :integer
+#  end_of_range      :integer
 #
 
 require 'spec_helper'

@@ -3,9 +3,9 @@
 # Table name: submitted_template_fields
 #
 #  id                     :integer          not null, primary key
-#  document_submission_id :integer          not null
-#  template_field_id      :integer          not null
-#  value                  :string(255)      default(""), not null
+#  document_submission_id :integer
+#  template_field_id      :integer
+#  value                  :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
 #

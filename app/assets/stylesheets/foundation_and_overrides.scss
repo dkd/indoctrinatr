@@ -12,7 +12,19 @@
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
 
-$top-nav-bg:#f9f9f9;
+$top-nav-bg: #fdfdfd;
+$primary-bg: #f2f2f2;
+$secondary-bg: #e9e5e2;
+$dkd-green: #bccf0c;
+$primary-text-color: #403026;
+$secondary-text-color: #83553c;
+$annotation-color :#847f7c;
+$table-head: #a3958b;
+$table-even: #e9e5e2;
+$table-odd: #dcd5d0;
+$secondary-btn-bg: #d3cbc4;
+$datepicker-bg-light: #ebe9e7;
+$datepicker-bg-dark: #dad3cf;
 
 // $experimental: true;
 
@@ -43,9 +55,9 @@ $top-nav-bg:#f9f9f9;
 
 // We use these to control various global styles
 $body-bg: #f2f2f2;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
+$body-font-color: $primary-text-color;
+$body-font-family: 'Open Sans', sans-serif;
+// $body-font-weight: 200;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
@@ -57,7 +69,7 @@ $body-bg: #f2f2f2;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #008CBA;
+$primary-color: $primary-text-color;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -120,17 +132,17 @@ $primary-color: #008CBA;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family;
-$header-font-family: 'Cabin';
-// $header-font-weight: normal;
+// $header-font-family: 'Arial';
+// $header-font-weight: 200;
 // $header-font-style: normal;
-// $header-font-color: #222;
-// $header-line-height: 1.4;
-// $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
+$header-font-color: $secondary-text-color;
+$header-line-height: 1.2;
+$header-top-margin: 3.5rem;
+$header-bottom-margin: 3rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
+$h1-font-size: rem-calc(28);
 // $h2-font-size: rem-calc(37);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
@@ -331,13 +343,13 @@ $header-font-family: 'Cabin';
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: #fff;
+$button-font-color: $primary-color;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: normal;
+$button-font-weight: 300;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
@@ -361,6 +373,7 @@ $header-font-family: 'Cabin';
 // Sets the margin for the right side by default, and the left margin if right-to-left direction is used
 // $button-bar-margin-opposite: rem-calc(10);
 // $button-group-border-width: 1px;
+// $button-bg:$dkd-green;
 
 // Clearing
 
@@ -487,10 +500,10 @@ $header-font-family: 'Cabin';
 // $form-label-font-size: rem-calc(14);
 // $form-label-font-weight: normal;
 // $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color(#000, $lightness: 30%);
+$form-label-font-color: $secondary-text-color; //scale-color(#000, $lightness: 30%);
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
+$input-font-color: $primary-text-color;
 // $input-font-size: rem-calc(14);
 // $input-bg-color: #fff;
 // $input-focus-bg-color: scale-color(#fff, $lightness: -2%);
@@ -772,8 +785,8 @@ $header-font-family: 'Cabin';
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-$panel-bg: scale-color(#fff, $lightness: -2%);
-// $panel-border-style: solid;
+$panel-bg: #ffffff; // scale-color(#fff, $lightness: -2%);
+$panel-border-style: none;
 // $panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
@@ -785,7 +798,7 @@ $panel-bg: scale-color(#fff, $lightness: -2%);
 // $panel-padding: rem-calc(20);
 
 // We use these to set default font colors
-// $panel-font-color: #333;
+$panel-font-color: $secondary-text-color;
 // $panel-font-color-alt: #fff;
 
 // $panel-header-adjust: true;
@@ -1038,19 +1051,19 @@ $panel-bg: scale-color(#fff, $lightness: -2%);
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9  ;
+$table-bg: $primary-bg;
+$table-even-row-bg: $table-even;
 
 // These control the table cell border style
 // $table-border-style: solid;
 // $table-border-size: 1px;
-// $table-border-color: #ddd;
+// $table-border-color: $primary-bg;
 
 // These control the table head styles
-// $table-head-bg: #f5f5f5  ;
+$table-head-bg: $table-head;
 // $table-head-font-size: rem-calc(14);
-// $table-head-font-color: #222;
-// $table-head-font-weight: bold;
+$table-head-font-color: #fff;
+$table-head-font-weight: normal;
 // $table-head-padding: rem-calc(8 10 10);
 
 // These control the row padding and font styles
@@ -1061,7 +1074,7 @@ $panel-bg: scale-color(#fff, $lightness: -2%);
 
 // These are for controlling the display and margin of tables
 // $table-display: table-cell;
-// $table-margin-bottom: rem-calc(20);
+$table-margin-bottom: rem-calc(75);
 
 //
 // TABS
@@ -1133,11 +1146,11 @@ $panel-bg: scale-color(#fff, $lightness: -2%);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #fff;
+$topbar-bg-color: $top-nav-bg;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 104px;
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1146,7 +1159,7 @@ $topbar-bg: $topbar-bg-color;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
-$topbar-dropdown-link-color: #111;
+// $topbar-dropdown-link-color: #111;
 // $topbar-dropdown-link-bg: #333;
 // $topbar-dropdown-link-weight: normal;
 // $topbar-dropdown-toggle-size: 5px;
@@ -1154,19 +1167,19 @@ $topbar-dropdown-link-color: #111;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #111;
-$topbar-link-color-hover: $primary-color;
-$topbar-link-color-active: $primary-color;
-$topbar-link-color-active-hover: $primary-color;
+$topbar-link-color: $secondary-text-color;
+$topbar-link-color-hover: #fff;
+$topbar-link-color-active: #fff;
+$topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
-$topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: #f9f9f9;
-$topbar-link-bg-active: $primary-color;
-$topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
+$topbar-link-font-size: rem-calc(18);
+$topbar-link-hover-lightness: #fff; // Darken by 10%
+$topbar-link-bg-hover: $dkd-green;
+$topbar-link-bg-active: $dkd-green;
+$topbar-link-bg-active-hover: $dkd-green;
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
+$topbar-link-padding: $topbar-height / 5;
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;

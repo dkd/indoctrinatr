@@ -11,16 +11,63 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery_nested_form
-//= require turbolinks
+//= require jquery-ui
 //= require foundation
 //= require_tree .
+//= require turbolinks
+
 
 $(function() {
   $(document).foundation();
 });
+
+function presentationVisibiltyUpdater()
+{
+  var chosen = $(this).val();
+  var panel = $(this).closest(".panel");
+
+  hideAllField(panel);
+
+  if (chosen == "checkbox" || chosen == "radiobutton" || chosen == "dropdown" || chosen == "date") {
+    showTextField(panel);
+  }else if (chosen == "range") {
+    showRangeField(panel);
+  }
+}
+
+$(document).ready(function() {
+    $(".presentation").each(presentationVisibiltyUpdater);
+    $('body').on('change', '.presentation', presentationVisibiltyUpdater);
+});
+
 $(document).on('nested:fieldAdded', function(event){
+  // Insert Attribute Name in created panel
+  var panel = $("#field-wrapper .fields:last .input input:first");
+  panel.val($("#attr-name").val());
+  $("#attr-name").val("");
   $('#add-panel').show();
+  presentationVisibiltyUpdater.call($("#field-wrapper .fields:last .input .presentation"));
 })
-$(function(){ $(document).foundation(); });
+
+  function showTextField (panel) {
+    panel.find(".textfield").show();
+    panel.find(".rangefield").hide();
+  }
+
+  function showRangeField (panel) {
+    panel.find(".textfield").hide();
+    panel.find(".rangefield").show();
+  }
+
+  function hideAllField(panel) {
+    panel.find(".textfield").hide();
+    panel.find(".rangefield").hide();
+  }
+
+
+$(function() {
+  $('.datepicker').datepicker();
+});

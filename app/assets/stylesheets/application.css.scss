@@ -9,16 +9,50 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
-
- *= require_tree .
+ *= require jquery-ui
  */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import 'foundation_and_overrides';
 @import 'foundation-icons';
 
+$light-green: #dbe0af;
+$bg-main: #f2f2f2;
+
 body {
-  background: url('bg.png') repeat;
+  background-color: $bg-main;
 }
+
+/* Custom Buttons Start */
+
+.primary-btn {
+  @include button (
+    $button-tny,
+    $dkd-green,
+    $global-radius,
+    false,
+    false,
+    false
+  );
+  color: $primary-text-color;
+  font-size: rem-calc(18);
+}
+
+.secondary-btn {
+  @include button (
+    $button-tny,
+    $secondary-btn-bg,
+    $global-radius,
+    false,
+    false,
+    false
+  );
+  color: $primary-text-color;
+  font-size: rem-calc(18);
+}
+
+/* Custom Buttons End */
+
 .top-bar {
   box-shadow: 0px 0px 2px rgba(6, 8, 8, 0.15);
 }
@@ -29,21 +63,283 @@ table {
   }
 }
 a.close-icon {
-  margin-top: -15px;
-  margin-right: -12px;
+  margin-right: -22px;
+  margin-top: -13px;
 }
 #add-panel {
-  text-align: center;
-  .panel {
-    border-style: dashed;
-    border-width: 3px;
+  input {
+    margin-bottom: 0;
+  }
+  .button {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-left: none;
+    margin-bottom: 0;
   }
   .fi-plus {
-    font-size: 45px;
+    font-size: 18px;
   }
 }
 footer {
   .columns {
-    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 15px;
   }
+}
+
+.bg-slider {
+	background: image-url("pattern.png") repeat center center $light-green;
+	h1 {
+		color: $primary-text-color;
+		margin: 60px 0 40px 0;
+	}
+}
+
+.top-bar {
+	box-shadow: none;
+	.name {
+		h1 {
+			a {
+				padding: 0;
+			}
+		}
+	}
+	.top-bar-section {
+		li.new-template {
+			a {
+//				padding-left: 26px;
+//				background: image-url("newtemplate.png") no-repeat left center;
+//				&:hover {
+//					background: image-url("newtemplate.png") no-repeat left center;
+//				}
+			}
+		}
+	}
+}
+
+.button-group {
+  li {
+    padding-right: 10px;
+    &:last-child {
+      padding-right: 0px;
+    }
+  }
+}
+
+.contain-to-grid {
+	-webkit-box-shadow: 0 1px 2px #aeae99;
+	-moz-box-shadow: 0 1px 2px #aeae99;
+	box-shadow: 0 1px 2px #aeae99;
+	position: relative;
+}
+
+.footer-container {
+	background-color: #e9e5e2;
+	height: 60px;
+	padding-top: 16px;
+  margin-top: rem-calc(75);
+	ul {
+		list-style-type: none;
+		margin-left: 0px;
+		li {
+
+			float: right;
+			margin-left: 25px;
+			&:first-child {
+				margin-left: 0px;
+				padding-left: 28px;
+				background: image_url("externallink.png") no-repeat left center;
+			}
+			a {
+				color:$secondary-text-color;
+				font-size: rem-calc(18);
+			}
+		}
+	}
+}
+
+// Icons - Start
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 29px;
+}
+
+.generatepdf {
+  background: image_url("generatepdf.png") no-repeat;
+  width: 29px;
+  height: 24px;
+  display: block;
+}
+.editpdf {
+  background: image_url("edit.png") no-repeat;
+  width: 29px;
+  height: 24px;
+  display: block;
+}
+.lasterror {
+  background: image_url("lasterror.png") no-repeat;
+  width: 29px;
+  height: 24px;
+  display: block;
+}
+.deletepdf {
+  background: image_url("delete.png") no-repeat;
+  width: 29px;
+  height: 24px;
+  display: block;
+}
+.remove-icon {
+  background: image_url("delete_attribute.png") no-repeat;
+  width: 29px;
+  height: 24px;
+  display: block;
+}
+.add-option {
+  background: image_url("neues_option.png") no-repeat;
+  width: 29px;
+  height: 24px;
+  display: block;
+}
+.history-icon {
+  background: image_url("indoctrinatr_view.png") no-repeat;
+  width: 29px;
+  height: 24px;
+  display: block;
+}
+
+// Icons - End
+
+
+// Lists - Start
+
+.list-wrapper {
+  list-style: none;
+  margin-left: 0;
+  .odd {
+    background-color: $table-odd;
+  }
+
+  .even {
+    background-color: $table-even;
+  }
+}
+
+.template-type {
+  float: left;
+  &:first-child {
+    margin-right: 15px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  p:last-child {
+    color: $secondary-text-color;
+    font-size: rem-calc(12);
+  }
+}
+
+
+
+.list-row {
+  padding: rem-calc(10);
+  border-bottom: 1px solid $body-bg;
+  .row-container {
+    .row-content {
+
+    }
+    .row-actions {
+      .button-group {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+
+// Lists - End
+
+
+// jQuery UI Datepicker - Start
+#ui-datepicker-div {
+  background: none $datepicker-bg-dark;
+  border: none;
+  .ui-widget-header {
+    border: none;
+    background: none $datepicker-bg-light;
+    .ui-datepicker-title {
+      color: $secondary-text-color;
+      font-weight: normal;
+    }
+    .ui-icon {
+      background-image: image_url("accordeon_closed.png");
+    }
+    .ui-icon-circle-triangle-e {
+      background-position: 0 0;
+    }
+    .ui-icon-circle-triangle-w {
+      background-position: 0 0;
+      /* Mirror the background image */
+      -webkit-transform: scaleX(-1);
+      -khtml-transform: scaleX(-1);
+      -moz-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+  .ui-datepicker-calendar {
+    border: none;
+    background: none;
+    thead {
+      background: none;
+      tr th {
+        color: $secondary-text-color;
+        font-weight: normal;
+      }
+    }
+  }
+  table tr.even, table tr.alt, table tr:nth-of-type(2n) {
+    background: none;
+  }
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none 50% 50% $datepicker-bg-light;
+    border: none;
+    color: $secondary-text-color;
+    font-weight: normal;
+  }
+  .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color: #555555;
+    text-decoration: none;
+  }
+  .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    background: none 50% 50% $datepicker-bg-dark;
+    border: none;
+    color: #212121;
+    font-weight: normal;
+  }
+  .ui-state-hover a, .ui-state-hover a:hover, .ui-state-hover a:link, .ui-state-hover a:visited, .ui-state-focus a, .ui-state-focus a:hover, .ui-state-focus a:link, .ui-state-focus a:visited {
+    color: #212121;
+    text-decoration: none;
+  }
+  .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    background: none 50% 50% #ffffff;
+    border: none;
+    color: #212121;
+    font-weight: normal;
+  }
+}
+
+// jQuery UI Datepicker - End
+
+// Forms - Start
+
+.collection_radio_buttons {
+  text-decoration: underline;
+}
+
+.collection_check_boxes {
+  text-decoration: underline;
 }

@@ -1,45 +1,58 @@
 <div class="row">
     <div class="large-12 columns">
-        <h1 class="text-center">Listing templates</h1>
-        <table class="wide">
-            <thead>
-              <tr>
-                  <th>Name</th>
-                  <th>Content</th>
-                  <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
+        <h1>Listing templates</h1>
+        <%= link_to 'Upload Template Pack', new_template_pack_path, class: "primary-btn" %>
+        <%= link_to 'New Template', new_template_path, class: "secondary-btn" %>
+        <%= link_to "History", document_submissions_path, class: "secondary-btn" %></li>
+        <ul class="list-wrapper">
             <% @templates.each do |template| %>
-              <tr>
-                <td><%= template.name %></td>
-                <td><%= truncate template.content %></td>
-                <td>
-                  <ul class="button-group">
-                    <% if template.template_fields.any? %>
-                      <%= content_tag(:li) do
-                        link_to("Fill in form", new_document_submission_url(template_id: template), class: "button tiny success")
-                      end %>
-                      <%= content_tag(:li) do
-                        link_to("Generate with defaults", with_defaults_document_submissions_url(template_id: template), class: "button tiny secondary", method: :post)
-                      end %>
-                    <% else %>
-                      <%= content_tag(:li) do
-                        link_to("Generate", with_defaults_document_submissions_url(template_id: template), class: "button tiny success", method: :post)
-                      end %>
-                    <% end %>
-                    <li><%= link_to 'Edit', edit_template_path(template), class: "button tiny secondary" %></li>
-                    <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" %></li>
-                  </ul>
-                </td>
-
-              </tr>
+            <li class="list-row <%= cycle('even', 'odd') %>">
+                <div class="row-container row">
+                    <div class="row-content large-9 columns">
+                        <div class="row">
+                            <div class="large-1 columns template-name">
+                                <%= template.id %>
+                            </div>
+                            <div class="large-8 columns template-name">
+                                <%= template.name %>
+                            </div>
+                            <div class="large-3 columns ">
+                                <div class="template-type">
+                                    <p><%= template.template_type %></p>
+                                    <p>Type</p>
+                                </div>
+                                <% if template.is_package? %>
+                                  <div class="template-type">
+                                      <p><%= template.template_pack.id %></p>
+                                      <p>Package ID</p>
+                                  </div>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-actions large-3 columns">
+                        <ul class="button-group right">
+                          <% if template.template_fields.any? %>
+                            <%= content_tag(:li) do
+                              link_to("Fill in form", new_document_submission_url(template_id: template), class: "generatepdf hide-text")
+                            end %>
+                            <%= content_tag(:li) do
+                              link_to("Generate with defaults", with_defaults_document_submissions_url(template_id: template), class: "lasterror hide-text", method: :post)
+                            end %>
+                          <% else %>
+                            <%= content_tag(:li) do
+                              link_to("Generate", with_defaults_document_submissions_url(template_id: template), class: "generatepdf hide-text", method: :post)
+                            end %>
+                          <% end %>
+                          <li><%= link_to 'Edit', edit_template_path(template), class: "editpdf hide-text" %></li>
+                          <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
+                          <li><%= link_to 'Submissions', document_submissions_template_url(template), class:"history-icon hide-text" %></li>
+                    </div>
+                </div>
+            </li>
             <% end %>
-            </tbody>
-        </table>
+        </ul>
 
-
-        <%= link_to 'New Template', new_template_path, class: "button right" %>
     </div>
 </div>
 

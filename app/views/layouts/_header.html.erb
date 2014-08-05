@@ -3,39 +3,16 @@
         <!-- Title Area -->
         <li class="name">
             <h1>
-                <%= link_to 'Home', root_path %>
+                <%= link_to image_tag("logo.png"), root_path %>
             </h1>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
     <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
-            <%= render 'layouts/navigation_links' %>
-        </ul>
-
         <!-- Right Nav Section -->
         <ul class="right">
-            <li class="divider"></li>
-            <li class="has-dropdown">
-                <a href="#">API</a>
-                <ul class="dropdown">
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Example</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li class="has-dropdown">
-                <a href="#">Language</a>
-                <ul class="dropdown">
-                    <li><label>Language</label></li>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">German</a></li>
-                </ul>
-            </li>
-            <li class="divider"></li>
-            <li><a href="#">Contact</a></li>
+			<%= render 'layouts/navigation_links' %>
         </ul>
     </section>
 </nav>

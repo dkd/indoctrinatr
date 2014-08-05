@@ -1,30 +1,31 @@
 <div class="row">
   <div class="large-12 column">
-    <h1 class="text-center">Listing document_submissions</h1>
-
-    <table class="wide">
-      <thead>
-        <tr>
-          <th>Template</th>
-          <th></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @document_submissions.each do |document_submission| %>
-          <tr>
-            <td><%= document_submission.template_name %></td>
-            <td>
-              <ul class="button-group">
-                <li><%= link_to 'Generated document', document_url(document_submission.document, format: :pdf), class: "button tiny" %></li>
-                <li><%= link_to 'Destroy', document_submission, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert tiny" %></li>
-              </ul>
-            </td>
-          </tr>
+    <h1 class="">Listing document_submissions</h1>
+      <ul class="list-wrapper">
+          <% @document_submissions.each do |document_submission| %>
+          <li class="list-row <%= cycle('even', 'odd') %>">
+            <div class="row-container row">
+              <div class="row-content large-9 columns">
+                <div class="row">
+                    <div class="large-9 columns template-name">
+                        <%= document_submission.template_name %>
+                    </div>
+                    <div class="large-3 columns template-type">
+                       <p><%= l document_submission.updated_at, format: :default  %></p>
+                       <p>geändert am</p>
+                    </div>
+                </div>
+              </div>
+              <div class="row-actions large-3 columns">
+                  <ul class="button-group right">
+                    <li><%= link_to 'Generated document', document_url(document_submission.document, format: :pdf), class: "generatepdf hide-text" %></li>
+                    <li><%= link_to 'Destroy', document_submission, method: :delete, data: { confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
+                  </ul>
+              </div>
+            </div>
+          </li>
         <% end %>
-      </tbody>
-    </table>
-
+      </ul>
     <br>
   </div>
 </div>
