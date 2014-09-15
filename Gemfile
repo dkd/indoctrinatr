@@ -3,7 +3,7 @@ source 'https://rubygems.dkd.de'
 ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.1.1'
+gem 'rails', '~> 4.1.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.1'
 # Use Uglifier as compressor for JavaScript assets
@@ -48,7 +48,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.1.0'
   gem "rspec", '~> 3.1.0'
-  gem 'guard-rspec', '~> 4.2.8', require: false
+  gem 'guard-rspec', '~> 4.3.1', require: false
   gem 'growl' # OR use: gem 'terminal-notifier-guard'
   gem 'factory_girl_rails'
   gem 'shoulda'
