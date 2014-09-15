@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get '/contact' => 'pages#contact'
+  get '/documentation' => 'pages#documentation'
+
+  resources :documents, only: %i(:show)
+  resources :template_packs
 
   namespace :api do
     resources :templates do
@@ -9,24 +14,17 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :templates, except: [:show] do
+  resources :templates, except: %i(:show) do
     member do
       get :document_submissions
     end
   end
-  resources :documents, only: [:show]
 
-  resources :document_submissions, except: [:show, :edit, :update] do
+  resources :document_submissions, except: %i(show, edit, update) do
     collection do
       post :with_defaults
     end
   end
 
-  resources :template_packs
-
-  root to: "home#index"
-
-  get '/contact' => 'pages#contact'
-  get '/documentation' => 'pages#documentation'
-
+  root to: 'home#index'
 end

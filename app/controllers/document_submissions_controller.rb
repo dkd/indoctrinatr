@@ -40,6 +40,7 @@ class DocumentSubmissionsController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_document_submission
     @document_submission = DocumentSubmission.find(params[:id])

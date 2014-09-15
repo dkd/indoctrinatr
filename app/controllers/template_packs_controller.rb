@@ -1,5 +1,4 @@
 class TemplatePacksController < ApplicationController
-
   def new
     @template_pack = TemplatePack.new
   end
@@ -7,9 +6,9 @@ class TemplatePacksController < ApplicationController
   def create
     @template_pack = TemplatePack.new(template_pack_params)
     if @template_pack.save!
-      redirect_to templates_path, notice: "Template was successfully created out of suppplied template-pack"
+      redirect_to templates_path, notice: 'Template was successfully created out of suppplied template pack.'
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -28,5 +27,4 @@ class TemplatePacksController < ApplicationController
   def template_pack_params
     params.require(:template_pack).permit(:zip_container)
   end
-
 end

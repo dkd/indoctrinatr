@@ -1,5 +1,4 @@
 class TemplatesController < ApplicationController
-
   before_action :set_template, only: [:edit, :update, :destroy]
 
   # GET /templates
@@ -53,6 +52,7 @@ class TemplatesController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_template
     @template = Template.find(params[:id])

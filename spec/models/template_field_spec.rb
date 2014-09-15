@@ -3,13 +3,13 @@
 # Table name: template_fields
 #
 #  id                :integer          not null, primary key
-#  name              :string(255)
-#  default_value     :string(255)
-#  presentation      :string(255)
-#  template_id       :integer
+#  name              :string(255)      default(""), not null
+#  default_value     :string(255)      default(""), not null
+#  presentation      :string(255)      default("text"), not null
+#  template_id       :integer          not null
 #  created_at        :datetime
 #  updated_at        :datetime
-#  available_options :text             default("")
+#  available_options :text
 #  start_of_range    :integer
 #  end_of_range      :integer
 #
@@ -19,13 +19,13 @@ require 'spec_helper'
 describe TemplateField do
   let(:valid_presentations) { TemplateField::VALID_PRESENTATIONS }
 
-  describe "valid presentations" do
-    specify "5 presentations" do
+  describe 'valid presentations' do
+    specify '5 presentations' do
       expect(valid_presentations.size).to eql 5
     end
 
-    it "includes text, textarea, checkbox, radiobutton dropdown" do
-      ["text", "textarea", "checkbox", "radiobutton", "dropdown"].each do |expected_presentation|
+    it 'includes text, textarea, checkbox, radiobutton dropdown' do
+      %w(text textarea checkbox radiobutton dropdown).each do |expected_presentation|
         expect(valid_presentations).to include expected_presentation
       end
     end
@@ -45,11 +45,11 @@ describe TemplateField do
 
   it { should ensure_inclusion_of(:presentation).in_array(valid_presentations) }
 
-  it "splits available options at comma and strips with spaces" do
-    tf = TemplateField.new available_options: " aa,   bb  , cc "
+  it 'splits available options at comma and strips with spaces' do
+    tf = TemplateField.new available_options: ' aa,   bb  , cc '
 
     expect(tf.available_options_as_collection.size).to eql 3
-    ["aa", "bb", "cc"].each do |expected_option|
+    %w(aa bb cc).each do |expected_option|
       expect(tf.available_options_as_collection).to include expected_option
     end
   end

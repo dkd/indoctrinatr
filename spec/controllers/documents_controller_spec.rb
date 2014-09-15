@@ -21,10 +21,10 @@ require 'spec_helper'
 describe DocumentsController do
   let(:valid_session) { {} }
 
-  describe "GET show" do
-    it "assigns the requested document as @document" do
+  describe 'GET show' do
+    it 'assigns the requested document as @document' do
       document = FactoryGirl.create :document
-      get :show, {:id => document.to_param}, valid_session
+      get :show, { id: document.to_param }, valid_session
       expect(assigns(:document)).to eq(document)
     end
   end

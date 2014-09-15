@@ -2,13 +2,11 @@
 #
 # Table name: document_submissions
 #
-#  id                       :integer          not null, primary key
-#  template_id              :integer
-#  created_at               :datetime
-#  updated_at               :datetime
-#  content                  :text             default(""), not null
-#  document_submission_name :string(255)
-#  user_id                  :integer
+#  id          :integer          not null, primary key
+#  template_id :integer          not null
+#  created_at  :datetime
+#  updated_at  :datetime
+#  content     :text             default(""), not null
 #
 
 class DocumentSubmission < ActiveRecord::Base
@@ -24,7 +22,7 @@ class DocumentSubmission < ActiveRecord::Base
 
   after_commit :create_document, on: :create
 
-  def get_binding
+  def retrieve_binding
     binding
   end
 

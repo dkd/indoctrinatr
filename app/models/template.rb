@@ -3,16 +3,15 @@
 # Table name: templates
 #
 #  id                  :integer          not null, primary key
-#  name                :string(255)
-#  content             :text
+#  name                :string(255)      default(""), not null
+#  content             :text             default(""), not null
 #  created_at          :datetime
 #  updated_at          :datetime
-#  is_package          :boolean
-#  template_pack       :string(255)
 #  asset_path          :string(255)
 #  template_asset_path :string(255)
 #  tex_template        :string(255)
 #  template_pack_id    :integer
+#  is_package          :boolean
 #
 
 class Template < ActiveRecord::Base
@@ -26,6 +25,6 @@ class Template < ActiveRecord::Base
   validates :content, presence: true
 
   def template_type
-    is_package? ? "Package" : "GUI Template"
+    is_package? ? 'Package' : 'GUI Template'
   end
 end

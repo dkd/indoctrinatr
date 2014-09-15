@@ -47,7 +47,7 @@ gem 'jquery-turbolinks'
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.1.0'
-  gem "rspec", '~> 3.1.0'
+  gem 'rspec', '~> 3.1.0'
   gem 'guard-rspec', '~> 4.3.1', require: false
   gem 'growl' # OR use: gem 'terminal-notifier-guard'
   gem 'factory_girl_rails'
@@ -62,12 +62,13 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'sqlite3'
-  gem "rails-erd"
-  gem "annotate"
+  gem 'rails-erd'
+  gem 'annotate'
+  gem 'rubocop'
 end
 
-gem "rails-latex"
-gem "erubis"
-gem "paperclip", "~> 3.0"
-gem "rubyzip"
-# gem "to_latex"
+gem 'rails-latex'
+gem 'erubis'
+gem 'paperclip', '~> 3.0'
+gem 'rubyzip'
+# gem 'to_latex'

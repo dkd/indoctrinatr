@@ -12,6 +12,7 @@ class TemplatePackProcessor
   end
 
   private
+
   def unzip_container
     Zip::File.open @template_pack.zip_container.path do |zip_file|
       zip_file.each do |file|
@@ -25,8 +26,8 @@ class TemplatePackProcessor
   def process_configuration_file
     config_file_content = File.read @template_pack.path_to_config_file
     @template_config = YAML.load config_file_content
-    @template_name = @template_config.fetch("template-name", "") # legacy
-    @template_name = @template_config.fetch("template_name", @template_name)
+    @template_name = @template_config.fetch('template-name', '') # legacy
+    @template_name = @template_config.fetch('template_name', @template_name)
   end
 
   def extract_tex_template
@@ -34,13 +35,13 @@ class TemplatePackProcessor
   end
 
   def extract_template_fields
-    @template_fields_attributes = @template_config.fetch("attributes", [])
+    @template_fields_attributes = @template_config.fetch('attributes', [])
   end
 
   def create_template_and_template_attributes
     @template = Template.create! do |template|
       template.name = @template_name
-      template.asset_path = ""
+      template.asset_path = ''
       template.template_asset_path = @template_pack.path_to_extracted_container
       template.content = @template_content
       template.template_fields_attributes = @template_fields_attributes
