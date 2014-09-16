@@ -25,6 +25,6 @@ class Template < ActiveRecord::Base
   validates :content, presence: true
 
   def template_type
-    is_package? ? 'Package' : 'GUI Template'
+    is_package? ? 'Template Pack' : 'GUI Template'
   end
 end

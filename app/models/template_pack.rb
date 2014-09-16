@@ -18,7 +18,7 @@ class TemplatePack < ActiveRecord::Base
   has_attached_file :zip_container
   validates_attachment_presence :zip_container
 
-  belongs_to :template
+  belongs_to :template, dependent: :destroy
 
   after_save :process_zip_container
 

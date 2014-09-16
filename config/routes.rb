@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   resources :template_packs
 
   namespace :api do
-    resources :templates do
+    resources :templates, only: [] do
       member do
         get :generate
-        get :error_log
       end
     end
   end

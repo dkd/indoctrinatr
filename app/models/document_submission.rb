@@ -21,6 +21,7 @@ class DocumentSubmission < ActiveRecord::Base
   delegate :name, to: :template, prefix: :template
 
   after_commit :create_document, on: :create
+  after_initialize :initialize_fields
 
   def retrieve_binding
     binding
@@ -28,5 +29,12 @@ class DocumentSubmission < ActiveRecord::Base
 
   def create_document
     Document.create document_submission: self
+  end
+
+  def initialize_fields
+    submitted_template_fields.each do |submitted_template_field|
+      (class << self; self; end).send(:define_method, submitted_template_field.name.to_sym, -> { instance_variable_get("@#{submitted_template_field.name}").to_s.to_latex })
+      instance_variable_set("@#{submitted_template_field.name}", submitted_template_field.value_or_default)
+    end
   end
 end
