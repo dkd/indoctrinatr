@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact'
   get '/documentation' => 'pages#documentation'
 
-  resources :documents, only: %i(:show)
+  resources :documents, only: %i(show)
   resources :template_packs
 
   namespace :api do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :templates, except: %i(:show) do
+  resources :templates, except: %i(show) do
     member do
       get :document_submissions
     end
