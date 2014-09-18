@@ -20,3 +20,5 @@
 
 # default Rails scaffold
 /app/assets/stylesheets/scaffolds*
+
+/public/system
