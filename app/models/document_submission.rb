@@ -33,7 +33,9 @@ class DocumentSubmission < ActiveRecord::Base
 
   def initialize_fields
     submitted_template_fields.each do |submitted_template_field|
-      (class << self; self; end).send(:define_method, submitted_template_field.name.to_sym, -> { instance_variable_get("@#{submitted_template_field.name}").to_s.to_latex })
+      define_singleton_method submitted_template_field.name.to_sym do
+        instance_variable_get("@#{submitted_template_field.name}").to_s.to_latex
+      end
       instance_variable_set("@#{submitted_template_field.name}", submitted_template_field.value_or_default)
     end
   end

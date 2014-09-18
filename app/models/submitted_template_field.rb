@@ -11,15 +11,15 @@
 #
 
 class SubmittedTemplateField < ActiveRecord::Base
+  # Associations
   belongs_to :document_submission
   belongs_to :template_field
 
+  # Delegations
+  delegate :name, to: :template_field
+
   def value_or_default
     value || template_field.default_value
-  end
-
-  def name
-    template_field.name
   end
 
   def to_form_label

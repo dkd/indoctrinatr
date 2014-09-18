@@ -15,14 +15,6 @@ module Api
       else
         render layout: 'application', formats: [:pdf]
       end
-    # rescue ActionView::Template::Error => e
-    #   Honeybadger.notify(e)
-    #   @template.update_attributes(error_log: File.read(e.message.match(%r{[\./\w-]+.log}).first))
-    #   if params[:backend]
-    #     redirect_to last_error_document_type_path(@template)
-    #   else
-    #     redirect_to error_log_api_templates_path(@template, auth_key: AUTH_KEY, secure_token: SECURE_TOKEN)
-    #   end
     end
 
     # def error_log
