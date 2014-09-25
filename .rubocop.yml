@@ -2,7 +2,7 @@ AllCops:
   RunRailsCops: true
   Exclude:
     - 'bin/*'
-Style/LineLength:
+Metrics/LineLength:
   Max: 200
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
