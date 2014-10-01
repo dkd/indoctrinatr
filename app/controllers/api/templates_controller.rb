@@ -2,6 +2,8 @@ require 'erb'
 
 module Api
   class TemplatesController < ApplicationController
+    protect_from_forgery with: :null_session
+
     AUTH_KEY     = 'tNDF6kiuAiJcAdr2SX'
     SECURE_TOKEN = 'KnOEWFGwNiMEl7kmNZGOSO3XAhKjzZTHJShHlhbC'
 
@@ -24,7 +26,7 @@ module Api
 
     private
 
-    def authenticate
+    def authenticate_api
       head :forbidden unless [params[:auth_key], params[:secure_token]] == [AUTH_KEY, SECURE_TOKEN]
     end
   end

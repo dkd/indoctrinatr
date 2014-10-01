@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :templates, only: [] do
       member do
-        get :generate
+        post :generate
       end
     end
   end
