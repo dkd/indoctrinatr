@@ -36,6 +36,7 @@ class TemplatePackProcessor
 
   def extract_template_fields
     @template_fields_attributes = @template_config.fetch('fields', [])
+    # Legacy:
     # @template_fields_attributes.map! do |template_fields_attribute_hash|
     #   template_fields_attribute_hash[:presentation] = template_fields_attribute_hash.delete('data_type')
     #   template_fields_attribute_hash

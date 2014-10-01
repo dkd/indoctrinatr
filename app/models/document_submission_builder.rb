@@ -1,6 +1,9 @@
 class DocumentSubmissionBuilder
-  def self.build_from_template template_id
-    template = Template.find template_id
+  def self.build_with_defaults template
+    build_from_template template
+  end
+
+  def self.build_from_template template
     document_submission = DocumentSubmission.new template: template, content: template.content
     template.template_fields.each do |template_field|
       document_submission.submitted_template_fields.build template_field: template_field, value: template_field.default_value
@@ -14,7 +17,12 @@ class DocumentSubmissionBuilder
     document_submission
   end
 
-  def self.build_with_defaults template_id
-    build_from_template template_id
+  def self.build_via_api template, params
+    document_submission = DocumentSubmission.new template: template, content: template.content
+    template.template_fields.each do |template_field|
+      document_submission.submitted_template_fields.build template_field: template_field, value: params[template_field.name] || template_field.default_value
+    end
+    document_submission.initialize_fields
+    document_submission
   end
 end

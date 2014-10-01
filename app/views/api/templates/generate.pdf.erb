@@ -1,1 +1,1 @@
-<%= raw ERB.new(@template.tex_template, nil, '-').result(@template.retrieve_binding) %>
+<%= raw ERB.new(@document_submission.content, nil, '-').result(@document_submission.retrieve_binding) %>
