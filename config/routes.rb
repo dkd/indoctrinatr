@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/documentation' => 'pages#documentation'
 
   resources :documents, only: %i(show)
-  resources :template_packs, only: %(new create)
+  resources :template_packs, only: %i(new create)
 
   resources :templates, except: %i(show) do
     member do
