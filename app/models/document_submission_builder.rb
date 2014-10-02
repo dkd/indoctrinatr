@@ -22,7 +22,6 @@ class DocumentSubmissionBuilder
     template.template_fields.each do |template_field|
       document_submission.submitted_template_fields.build template_field: template_field, value: params[template_field.name] || template_field.default_value
     end
-    document_submission.initialize_fields
     document_submission
   end
 end

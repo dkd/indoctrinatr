@@ -12,8 +12,10 @@ module Api
     def generate
       @template = Template.find params[:id]
       @document_submission = DocumentSubmissionBuilder.build_via_api @template, params
+      @document_submission.initialize_fields
+
       if params[:raw].present?
-        render text: ERB.new(@template.tex_template, nil, '-').result(@template.retrieve_binding), content_type: 'text/plain'
+        render text: ERB.new(@document_submission.content, nil, '-').result(@document_submission.retrieve_binding), content_type: 'text/plain'
       else
         render layout: 'application', formats: [:pdf]
       end
