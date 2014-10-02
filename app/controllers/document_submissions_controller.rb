@@ -6,6 +6,10 @@ class DocumentSubmissionsController < ApplicationController
     @document_submissions = DocumentSubmission.all.page params[:page]
   end
 
+  def show
+    @document_submission = DocumentSubmission.find params[:id]
+  end
+
   # POST /document_submissions/with_defaults
   def with_defaults
     @template = Template.find params[:template_id]

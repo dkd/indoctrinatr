@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact'
   get '/documentation' => 'pages#documentation'
 
-  resources :documents, only: %i(show)
   resources :template_packs, only: %i(new create)
 
   resources :templates, except: %i(show) do
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :document_submissions, except: %i(show, edit, update) do
+  resources :document_submissions, except: %i(edit update) do
     collection do
       post :with_defaults
     end

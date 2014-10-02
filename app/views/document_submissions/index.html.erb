@@ -18,7 +18,7 @@
               </div>
               <div class="row-actions large-3 columns">
                   <ul class="button-group right">
-                    <li><%= link_to 'Generated document', document_url(document_submission.document, format: :pdf), class: "generatepdf hide-text" %></li>
+                    <li><%= link_to 'Generated document', document_submission_url(document_submission, format: :pdf), class: "generatepdf hide-text" %></li>
                     <li><%= link_to 'Destroy', document_submission, method: :delete, data: { confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
                   </ul>
               </div>
