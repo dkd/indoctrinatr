@@ -20,7 +20,7 @@ class DocumentSubmissionBuilder
   def self.build_via_api template, params
     document_submission = DocumentSubmission.new template: template, content: template.content
     template.template_fields.each do |template_field|
-      document_submission.submitted_template_fields.build template_field: template_field, value: params[template_field.name] || template_field.default_value
+      document_submission.submitted_template_fields.build template_field: template_field, value: params[template_field.name]
     end
     document_submission
   end

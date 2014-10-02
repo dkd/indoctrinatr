@@ -2,10 +2,10 @@ require 'erb'
 
 module Api
   class TemplatesController < ApplicationController
-    protect_from_forgery with: :null_session
+    INDOCTRINATR_AUTH_KEY     = Rails.application.secrets.fetch(:indoctrinatr_auth_key)
+    INDOCTRINATR_SECURE_TOKEN = Rails.application.secrets.fetch(:indoctrinatr_secure_token)
 
-    AUTH_KEY     = 'tNDF6kiuAiJcAdr2SX'
-    SECURE_TOKEN = 'KnOEWFGwNiMEl7kmNZGOSO3XAhKjzZTHJShHlhbC'
+    protect_from_forgery with: :null_session
 
     before_action :authenticate_api
 
@@ -21,15 +21,10 @@ module Api
       end
     end
 
-    # def error_log
-    #   @template = DocumentType.find params[:id]
-    #   render text: @template.error_log
-    # end
-
     private
 
     def authenticate_api
-      head :forbidden unless [params[:auth_key], params[:secure_token]] == [AUTH_KEY, SECURE_TOKEN]
+      head :forbidden unless [params[:auth_key], params[:secure_token]] == [INDOCTRINATR_AUTH_KEY, INDOCTRINATR_SECURE_TOKEN]
     end
   end
 end
