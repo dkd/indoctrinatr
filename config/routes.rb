@@ -3,15 +3,7 @@ Rails.application.routes.draw do
   get '/documentation' => 'pages#documentation'
 
   resources :documents, only: %i(show)
-  resources :template_packs
-
-  namespace :api do
-    resources :templates, only: [] do
-      member do
-        post :generate
-      end
-    end
-  end
+  resources :template_packs, only: %(new create)
 
   resources :templates, except: %i(show) do
     member do
@@ -24,6 +16,8 @@ Rails.application.routes.draw do
       post :with_defaults
     end
   end
+
+  post '/api/templates/:id/generate' => 'api/templates#generate'
 
   root to: 'home#index'
 end

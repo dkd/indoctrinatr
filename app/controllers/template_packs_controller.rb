@@ -12,15 +12,6 @@ class TemplatePacksController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def index
-  end
-
-  def destroy
-  end
-
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.
