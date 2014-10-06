@@ -1,5 +1,5 @@
 class TemplatesController < ApplicationController
-  before_action :set_template, only: [:edit, :update, :destroy]
+  before_action :set_template, only: [:document_submissions, :edit, :update, :destroy]
 
   # GET /templates
   # GET /templates.json
@@ -18,7 +18,6 @@ class TemplatesController < ApplicationController
 
   # GET /templates/1/document_submission
   def document_submissions
-    @template = Template.find params[:id]
     @document_submissions = @template.document_submissions
   end
 
@@ -55,7 +54,7 @@ class TemplatesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_template
-    @template = Template.find(params[:id])
+    @template = Template.find params[:id]
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

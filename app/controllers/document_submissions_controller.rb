@@ -1,5 +1,6 @@
 class DocumentSubmissionsController < ApplicationController
-  before_action :set_document_submission, only: [:edit, :update, :destroy]
+  before_action :set_template, only: [:with_defaults, :new]
+  before_action :set_document_submission, only: [:show, :edit, :update, :destroy]
 
   # GET /document_submissions
   def index
@@ -17,7 +18,6 @@ class DocumentSubmissionsController < ApplicationController
 
   # POST /document_submissions/with_defaults
   def with_defaults
-    @template = Template.find params[:template_id]
     @document_submission = DocumentSubmissionBuilder.build_with_defaults @template
 
     if @document_submission.save
@@ -29,7 +29,6 @@ class DocumentSubmissionsController < ApplicationController
 
   # GET /document_submissions/new
   def new
-    @template = Template.find params[:template_id]
     @document_submission = DocumentSubmissionBuilder.build_from_template @template
   end
 
@@ -52,6 +51,10 @@ class DocumentSubmissionsController < ApplicationController
 
   private
 
+  def set_template
+    @template = Template.find params[:template_id]
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_document_submission
     @document_submission = DocumentSubmission.find(params[:id])
@@ -59,6 +62,6 @@ class DocumentSubmissionsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def document_submission_params
-    params.require(:document_submission).permit(:template_id, submitted_template_fields_attributes: [:id, :value, :template_field_id, :end_of_range])
+    params.require(:document_submission).permit(:template_id, submitted_template_fields_attributes: [:id, :value, :template_field_id, :start_of_range, :end_of_range])
   end
 end
