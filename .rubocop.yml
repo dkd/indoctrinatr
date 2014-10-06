@@ -2,6 +2,7 @@ AllCops:
   RunRailsCops: true
   Exclude:
     - 'bin/*'
+    - 'public/system/**/*'
 Metrics/LineLength:
   Max: 200
 Style/MethodDefParentheses:
