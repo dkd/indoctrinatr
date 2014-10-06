@@ -18,6 +18,7 @@ class DocumentSubmission < ActiveRecord::Base
   accepts_nested_attributes_for :submitted_template_fields
 
   delegate :name, to: :template, prefix: :template
+  delegate :template_asset_path, to: :template # adds method 'template_asset_path' to allow TeX templates to include assets
 
   after_initialize :initialize_fields
 
@@ -27,11 +28,6 @@ class DocumentSubmission < ActiveRecord::Base
 
   def textilize textile
     RedCloth.new(textile).to_latex
-  end
-
-  # add method 'template_asset_path' to allow templates to include assets
-  def template_asset_path
-    template.template_asset_path
   end
 
   # add methods for each field
