@@ -19,5 +19,6 @@ describe DocumentSubmission do
 
   it { should accept_nested_attributes_for :submitted_template_fields }
 
-  it { should respond_to :template_name }
+  it { should delegate_method(:template_name).to(:template).as(:name) }
+  it { should delegate_method(:template_asset_path).to(:template) }
 end
