@@ -69,7 +69,7 @@ end
 
 gem 'rails-latex', '~> 1.0.12'
 gem 'erubis', '~> 2.7.0'
-gem 'paperclip', '~> 3.5.0'
+gem 'paperclip', '~> 4.2.0'
 gem 'rubyzip', '~> 1.1.6'
 gem 'to_latex', '~> 0.5.0'
 gem 'RedCloth', '~> 4.2.9'
