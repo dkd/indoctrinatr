@@ -19,10 +19,10 @@ class Template < ActiveRecord::Base
 
   accepts_nested_attributes_for :template_fields, allow_destroy: true
 
-  validates :name, presence: true # TODO: scope to creator_id
+  validates :name, presence: true
   validates :content, presence: true
 
   def template_type
-    is_package? ? 'Template Pack' : 'GUI Template'
+    template_pack.present? ? 'Template Pack' : 'Template'
   end
 end

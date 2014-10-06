@@ -1,3 +1,5 @@
+require 'zip'
+
 class TemplatePackProcessor
   def initialize template_pack
     @template_pack = template_pack
@@ -16,7 +18,7 @@ class TemplatePackProcessor
   def unzip_container
     Zip::File.open @template_pack.zip_container.path do |zip_file|
       zip_file.each do |file|
-        file_path = File.join(@template_pack.path_for_extraction, file.name)
+        file_path = File.join @template_pack.path_for_extraction, file.name
         FileUtils.mkdir_p File.dirname(file_path)
         zip_file.extract file, file_path unless File.exist? file_path
       end
@@ -26,8 +28,7 @@ class TemplatePackProcessor
   def process_configuration_file
     config_file_content = File.read @template_pack.path_to_config_file
     @template_config = YAML.load config_file_content
-    @template_name = @template_config.fetch('template-name', '') # legacy
-    @template_name = @template_config.fetch('template_name', @template_name)
+    @template_name = @template_config.fetch 'template_name', @template_name
   end
 
   def extract_tex_template
@@ -35,7 +36,7 @@ class TemplatePackProcessor
   end
 
   def extract_template_fields
-    @template_fields_attributes = @template_config.fetch('fields', [])
+    @template_fields_attributes = @template_config.fetch 'fields', []
   end
 
   def create_template_and_template_attributes
@@ -43,9 +44,8 @@ class TemplatePackProcessor
       template.name = @template_name
       template.template_asset_path = @template_pack.path_to_extracted_container
       template.content = @template_content
-      template.template_fields_attributes = @template_fields_attributes
       template.template_pack = @template_pack
-      template.is_package = true
+      template.template_fields_attributes = @template_fields_attributes
     end
   end
 end

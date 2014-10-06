@@ -12,8 +12,6 @@
 #  updated_at                 :datetime
 #
 
-require 'zip'
-
 class TemplatePack < ActiveRecord::Base
   has_attached_file :zip_container
   validates_attachment_presence :zip_container

@@ -21,11 +21,11 @@ describe TemplateField do
 
   describe 'valid presentations' do
     specify '5 presentations' do
-      expect(valid_presentations.size).to eql 5
+      expect(valid_presentations.size).to eql 7
     end
 
-    it 'includes text, textarea, checkbox, radiobutton dropdown' do
-      %w(text textarea checkbox radiobutton dropdown).each do |expected_presentation|
+    it 'includes text, textarea, checkbox, radiobutton, dropdown, date and range' do
+      %w(text textarea checkbox radiobutton dropdown date range).each do |expected_presentation|
         expect(valid_presentations).to include expected_presentation
       end
     end
@@ -36,14 +36,27 @@ describe TemplateField do
   it { should have_many(:document_submissions).through(:submitted_template_fields) }
 
   it { should validate_presence_of :name }
+  it { should validate_uniqueness_of(:name).scoped_to(:template_id) }
 
-  it do
-    should validate_uniqueness_of(:name).scoped_to(:template_id)
+  it 'has an empty string as default value' do
+    expect(TemplateField.new.default_value).to eq ''
   end
 
-  it { should validate_presence_of :default_value }
+  describe 'requires presence of available_options' do
+    specify 'in case of a dropdown field' do
+      expect(TemplateField.new(presentation: 'dropdown')).to validate_presence_of :available_options
+    end
 
-  it { should ensure_inclusion_of(:presentation).in_array(valid_presentations) }
+    specify 'in case of a checkbox field' do
+      expect(TemplateField.new(presentation: 'checkbox')).to validate_presence_of :available_options
+    end
+
+    specify 'in case of a radiobutton field' do
+      expect(TemplateField.new(presentation: 'radiobutton')).to validate_presence_of :available_options
+    end
+  end
+
+  it { should validate_inclusion_of(:presentation).in_array(valid_presentations) }
 
   it 'splits available options at comma and strips with spaces' do
     tf = TemplateField.new available_options: ' aa,   bb  , cc '
