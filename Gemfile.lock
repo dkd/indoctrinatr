@@ -238,39 +238,39 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  RedCloth
-  annotate
-  better_errors
-  binding_of_caller
+  RedCloth (~> 4.2.9)
+  annotate (~> 2.6.5)
+  better_errors (~> 2.0.0)
+  binding_of_caller (~> 0.7.2)
   coffee-rails (~> 4.0.0)
-  erubis
-  factory_girl_rails
-  foundation-icons-sass-rails
-  foundation-rails
-  growl
+  erubis (~> 2.7.0)
+  factory_girl_rails (~> 4.4.0)
+  foundation-icons-sass-rails (~> 3.0.0)
+  foundation-rails (~> 5.4.5)
+  growl (~> 1.0.3)
   guard-rspec (~> 4.3.1)
   jquery-rails
-  jquery-turbolinks
+  jquery-turbolinks (~> 2.1.0)
   jquery-ui-rails (~> 5.0.0)
-  kaminari
-  listen
-  nested_form
-  paperclip (~> 3.0)
-  quiet_assets
+  kaminari (~> 0.16.1)
+  listen (~> 2.7.11)
+  nested_form (~> 0.3.2)
+  paperclip (~> 3.5.0)
+  quiet_assets (~> 1.0.3)
   rails (~> 4.1.6)
-  rails-erd
-  rails-latex
-  rails_layout
+  rails-erd (~> 1.1.0)
+  rails-latex (~> 1.0.12)
+  rails_layout (~> 1.0.22)
   rspec (~> 3.1.0)
   rspec-rails (~> 3.1.0)
-  rubocop
-  rubyzip
+  rubocop (~> 0.26.1)
+  rubyzip (~> 1.1.6)
   sass-rails (~> 4.0.1)
   sdoc (~> 0.4.0)
-  shoulda
-  simple_form
-  spring-commands-rspec
-  sqlite3
-  to_latex
+  shoulda (~> 3.5.0)
+  simple_form (~> 3.0.2)
+  spring-commands-rspec (~> 1.0.2)
+  sqlite3 (~> 1.3.9)
+  to_latex (~> 0.5.0)
   turbolinks
   uglifier (>= 1.3.0)

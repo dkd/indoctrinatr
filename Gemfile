@@ -35,41 +35,41 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 # Frontend stuff
-gem 'foundation-rails'
-gem 'simple_form'
-gem 'nested_form'
-gem 'foundation-icons-sass-rails'
-gem 'kaminari'
+gem 'foundation-rails', '~> 5.4.5'
+gem 'simple_form', '~> 3.0.2'
+gem 'nested_form', '~> 0.3.2'
+gem 'foundation-icons-sass-rails', '~> 3.0.0'
+gem 'kaminari', '~> 0.16.1'
 gem 'jquery-ui-rails', '~> 5.0.0'
-gem 'jquery-turbolinks'
+gem 'jquery-turbolinks', '~> 2.1.0'
 
 # Testing tools
 group :development, :test do
-  gem 'spring-commands-rspec'
+  gem 'spring-commands-rspec', '~> 1.0.2'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'rspec', '~> 3.1.0'
   gem 'guard-rspec', '~> 4.3.1', require: false
-  gem 'growl' # OR use: gem 'terminal-notifier-guard'
-  gem 'factory_girl_rails'
-  gem 'shoulda'
-  gem 'listen'
+  gem 'growl', '~> 1.0.3' # OR use: gem 'terminal-notifier-guard'
+  gem 'factory_girl_rails', '~> 4.4.0'
+  gem 'shoulda', '~> 3.5.0'
+  gem 'listen', '~> 2.7.11'
 end
 
 # Development tools
 group :development do
-  gem 'rails_layout'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'quiet_assets'
-  gem 'sqlite3'
-  gem 'rails-erd'
-  gem 'annotate'
-  gem 'rubocop'
+  gem 'rails_layout', '~> 1.0.22'
+  gem 'better_errors', '~> 2.0.0'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'quiet_assets', '~> 1.0.3'
+  gem 'sqlite3', '~> 1.3.9'
+  gem 'rails-erd', '~> 1.1.0'
+  gem 'annotate', '~> 2.6.5'
+  gem 'rubocop', '~> 0.26.1'
 end
 
-gem 'rails-latex'
-gem 'erubis'
-gem 'paperclip', '~> 3.0'
-gem 'rubyzip'
-gem 'to_latex'
-gem 'RedCloth'
+gem 'rails-latex', '~> 1.0.12'
+gem 'erubis', '~> 2.7.0'
+gem 'paperclip', '~> 3.5.0'
+gem 'rubyzip', '~> 1.1.6'
+gem 'to_latex', '~> 0.5.0'
+gem 'RedCloth', '~> 4.2.9'
