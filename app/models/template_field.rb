@@ -23,7 +23,6 @@ class TemplateField < ActiveRecord::Base
   has_many :document_submissions, through: :submitted_template_fields
 
   validates :name, presence: true, uniqueness: { scope: :template_id }
-  validates :default_value, presence: true
   validates :presentation, inclusion: VALID_PRESENTATIONS
   validates :available_options, presence: true, if: :requires_available_options?
   validates :start_of_range, presence: true, if: :range?

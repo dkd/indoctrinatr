@@ -25,6 +25,16 @@ class DocumentSubmission < ActiveRecord::Base
     binding
   end
 
+  def textilize textile
+    RedCloth.new(textile).to_latex
+  end
+
+  # add method 'template_asset_path' to allow templates to include assets
+  def template_asset_path
+    template.template_asset_path
+  end
+
+  # add methods for each field
   def initialize_fields
     submitted_template_fields.each do |submitted_template_field|
       define_singleton_method submitted_template_field.name.to_sym do

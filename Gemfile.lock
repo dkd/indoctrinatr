@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.dkd.de/
   specs:
+    RedCloth (4.2.9)
     actionmailer (4.1.6)
       actionpack (= 4.1.6)
       actionview (= 4.1.6)
@@ -237,6 +238,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   annotate
   better_errors
   binding_of_caller

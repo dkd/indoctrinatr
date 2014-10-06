@@ -7,9 +7,7 @@
 #  content             :text             default(""), not null
 #  created_at          :datetime
 #  updated_at          :datetime
-#  asset_path          :string(255)
 #  template_asset_path :string(255)
-#  tex_template        :string(255)
 #  template_pack_id    :integer
 #  is_package          :boolean
 #

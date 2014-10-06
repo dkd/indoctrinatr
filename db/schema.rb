@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821151007) do
+ActiveRecord::Schema.define(version: 20141006070715) do
 
   create_table "document_submissions", force: true do |t|
     t.integer  "template_id",              null: false
@@ -62,9 +62,7 @@ ActiveRecord::Schema.define(version: 20140821151007) do
     t.text     "content",             default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "asset_path"
     t.string   "template_asset_path"
-    t.string   "tex_template"
     t.integer  "template_pack_id"
     t.boolean  "is_package"
   end

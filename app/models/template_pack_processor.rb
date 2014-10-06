@@ -36,17 +36,11 @@ class TemplatePackProcessor
 
   def extract_template_fields
     @template_fields_attributes = @template_config.fetch('fields', [])
-    # Legacy:
-    # @template_fields_attributes.map! do |template_fields_attribute_hash|
-    #   template_fields_attribute_hash[:presentation] = template_fields_attribute_hash.delete('data_type')
-    #   template_fields_attribute_hash
-    # end
   end
 
   def create_template_and_template_attributes
     @template = Template.create! do |template|
       template.name = @template_name
-      template.asset_path = ''
       template.template_asset_path = @template_pack.path_to_extracted_container
       template.content = @template_content
       template.template_fields_attributes = @template_fields_attributes
