@@ -72,4 +72,4 @@ gem 'erubis'
 gem 'paperclip', '~> 3.0'
 gem 'rubyzip'
 gem 'to_latex'
-gem "RedCloth"
+gem 'RedCloth'
