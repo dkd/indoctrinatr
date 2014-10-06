@@ -30,6 +30,6 @@ describe Template do
 
     it "knows when it's a template pack" do
       expect(Template.new(template_pack: TemplatePack.new).template_type).to eq 'Template Pack'
-    end    
+    end
   end
 end
