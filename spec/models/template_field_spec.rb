@@ -19,6 +19,14 @@ require 'spec_helper'
 describe TemplateField do
   let(:valid_presentations) { TemplateField::VALID_PRESENTATIONS }
 
+  it { should belong_to :template }
+  it { should have_many :submitted_template_fields }
+  it { should have_many(:document_submissions).through(:submitted_template_fields) }
+
+  it { should validate_presence_of :name }
+  # it { expect(TemplateField.new).to validate_uniqueness_of(:name).scoped_to(:template_id) }
+  it { should validate_inclusion_of(:presentation).in_array(valid_presentations) }
+
   describe 'valid presentations' do
     specify '5 presentations' do
       expect(valid_presentations.size).to eql 7
@@ -31,15 +39,8 @@ describe TemplateField do
     end
   end
 
-  it { should belong_to :template }
-  it { should have_many :submitted_template_fields }
-  it { should have_many(:document_submissions).through(:submitted_template_fields) }
-
-  it { should validate_presence_of :name }
-  it { should validate_uniqueness_of(:name).scoped_to(:template_id) }
-
   it 'has an empty string as default value' do
-    expect(TemplateField.new.default_value).to eq ''
+    expect(subject.default_value).to eq ''
   end
 
   describe 'requires presence of available_options' do
@@ -55,8 +56,6 @@ describe TemplateField do
       expect(TemplateField.new(presentation: 'radiobutton')).to validate_presence_of :available_options
     end
   end
-
-  it { should validate_inclusion_of(:presentation).in_array(valid_presentations) }
 
   it 'splits available options at comma and strips with spaces' do
     tf = TemplateField.new available_options: ' aa,   bb  , cc '

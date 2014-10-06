@@ -10,6 +10,7 @@
 #
 
 class DocumentSubmission < ActiveRecord::Base
+  # Associations
   belongs_to :template
 
   has_many :submitted_template_fields, dependent: :destroy
@@ -17,6 +18,7 @@ class DocumentSubmission < ActiveRecord::Base
 
   accepts_nested_attributes_for :submitted_template_fields
 
+  # Delegations
   delegate :name, to: :template, prefix: :template
   delegate :template_asset_path, to: :template # adds method 'template_asset_path' to allow TeX templates to include assets
 
