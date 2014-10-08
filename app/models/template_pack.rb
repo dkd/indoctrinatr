@@ -13,11 +13,14 @@
 #
 
 class TemplatePack < ActiveRecord::Base
+  # paperclip attachment
   has_attached_file :zip_container
   validates_attachment_presence :zip_container
 
+  # associations
   belongs_to :template, dependent: :destroy
 
+  # callbacks
   after_save :process_zip_container
 
   def process_zip_container

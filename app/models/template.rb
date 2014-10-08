@@ -13,12 +13,14 @@
 #
 
 class Template < ActiveRecord::Base
+  # associations
   has_many :template_fields, dependent: :destroy
   has_many :document_submissions, dependent: :destroy
   has_one :template_pack
 
   accepts_nested_attributes_for :template_fields, allow_destroy: true
 
+  # validations
   validates :name, presence: true
   validates :content, presence: true
 

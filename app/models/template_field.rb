@@ -15,13 +15,16 @@
 #
 
 class TemplateField < ActiveRecord::Base
+  # class wide constants
   VALID_PRESENTATIONS = %w(text textarea checkbox radiobutton dropdown date range)
   REQUIRES_AVAILABLE_OPTIONS = %w(dropdown checkbox radiobutton)
 
+  # associations
   belongs_to :template
-  has_many :submitted_template_fields
+  has_many :submitted_template_fields, dependent: :destroy
   has_many :document_submissions, through: :submitted_template_fields
 
+  # validations
   validates :name, presence: true, uniqueness: { scope: :template_id }
   validates :presentation, inclusion: VALID_PRESENTATIONS
   validates :available_options, presence: true, if: :requires_available_options?

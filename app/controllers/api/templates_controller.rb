@@ -16,8 +16,6 @@ module Api
 
       if params[:debug].present? && params[:debug] == 'true'
         render text: ERB.new(@document_submission.content, nil, '-').result(@document_submission.retrieve_binding), content_type: 'text/plain'
-      else
-        render layout: 'application', formats: [:pdf]
       end
     end
 

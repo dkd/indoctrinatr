@@ -21,7 +21,7 @@ class DocumentSubmissionsController < ApplicationController
     @document_submission = DocumentSubmissionBuilder.build_with_defaults @template
 
     if @document_submission.save
-      redirect_to document_submissions_url, notice: 'Document submission was successfully created.'
+      redirect_to document_submission_url(@document_submission, format: :pdf)
     else
       render action: 'new'
     end
@@ -37,7 +37,7 @@ class DocumentSubmissionsController < ApplicationController
     @document_submission = DocumentSubmissionBuilder.build_from_params document_submission_params
 
     if @document_submission.save
-      redirect_to document_submissions_url, notice: 'Document submission was successfully created.'
+      redirect_to document_submission_url(@document_submission, format: :pdf)
     else
       render action: 'new'
     end
