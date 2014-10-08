@@ -3,7 +3,6 @@
         <h1>Listing templates</h1>
         <%= link_to 'Upload Template Pack', new_template_pack_path, class: "primary-btn" %>
         <%= link_to 'New Template', new_template_path, class: "secondary-btn" %>
-        <%= link_to "History", document_submissions_path, class: "secondary-btn" %></li>
         <ul class="list-wrapper">
             <% @templates.each do |template| %>
             <li class="list-row <%= cycle('even', 'odd') %>">
