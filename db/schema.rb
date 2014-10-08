@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006070715) do
+ActiveRecord::Schema.define(version: 20141008091149) do
 
   create_table "document_submissions", force: true do |t|
     t.integer  "template_id",              null: false
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20141006070715) do
   end
 
   add_index "document_submissions", ["template_id"], name: "index_document_submissions_on_template_id"
+
+  create_table "documents", force: true do |t|
+    t.integer  "document_submission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "documents", ["document_submission_id"], name: "index_documents_on_document_submission_id"
 
   create_table "submitted_template_fields", force: true do |t|
     t.integer  "document_submission_id",              null: false
@@ -64,7 +72,6 @@ ActiveRecord::Schema.define(version: 20141006070715) do
     t.datetime "updated_at"
     t.string   "template_asset_path"
     t.integer  "template_pack_id"
-    t.boolean  "is_package"
   end
 
 end
