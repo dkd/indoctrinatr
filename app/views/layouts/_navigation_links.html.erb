@@ -2,5 +2,6 @@
 <li class="divider"></li>
 <li class="new-template <%= current_url('/templates') %>"><%= link_to "Templates", templates_path -%></li>
 <li class="divider"></li>
+<li class="<%= current_url('/document_submissions') %>"><%= link_to "History", document_submissions_path %></li>
+<li class="divider"></li>
 <li><%= link_to "Documentation", documentation_url %></li>
-<li><%= link_to "Contact", contact_url %></li>

@@ -193,4 +193,5 @@ de:
       default: ! '%A, %d. %B %Y, %H:%M Uhr'
       long: ! '%A, %d. %B %Y, %H:%M Uhr'
       short: ! '%d. %B, %H:%M Uhr'
+      very_short: ! '%d.%m.%Y %H:%M'
     pm: nachmittags
