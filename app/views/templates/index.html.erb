@@ -35,17 +35,14 @@
                             <%= content_tag(:li) do
                               link_to("Fill in form", new_document_submission_url(template_id: template), class: "generatepdf hide-text")
                             end %>
-                            <%= content_tag(:li) do
-                              link_to("Generate with defaults", with_defaults_document_submissions_url(template_id: template), class: "lasterror hide-text", method: :post)
-                            end %>
                           <% else %>
                             <%= content_tag(:li) do
                               link_to("Generate", with_defaults_document_submissions_url(template_id: template), class: "generatepdf hide-text", method: :post)
                             end %>
                           <% end %>
                           <li><%= link_to 'Edit', edit_template_path(template), class: "editpdf hide-text" %></li>
-                          <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
                           <li><%= link_to 'Submissions', document_submissions_template_url(template), class:"history-icon hide-text" %></li>
+                          <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
                     </div>
                 </div>
             </li>
