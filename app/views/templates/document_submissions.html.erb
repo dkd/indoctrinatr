@@ -3,27 +3,7 @@
     <h1 class="">Listing document submissions</h1>
     <ul class="list-wrapper">
       <% @document_submissions.each do |document_submission| %>
-        <li class="list-row <%= cycle('even', 'odd') %>">
-            <div class="row-container row">
-              <div class="row-content large-9 columns">
-                <div class="row">
-                  <div class="large-9 columns template-name">
-                    <%= document_submission.template_name %>
-                  </div>
-                <div class="large-3 columns template-type">
-                  <p><%= l document_submission.updated_at, format: :very_short %></p>
-                  <p>geändert am</p>
-                </div>
-              </div>
-            </div>
-            <div class="row-actions large-3 columns">
-              <ul class="button-group right">
-                <li><%= link_to 'Generated document', document_submission_url(document_submission, format: :pdf), class: "generatepdf hide-text" %></li>
-                <li><%= link_to 'Destroy', document_submission, method: :delete, data: {confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
-              </ul>
-            </div>
-          </div>
-        </li>
+        <%= render partial: "document_submissions/listitem", locals: {document_submission: document_submission} %>
       <% end %>
     </ul>
     <br />
