@@ -9,7 +9,7 @@
       <div class="form-actions">
         <%= f.button :submit, class: "secondary-btn"%>
       </div>
-      <h1>Template attributes</h1>
+      <h1><%= t(:template_attributes) %></h1>
     </div>
   </div>
   <div class="row">
@@ -33,7 +33,7 @@
       <div class="panel">
         <div class="row collapse">
           <div class="small-10 columns">
-            <input id="attr-name" type="text" placeholder="Attribute name" />
+            <input id="attr-name" type="text" placeholder="<%= t(:attribute_name) %>" />
           </div>
           <div class="small-2 columns">
             <%= f.link_to_add :template_fields, data: { target: "#field-wrapper" }, class: "button postfix" do %>

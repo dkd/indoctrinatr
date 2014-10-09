@@ -1,8 +1,27 @@
 de:
+  new_template: "Neues Template"
+  template_attributes: "Template Eigenschaften"
+  attribute_name: "Name der Eingenschaft"
+  generate_document: "Dokument generieren"
+  upload_template_pack: "Templatepack hochladen"
+  new_template: "Neues Template"
+#  model localization
   activerecord:
+    models:
+      template: Vorlage
     attributes:
       template:
+        id: "ID"
+        name: "Name"
         content: "Inhalt"
+        template_type: "Template Art"
+      template_field:
+        default_value: "Vorbelegter Wert"
+        presentation: "Feldart"
+        start_of_range: "von"
+        end_of_range: "bis"
+        available_options: "Verfügbare Optionen"
+        template_id: "Template ID"
   date:
     abbr_day_names:
     - So
