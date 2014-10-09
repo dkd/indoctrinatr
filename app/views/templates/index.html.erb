@@ -1,6 +1,6 @@
 <div class="row">
     <div class="large-12 columns">
-        <h1>Listing templates</h1>
+        <h1><%= t(:template_index) %></h1>
         <%= link_to t(:upload_template_pack), new_template_pack_path, class: "primary-btn" %>
         <%= link_to t(:new_template), new_template_path, class: "secondary-btn" %>
         <ul class="list-wrapper">
@@ -48,7 +48,6 @@
             </li>
             <% end %>
         </ul>
-
     </div>
 </div>
 

@@ -1,4 +1,7 @@
 de:
+  edit_template: "Template bearbeiten"
+  document_submission_index: "Verlauf"
+  template_index: "Template Übersicht"
   new_template: "Neues Template"
   template_attributes: "Template Eigenschaften"
   attribute_name: "Name der Eingenschaft"
