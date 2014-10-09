@@ -6,6 +6,8 @@ de:
   upload_template_pack: "Templatepack hochladen"
   legal_notice: "Impressum"
   contact: "Kontakt"
+  documentation: "Dokumentation"
+  history: "Verlauf"
 #  model localization
   activerecord:
     models:
