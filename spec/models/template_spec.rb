@@ -9,7 +9,6 @@
 #  updated_at          :datetime
 #  template_asset_path :string(255)
 #  template_pack_id    :integer
-#  is_package          :boolean
 #
 
 require 'spec_helper'

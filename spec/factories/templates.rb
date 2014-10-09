@@ -9,7 +9,6 @@
 #  updated_at          :datetime
 #  template_asset_path :string(255)
 #  template_pack_id    :integer
-#  is_package          :boolean
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
