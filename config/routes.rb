@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/api/templates/:id/generate' => 'api/templates#generate'
+  post '/api/v1/templates/:id/generate' => 'api/v1/templates#generate'
 
   root to: 'home#index'
 end
