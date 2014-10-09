@@ -20,6 +20,30 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  new_template: "New Template"
+  template_attributes: "Template Attributes"
+  attribute_name: "Attribute Name"
+  generate_document: "Generate Document"
+  upload_template_pack: "Upload Templatepack"
+  legal_notice: "Legal Notice"
+  contact: "Contact"
+#  model localization
+  activerecord:
+    models:
+      template: Template
+    attributes:
+      template:
+        id: "ID"
+        name: "Name"
+        content: "Content"
+        template_type: "Template Type"
+      template_field:
+        default_value: "Default Value"
+        presentation: "Presentation"
+        start_of_range: "Start Value"
+        end_of_range: "End Value"
+        available_options: "Available Options"
+        template_id: "Template ID"
   time:
     formats:
       very_short: ! '%d/%m/%Y %H:%M'

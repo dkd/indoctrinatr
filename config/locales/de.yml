@@ -4,7 +4,8 @@ de:
   attribute_name: "Name der Eingenschaft"
   generate_document: "Dokument generieren"
   upload_template_pack: "Templatepack hochladen"
-  new_template: "Neues Template"
+  legal_notice: "Impressum"
+  contact: "Kontakt"
 #  model localization
   activerecord:
     models:
