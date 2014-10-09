@@ -1,4 +1,8 @@
 de:
+  activerecord:
+    attributes:
+      template:
+        content: "Inhalt"
   date:
     abbr_day_names:
     - So
