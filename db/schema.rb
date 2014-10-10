@@ -14,29 +14,18 @@
 ActiveRecord::Schema.define(version: 20141008091149) do
 
   create_table "document_submissions", force: true do |t|
-    t.integer  "template_id"
+    t.integer  "template_id",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "content",                  default: "", null: false
-    t.string   "document_submission_name"
-    t.integer  "user_id"
+    t.text     "content",     default: "", null: false
   end
 
   add_index "document_submissions", ["template_id"], name: "index_document_submissions_on_template_id"
-  add_index "document_submissions", ["user_id"], name: "index_document_submissions_on_user_id"
-
-  create_table "documents", force: true do |t|
-    t.integer  "document_submission_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "documents", ["document_submission_id"], name: "index_documents_on_document_submission_id"
 
   create_table "submitted_template_fields", force: true do |t|
-    t.integer  "document_submission_id"
-    t.integer  "template_field_id"
-    t.string   "value"
+    t.integer  "document_submission_id",              null: false
+    t.integer  "template_field_id",                   null: false
+    t.string   "value",                  default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,10 +34,10 @@ ActiveRecord::Schema.define(version: 20141008091149) do
   add_index "submitted_template_fields", ["template_field_id"], name: "index_submitted_template_fields_on_template_field_id"
 
   create_table "template_fields", force: true do |t|
-    t.string   "name"
-    t.string   "default_value"
-    t.string   "presentation"
-    t.integer  "template_id"
+    t.string   "name",              default: "",     null: false
+    t.string   "default_value",     default: "",     null: false
+    t.string   "presentation",      default: "text", null: false
+    t.integer  "template_id",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "available_options", default: ""
@@ -69,32 +58,12 @@ ActiveRecord::Schema.define(version: 20141008091149) do
   end
 
   create_table "templates", force: true do |t|
-    t.string   "name"
-    t.text     "content"
+    t.string   "name",                default: "", null: false
+    t.text     "content",             default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "template_pack"
     t.string   "template_asset_path"
     t.integer  "template_pack_id"
   end
-
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "",           null: false
-    t.string   "encrypted_password",     default: "",           null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,            null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "role",                   default: "basic_user", null: false
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
