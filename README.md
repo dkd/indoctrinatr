@@ -112,8 +112,10 @@ Indoctrinatr is licensed under the terms and conditions of [__TODO__]().
 
 ## Credits
 
+[![dkd](app/assets/images/dkd_logo.png)](https://dkd.de/)
+
 * Valeria Krasteva (design)
-* Wilfried Irßlinger (development)
-* Nicolai Reuschling (development)
+* Wilfried Irßlinger (frontend development)
+* Nicolai Reuschling (backend development)
 * Søren Schaffstein (idea, product management)
 * Stefan Sprenger (development of an earlier version)
