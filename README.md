@@ -58,21 +58,21 @@ Template Packs are zipped XeTex templates with configuration and asset files (im
 
 The file `configuration.yaml` contains all relevant information (in [YAML](http://www.yaml.org/)) about this Template Pack.
 
-name|validity|description
--|-|-
-`template_name`|required|Short name for your template.
-`fields`|optional|List of template fields you want to use with your template.
+| name | validity | description |
+|----|----|----|
+| `template_name` | required | Short name for your template. |
+| `fields` | optional | List of template fields you want to use with your template. Empty list if not specified. |
 
 For each field you need to specify:
 
-name|validity|description
--|-|-
-`name`|required|Short name for this field.
-`presentation`|required|Choose from this list of valid presentation values (with respect to their respective HTML equivalent for this field): `text`, `textarea`, `checkbox`, `radiobutton`, `dropdown`, `date`, `range`
-`default_value`|optional|Default value for this field, which will be used if no value is supplied by the user. Empty string if not specified.
-`available_options`|required for `presentation` of `checkbox`, `radiobutton` or `dropdown`|List of selectable text options, entries separated by commata
-`start_of_range`|required for `presentation` of `range`|Value of lower bound for this range selector.
-`end_of_range`|required for `presentation` of `range`|Value of upper bound for this range selector.
+| name | validity | description |
+|----|----|----|
+| `name` | required | Short name for this field. |
+| `presentation` | required | Choose from this list of valid presentation values (with respect to their respective HTML equivalent for this field): `text`, `textarea`, `checkbox`, `radiobutton`, `dropdown`, `date`, `range` |
+| `default_value` | optional | Default value for this field, which will be used if no value is supplied by the user. Empty string if not specified. |
+| `available_options` | required (for `presentation` of `checkbox`, `radiobutton` or `dropdown`) | List of selectable text options, entries separated by commata. |
+| `start_of_range` | required (for `presentation` of `range`) | Value of lower bound for this range selector. |
+| `end_of_range` | required for (`presentation` of `range`) | Value of upper bound for this range selector. |
 
 ##### Sample
 
@@ -92,13 +92,19 @@ name|validity|description
 
 ### Indoctrinatr Tools
 
-[Indoctrinatr Tools](__TODO__) is a set of command line tools to kick-start and develop Indoctrinatr Template Packs. Install via `gem install indoctrinatr-tools`. Note: You need to have XeTex installed locally to use Indoctrinatr Tools if you are running Indoctrinatr on a different machine (e.g. server setup).
+[Indoctrinatr Tools](__TODO__) is a set of commandline tools to kick-start and develop Indoctrinatr Template Packs. Install via `gem install indoctrinatr-tools`. Note: You need to have XeTex installed locally to use Indoctrinatr Tools if you are running Indoctrinatr on a different machine (e.g. server setup).
 
 Run `indoctrinatr help` to see a list of available commands. `indoctrinatr workflow` describes the general approach to developing templates. Run `indoctrinatr demo` to see a minimalistic working project sample.
 
 Protip: Use `indoctrinatr bashcompletion` or `indoctrinatr zshcompletion` to save precious time and energy.
 
+## Feedback
+
+What you think of Indoctrinatr? Drop us a [line](info@dkd.de) and tell us how you use Indoctrinatr. You can also open an issue if you experience any problems.
+
 ## Contributing
+
+We are also looking forward to your [GitHub Pull Requests](https://help.github.com/articles/using-pull-requests/).
 
 ## License
 
