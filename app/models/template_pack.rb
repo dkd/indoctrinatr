@@ -16,6 +16,8 @@ class TemplatePack < ActiveRecord::Base
   # paperclip attachment
   has_attached_file :zip_container
   validates_attachment_presence :zip_container
+  validates_attachment_file_name :zip_container, matches: [/zip\Z/]
+  do_not_validate_attachment_file_type :zip_container
 
   # associations
   belongs_to :template, dependent: :destroy
