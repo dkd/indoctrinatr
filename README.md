@@ -28,7 +28,7 @@ Indoctrinatr is an Open Source Software project by [dkd Internet Service GmbH](h
     bundle install
     ```
 
-5.  Setup database:
+5.  Setup database and import Indoctrinatr Achievement Template Pack®:
 
     ```Shell
     rake db:setup
