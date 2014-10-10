@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   private
+
   def set_locale
     I18n.locale = extract_certain_locales_from_accept_language_header || I18n.default_locale
   end
-
 
   def extract_certain_locales_from_accept_language_header
     request.env['HTTP_ACCEPT_LANGUAGE'][/(en|de)/]
