@@ -1,4 +1,4 @@
-# Indoctrinatr
+# ![Indoctrinatr](app/assets/images/logo.png)
 
 ## About
 
