@@ -18,19 +18,27 @@ Indoctrinatr is an Open Source Software project by [dkd Internet Service GmbH](h
 
 3.  Clone this repository:
 
-    `git clone blargh`
+    ```Shell
+    git clone blargh
+    ```
 
 4.  Run [Bundler](http://bundler.io/) inside your local repository to install project dependencies:
 
-    `bundle install`
+    ```Shell
+    bundle install
+    ```
 
 5.  Setup database:
 
-    `rake db:setup`
+    ```Shell
+    rake db:setup
+    ```
 
 6.  Start application server:
 
-    `rails server`
+    ```Shell
+    rails server
+    ```
 
 7.  Direct your preferred browser to <http://127.0.0.1:3000/>.
 
@@ -68,6 +76,7 @@ name|validity|description
 
 ##### Sample
 
+```YAML
     template_name: Hello World Template
     fields:
       -
@@ -79,6 +88,7 @@ name|validity|description
         presentation: dropdown
         default_value: not enough
         available_options: not enough, beautiful, your oyster, a template
+```
 
 ### Indoctrinatr Tools
 
