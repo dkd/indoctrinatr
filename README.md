@@ -19,7 +19,7 @@ Indoctrinatr is an Open Source Software project by [dkd Internet Service GmbH](h
 3.  Clone this repository:
 
     ```Shell
-    git clone blargh
+    git clone https://github.com/dkd/indoctrinatr.git
     ```
 
 4.  Run [Bundler](http://bundler.io/) inside your local repository to install project dependencies:
@@ -87,7 +87,7 @@ Beside creating templates via web interface there is another way: Template Packs
 
 ##### API
 
-The file `configuration.yaml` contains all relevant information (in [YAML](http://www.yaml.org/)) about this Template Pack.
+The file `configuration.yaml` contains all relevant information (in [YAML](http://www.yaml.org/)) about a Template Pack.
 
 | name | validity | description |
 |----|----|----|
@@ -131,7 +131,7 @@ Indoctrinatr exposes one REST API endpoint. Send a HTTP POST request to `/api/v1
 
 ### Indoctrinatr Tools
 
-[Indoctrinatr Tools](__TODO__) is a set of commandline tools to kick-start and develop Indoctrinatr Template Packs. Install via `gem install indoctrinatr-tools`. Note: You need to have XeTeX installed locally to use Indoctrinatr Tools if you are running Indoctrinatr on a different machine (e.g. server setup).
+[Indoctrinatr Tools](https://github.com/dkd/indoctrinatr-tools) is a set of commandline tools to kick-start and develop Indoctrinatr Template Packs. Install via `gem install indoctrinatr-tools`. Note: You need to have XeTeX installed locally to use Indoctrinatr Tools if you are running Indoctrinatr on a different machine (e.g. server setup).
 
 Run `indoctrinatr help` to see a list of available commands. `indoctrinatr workflow` describes the general approach to developing templates. Run `indoctrinatr demo` to see a minimalistic working project sample.
 
@@ -143,7 +143,7 @@ Foundation has a [known issue (#5875)](https://github.com/zurb/foundation/issues
 
 ## Feedback
 
-What you think of Indoctrinatr? Drop us a [line](info@dkd.de) and tell us how you use Indoctrinatr. You can also open an issue if you experience any problems.
+What you think of Indoctrinatr? Drop us a [line](info@dkd.de) and tell us how you use Indoctrinatr. You can also open an [GitHub Issue](https://github.com/dkd/indoctrinatr/issues) if you experience any problems.
 
 ## Contributing
 
@@ -151,7 +151,7 @@ We are also looking forward to your [GitHub Pull Requests](https://help.github.c
 
 ## License
 
-Indoctrinatr is licensed under the terms and conditions of [__TODO__]().
+Indoctrinatr is licensed under the terms and conditions of the [MIT License](http://en.wikipedia.org/wiki/MIT_License).
 
 ## Credits
 
