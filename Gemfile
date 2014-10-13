@@ -1,4 +1,4 @@
-source 'https://rubygems.dkd.de'
+source 'https://rubygems.org'
 
 ruby '2.1.3'
 
