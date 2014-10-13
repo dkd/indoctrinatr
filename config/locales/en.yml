@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  welcome_to_indoctrinatr: Welcome to Indoctrinatr
   new_template: New Template
   template_attributes: Template Attributes
   attribute_name: Attribute Name
