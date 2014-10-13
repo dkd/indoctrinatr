@@ -3,7 +3,7 @@ de:
   document_submission_index: Verlauf
   template_index: Vorlagen-Übersicht
   new_template: Neue Vorlage
-  template_attributes: Vorlagen-Eigenschaften
+  template_attributes: Eingabefelder
   attribute_name: Name der Eingenschaft
   generate_document: Dokument generieren
   upload_template_pack: Template Pack hochladen

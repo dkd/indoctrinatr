@@ -3,9 +3,10 @@
     <h1 class=""><%= t(:document_submission_index) %> </h1>
     <ul class="list-wrapper">
       <% @document_submissions.each do |document_submission| %>
-        <%= render partial: "document_submissions/listitem", locals: {document_submission: document_submission} %>
+        <%= render partial: "document_submissions/listitem", locals: { document_submission: document_submission } %>
       <% end %>
     </ul>
     <br />
   </div>
 </div>
+<%= paginate @document_submissions %>

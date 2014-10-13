@@ -22,7 +22,7 @@
           <% end %>
           <%= template_fields_form.input :name %>
           <%= template_fields_form.input :default_value %>
-          <%= template_fields_form.input :presentation, collection: TemplateField::VALID_PRESENTATIONS, include_blank: false, :input_html => { :class => "presentation" } %>
+          <%= template_fields_form.input :presentation, collection: TemplateField::VALID_PRESENTATIONS, include_blank: false, input_html: { class: "presentation" } %>
           <%= render 'available_options', template_fields_form: template_fields_form %>
           <%= render 'range', template_fields_form: template_fields_form %>
         </div>

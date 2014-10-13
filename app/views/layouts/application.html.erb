@@ -14,26 +14,15 @@
   <body>
 
     <!-- Header and Nav -->
-    <div class="contain-to-grid">
-      <%= render 'layouts/header' %>
-    </div>
+    <%= render 'layouts/header' %>
+
     <!-- End Header and Nav -->
-    <div class="row">
-        <div class="large-12 columns">
-            <%= render 'layouts/messages' %>
-        </div>
-    </div>
+    <%= render 'layouts/messages' %>
 
     <!-- Main Grid Section -->
-
     <%= yield %>
 
-    <!-- End Grid Section -->
-
-
     <!-- Footer -->
-	<%= render 'layouts/footer' %>
-
-
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def extract_certrain_locals_from_params
-    params.fetch(:locale, "")[VALID_LOCALES_AS_REGEX]
+    params.fetch(:locale, '')[VALID_LOCALES_AS_REGEX]
   end
 
   def extract_certain_locales_from_accept_language_header
