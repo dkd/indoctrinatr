@@ -1,5 +1,8 @@
 de:
   welcome_to_indoctrinatr: Willkommen bei Indoctrinatr
+  first_step: 1. Erstelle ein Indoctrinatr Template Pack (XeTeX plus ERB)
+  second_step: 2. Importiere das Template Pack in Indoctrinatr
+  third_step: 3. Generiere ein PDF mit Benutzerdaten
   get_started_now: Hier geht's los…
   edit_template: Vorlage bearbeiten
   document_submission_index: Verlauf
