@@ -6,6 +6,7 @@ en:
   third_step: 3. Generate resulting PDF with user supplied values
   get_started_now: Get started now…
   new_template: New Template
+  new_template_pack: Upload Template Pack
   template_attributes: Template Attributes
   attribute_name: Attribute Name
   generate_document: Generate Document
@@ -19,6 +20,7 @@ en:
     models:
       template: Template
       template_field: Template Field
+      template_pack: Template Pack
     attributes:
       template:
         id: ID
