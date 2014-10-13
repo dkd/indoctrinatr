@@ -137,6 +137,10 @@ Run `indoctrinatr help` to see a list of available commands. `indoctrinatr workf
 
 Protip: Use `indoctrinatr bashcompletion` or `indoctrinatr zshcompletion` to save precious time and energy.
 
+## Known issues
+
+Foundation has a [known issue (#5875)](https://github.com/zurb/foundation/issues/5875) displaying the currently selected value of the slider.
+
 ## Feedback
 
 What you think of Indoctrinatr? Drop us a [line](info@dkd.de) and tell us how you use Indoctrinatr. You can also open an issue if you experience any problems.
