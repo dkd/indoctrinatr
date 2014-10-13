@@ -21,6 +21,10 @@ class DocumentSubmission < ActiveRecord::Base
   delegate :name, to: :template, prefix: :template
   delegate :template_asset_path, to: :template # adds method 'template_asset_path' to allow TeX templates to include assets
 
+  # scopes
+  scope :recent_first, -> { order(created_at: :desc) }
+
+  # callbacks
   after_initialize :initialize_fields
 
   def retrieve_binding

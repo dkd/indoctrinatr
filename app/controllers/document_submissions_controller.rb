@@ -4,7 +4,7 @@ class DocumentSubmissionsController < ApplicationController
 
   # GET /document_submissions
   def index
-    @document_submissions = DocumentSubmission.all.page params[:page]
+    @document_submissions = DocumentSubmission.all.recent_first.page params[:page]
   end
 
   def show

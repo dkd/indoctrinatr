@@ -18,7 +18,7 @@ class TemplatesController < ApplicationController
 
   # GET /templates/1/document_submission
   def document_submissions
-    @document_submissions = @template.document_submissions
+    @document_submissions = @template.document_submissions.recent_first.page params[:page]
   end
 
   # POST /templates
