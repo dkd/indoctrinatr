@@ -2,13 +2,13 @@
 
 ## About
 
-Indoctrinatr is an Open Source Software project by [dkd Internet Service GmbH](https://dkd.de/), Frankfurt (Germany), which renders [eRuby](https://en.wikipedia.org/wiki/ERuby) (more specifically: [Erubis](http://www.kuwata-lab.com/erubis/)) enriched [XeTex](http://tug.org/xetex/) templates to PDF documents.
+Indoctrinatr is an Open Source Software project by [dkd Internet Service GmbH](https://dkd.de/), Frankfurt (Germany), which renders [eRuby](https://en.wikipedia.org/wiki/ERuby) (more specifically: [Erubis](http://www.kuwata-lab.com/erubis/)) enriched [XeTeX](http://tug.org/xetex/) templates to PDF documents.
 
 ## Setup (development environment)
 
-1.  Install XeTex:
+1.  Install XeTeX:
 
-    Mac OS X: [MacTex](https://tug.org/mactex/)
+    Mac OS X: [MacTeX](https://tug.org/mactex/)
  
     Debian/Ubuntu: `apt-get install texlive-full`
 
@@ -44,11 +44,11 @@ Indoctrinatr is an Open Source Software project by [dkd Internet Service GmbH](h
 
 ## Usage
 
-### XeTex Templates with ERB
+### XeTeX Templates with ERB
 
 #### About
 
-Indoctrinatr allows you to define XeTex templates mixed with template fields via ERB. User can then enter values for these template fields and Indoctrinatr will render the template together with these user supplied values. Just write your XeTeX template like you normally would, enter it into the web interface, define template fields as needed and insert them like `<%= template_field_name %>` into your template (also see [Jason Shultz](http://jasonshultz.com/2013228examples-of-ruby-erb-syntax/) or [Stack Overflow](http://stackoverflow.com/questions/7996695/what-is-the-difference-between-and-in-erb-in-rails) for ERB syntax). The name of the template field corresponds to the name of the variable you can access in your template.
+Indoctrinatr allows you to define XeTeX templates mixed with template fields via ERB. User can then enter values for these template fields and Indoctrinatr will render the template together with these user supplied values. Just write your XeTeX template like you normally would, enter it into the web interface, define template fields as needed and insert them like `<%= template_field_name %>` into your template (also see [Jason Shultz](http://jasonshultz.com/2013228examples-of-ruby-erb-syntax/) or [Stack Overflow](http://stackoverflow.com/questions/7996695/what-is-the-difference-between-and-in-erb-in-rails) for ERB syntax). The name of the template field corresponds to the name of the variable you can access in your template.
 
 #### Sample
 
@@ -81,7 +81,7 @@ If you want to convert (user supplied) values formatted in [Textile](http://txst
 
 #### About
 
-Beside creating templates via web interface there is another way: Template Packs are zipped XeTex templates with configuration and asset files (images, PDF documents and the like) which can be uploaded and imported into Indoctrinatr. They can be easily created with Indoctrinatr Tools (see below).
+Beside creating templates via web interface there is another way: Template Packs are zipped XeTeX templates with configuration and asset files (images, PDF documents and the like) which can be uploaded and imported into Indoctrinatr. They can be easily created with Indoctrinatr Tools (see below).
 
 #### Configuration Syntax
 
@@ -123,11 +123,15 @@ For each field you need to specify:
 
 #### Assets
 
-Place your assets (e.g. images, PDF documents) into the `assets` folder. If you want to reference this folder inside your XeTex template please use the variable `template_asset_path` like this: `<%= template_asset_path -%>`. It will be resolve correctly on you machine locally as well as on the server. 
+Place your assets (e.g. images, PDF documents) into the `assets` folder. If you want to reference this folder inside your XeTeX template please use the variable `template_asset_path` like this: `<%= template_asset_path %>`. It will be resolve correctly on you machine locally as well as on the server.
+
+### RESTful API (sort of)
+
+Indoctrinatr exposes one REST API endpoint. Send a HTTP POST request to `/api/v1/templates/:id/generate` to generate a PDF document with supplied values. Substitute `:id` with the Indoctrinatr Template ID you want to use. Note: You need to send two authentication keys as well: `auth_key` and `secure_token`. Both keys can be configured in `config/secrets.yml`. If you send an addition value `debug` with string value of `true` the API endpoint will return the ERB rendered XeTeX template.
 
 ### Indoctrinatr Tools
 
-[Indoctrinatr Tools](__TODO__) is a set of commandline tools to kick-start and develop Indoctrinatr Template Packs. Install via `gem install indoctrinatr-tools`. Note: You need to have XeTex installed locally to use Indoctrinatr Tools if you are running Indoctrinatr on a different machine (e.g. server setup).
+[Indoctrinatr Tools](__TODO__) is a set of commandline tools to kick-start and develop Indoctrinatr Template Packs. Install via `gem install indoctrinatr-tools`. Note: You need to have XeTeX installed locally to use Indoctrinatr Tools if you are running Indoctrinatr on a different machine (e.g. server setup).
 
 Run `indoctrinatr help` to see a list of available commands. `indoctrinatr workflow` describes the general approach to developing templates. Run `indoctrinatr demo` to see a minimalistic working project sample.
 
