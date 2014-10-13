@@ -21,14 +21,4 @@ describe Template do
 
   it { should validate_presence_of :name }
   it { should validate_presence_of :content }
-
-  describe 'differentiating templates made via web interface and uploaded template packd' do
-    it "knows when it's a (normal) template" do
-      expect(Template.new.template_type).to eq 'Template'
-    end
-
-    it "knows when it's a template pack" do
-      expect(Template.new(template_pack: TemplatePack.new).template_type).to eq 'Template Pack'
-    end
-  end
 end

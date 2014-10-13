@@ -1,9 +1,9 @@
 <div class="panel" id="<%= submitted_template_fields_form.object.template_field.id %>">
-    <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
-    <div class="range-slider" data-slider="<%= submitted_template_fields_form.object.template_field.start_of_range %>" data-options="display_selector: #sliderOutput3; start: <%= submitted_template_fields_form.object.template_field.start_of_range %>; end: <%= submitted_template_fields_form.object.template_field.end_of_range %>;">
-        <span class="range-slider-handle"></span>
-        <span class="range-slider-active-segment"></span>
-        <input type="hidden">
-    </div>
-    <span id="sliderOutput3"></span>
+  <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
+  <div class="range-slider" data-slider="<%= submitted_template_fields_form.object.template_field.start_of_range %>" data-options="display_selector: #sliderOutput3; start: <%= submitted_template_fields_form.object.template_field.start_of_range %>; end: <%= submitted_template_fields_form.object.template_field.end_of_range %>;">
+    <span class="range-slider-handle"></span>
+    <span class="range-slider-active-segment"></span>
+    <input type="hidden">
+  </div>
+  <span id="sliderOutput3"></span>
 </div>

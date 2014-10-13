@@ -1,48 +1,48 @@
-<div class="row">
-    <div class="large-12 columns">
+<div class='row'>
+    <div class='large-12 columns'>
         <h1><%= t(:template_index) %></h1>
-        <%= link_to t(:upload_template_pack), new_template_pack_path, class: "primary-btn" %>
-        <%= link_to t(:new_template), new_template_path, class: "secondary-btn" %>
-        <ul class="list-wrapper">
+        <%= link_to t(:upload_template_pack), new_template_pack_path, class: 'primary-btn' %>
+        <%= link_to t(:new_template), new_template_path, class: 'secondary-btn' %>
+        <ul class='list-wrapper'>
             <% @templates.each do |template| %>
-            <li class="list-row <%= cycle('even', 'odd') %>">
-                <div class="row-container row">
-                    <div class="row-content large-9 columns">
-                        <div class="row">
-                            <div class="large-1 columns template-name">
-                                <div class="template-type">
+            <li class='list-row <%= cycle('even', 'odd') %>'>
+                <div class='row-container row'>
+                    <div class='row-content large-9 columns'>
+                        <div class='row'>
+                            <div class='large-1 columns template-name'>
+                                <div class='template-name'>
                                   <%= template.id %>
-                                    <p><%= ::Template.human_attribute_name("id") %></p>
+                                    <p><%= ::Template.human_attribute_name('id') %></p>
                                 </div>
                             </div>
-                            <div class="large-8 columns template-name">
-                                <div class="template-type">
+                            <div class='large-8 columns template-name'>
+                                <div class='template-type'>
                                   <%= template.name %>
-                                  <p><%= ::Template.human_attribute_name("name") %></p>
+                                  <p><%= ::Template.human_attribute_name('name') %></p>
                                 </div>
                             </div>
-                            <div class="large-3 columns ">
-                                <div class="template-type">
-                                    <p><%= template.template_type %></p>
-                                    <p><%= ::Template.human_attribute_name("template_type") %></p>
+                            <div class='large-3 columns '>
+                                <div class='template-type'>
+                                    <p><%= template.template_package? ? t(:'template_pack') : t(:'template') %></p>
+                                    <p><%= ::Template.human_attribute_name('template_type') %></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row-actions large-3 columns">
-                        <ul class="button-group right">
+                    <div class='row-actions large-3 columns'>
+                        <ul class='button-group right'>
                           <% if template.template_fields.any? %>
                             <%= content_tag(:li) do
-                              link_to("Fill in form", new_document_submission_url(template_id: template), class: "generatepdf hide-text")
+                              link_to('Fill in form', new_document_submission_url(template_id: template), class: 'generatepdf hide-text')
                             end %>
                           <% else %>
                             <%= content_tag(:li) do
-                              link_to("Generate", with_defaults_document_submissions_url(template_id: template), class: "generatepdf hide-text", method: :post)
+                              link_to('Generate', with_defaults_document_submissions_url(template_id: template), class: 'generatepdf hide-text', method: :post)
                             end %>
                           <% end %>
-                          <li><%= link_to 'Edit', edit_template_path(template), class: "editpdf hide-text" %></li>
-                          <li><%= link_to 'Submissions', document_submissions_template_url(template), class:"history-icon hide-text" %></li>
-                          <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
+                          <li><%= link_to 'Edit', edit_template_path(template), class: 'editpdf hide-text' %></li>
+                          <li><%= link_to 'Submissions', document_submissions_template_url(template), class:'history-icon hide-text' %></li>
+                          <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: 'deletepdf hide-text' %></li>
                     </div>
                 </div>
             </li>

@@ -1,22 +1,22 @@
-<li class="list-row <%= cycle('even', 'odd') %>">
-    <div class="row-container row">
-        <div class="row-content large-9 columns">
-            <div class="row">
-                <div class="large-9 columns template-name">
-                    <%= document_submission.template_name %>
-                </div>
-                <div class="large-3 columns template-type">
-                    <p><%= l document_submission.updated_at, format: :very_short %></p>
-
-                    <p>geändert am</p>
-                </div>
-            </div>
+<li class="list-row <%= cycle("even", "odd") %>">
+  <div class="row-container row">
+    <div class="row-content large-9 columns">
+      <div class="row">
+        <div class="large-6 columns template-name">
+          <p><%= document_submission.template_name %></p>
+          <p><%= ::Template.human_attribute_name('name') %></p>
         </div>
-        <div class="row-actions large-3 columns">
-            <ul class="button-group right">
-                <li><%= link_to 'Generated document', document_submission_url(document_submission, format: :pdf), class: "generatepdf hide-text" %></li>
-                <li><%= link_to 'Destroy', document_submission, method: :delete, data: {confirm: 'Are you sure?' }, class: "deletepdf hide-text" %></li>
-            </ul>
+        <div class="large-3 columns template-type">
+          <p><%= l document_submission.updated_at, format: :very_short %></p>
+          <p>geändert am</p>
         </div>
+      </div>
     </div>
+    <div class="row-actions large-3 columns">
+      <ul class="button-group right">
+        <li><%= link_to "Generated document", document_submission_url(document_submission, format: :pdf), class: "generatepdf hide-text" %></li>
+      <li><%= link_to "Destroy", document_submission, method: :delete, data: { confirm: "Are you sure?" }, class: "deletepdf hide-text" %></li>
+      </ul>
+    </div>
+  </div>
 </li>

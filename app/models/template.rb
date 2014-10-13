@@ -23,10 +23,6 @@ class Template < ActiveRecord::Base
   validates :name, presence: true
   validates :content, presence: true
 
-  def template_type
-    template_package? ? 'Template Pack' : 'Template'
-  end
-
   def template_package?
     template_pack.present?
   end

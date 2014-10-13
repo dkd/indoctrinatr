@@ -241,6 +241,19 @@ footer {
   }
 }
 
+.template-name {
+  float: left;
+  &:first-child {
+    margin-right: 15px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  p:last-child {
+    color: $secondary-text-color;
+    font-size: rem-calc(12);
+  }
+}
 
 
 .list-row {

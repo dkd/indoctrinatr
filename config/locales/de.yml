@@ -19,6 +19,8 @@ de:
   documentation: Dokumentation
   history: Verlauf
   templates: Vorlagen
+  template: 'Vorlage'
+  template_pack: 'Template Pack'
 #  model localization
   activerecord:
     models:
