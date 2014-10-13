@@ -1,6 +1,6 @@
 <%# add navigation links to this file %>
 <li class="divider"></li>
-<li class="new-template <%= current_url('/templates') %>"><%= link_to "Templates", templates_path -%></li>
+<li class="new-template <%= current_url('/templates') %>"><%= link_to t(:templates), templates_path -%></li>
 <li class="divider"></li>
 <li class="<%= current_url('/document_submissions') %>"><%= link_to t(:history), document_submissions_path %></li>
 <li class="divider"></li>
