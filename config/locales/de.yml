@@ -11,7 +11,7 @@ de:
   new_template: Neue Vorlage
   new_template_pack: Template Pack hochladen
   template_attributes: Eingabefelder
-  attribute_name: Name der Eingenschaft
+  attribute_name: Name des Eingabefeldes
   generate_document: Dokument generieren
   upload_template_pack: Template Pack hochladen
   legal_notice: Impressum
@@ -34,7 +34,8 @@ de:
         content: Inhalt
         template_type: Vorlagen-Art
       template_field:
-        default_value: Vorbelegter Wert
+        name: Name
+        default_value: Standardwert
         presentation: Art des Eingabefelds
         start_of_range: von
         end_of_range: bis
