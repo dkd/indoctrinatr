@@ -143,7 +143,7 @@ Foundation has a [known issue (#5875)](https://github.com/zurb/foundation/issues
 
 ## Feedback
 
-What you think of Indoctrinatr? Drop us a [line](opensource@dkd.de) and tell us how you use Indoctrinatr. You can also open a [GitHub Issue](https://github.com/dkd/indoctrinatr/issues) if you experience any problems.
+What you think of Indoctrinatr? Drop us a  line (<opensource@dkd.de>) and tell us how you use Indoctrinatr. You can also open a [GitHub Issue](https://github.com/dkd/indoctrinatr/issues) if you experience any problems.
 
 ## Contributing
 
