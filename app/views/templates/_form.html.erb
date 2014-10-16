@@ -13,22 +13,22 @@
     </div>
   </div>
   <div class="row">
-      <div id="field-wrapper">
-    <%= f.fields_for :template_fields do |template_fields_form| %>
-      <div class="large-6 columns">
-        <div class="panel">
-          <%= template_fields_form.link_to_remove class: "right close-icon" do %>
-            <i class="remove-icon"></i>
-          <% end %>
-          <%= template_fields_form.input :name %>
-          <%= template_fields_form.input :default_value %>
-          <%= template_fields_form.input :presentation, collection: TemplateField::VALID_PRESENTATIONS, include_blank: false, input_html: { class: "presentation" } %>
-          <%= render 'available_options', template_fields_form: template_fields_form %>
-          <%= render 'range', template_fields_form: template_fields_form %>
+    <div id="field-wrapper">
+      <%= f.fields_for :template_fields do |template_fields_form| %>
+        <div class="large-6 columns">
+          <div class="panel">
+            <%= template_fields_form.link_to_remove class: "right close-icon" do %>
+              <i class="remove-icon"></i>
+            <% end %>
+            <%= template_fields_form.input :name %>
+            <%= template_fields_form.input :default_value %>
+            <%= template_fields_form.input :presentation, collection: TemplateField::VALID_PRESENTATIONS, include_blank: false, input_html: { class: "presentation" } %>
+            <%= render 'available_options', template_fields_form: template_fields_form %>
+            <%= render 'range', template_fields_form: template_fields_form %>
+          </div>
         </div>
-      </div>
-    <% end %>
-      </div>
+      <% end %>
+    </div>
     <div class="large-6 columns" id="add-panel">
       <div class="panel">
         <div class="row collapse">
