@@ -131,6 +131,8 @@ Indoctrinatr exposes one REST API endpoint. Send a HTTP POST request to `/api/v1
 
 ### Indoctrinatr Tools
 
+[![Gem Version](https://badge.fury.io/rb/indoctrinatr-tools.svg)](http://badge.fury.io/rb/indoctrinatr-tools)
+
 [Indoctrinatr Tools](https://github.com/dkd/indoctrinatr-tools) is a set of commandline tools to kick-start and develop Indoctrinatr Template Packs. Install via `gem install indoctrinatr-tools`. Note: You need to have XeTeX installed locally to use Indoctrinatr Tools if you are running Indoctrinatr on a different machine (e.g. server setup).
 
 Run `indoctrinatr help` to see a list of available commands. `indoctrinatr workflow` describes the general approach to developing templates. Run `indoctrinatr demo` to see a minimalistic working project sample.
