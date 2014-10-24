@@ -1,19 +1,27 @@
 require 'zip'
 
 class TemplatePackProcessor
-  def initialize template_pack
-    @template_pack = template_pack
+  attr_reader :template_pack, :template
+
+  def initialize template_pack_attributes
+    @template_pack_attributes = template_pack_attributes
   end
 
   def run
+    create_template_pack
     unzip_container
     process_configuration_file
     extract_tex_template
     extract_template_fields
     create_template_and_template_attributes
+    save_template
   end
 
   private
+
+  def create_template_pack
+    @template_pack = TemplatePack.create @template_pack_attributes
+  end
 
   def unzip_container
     Zip::File.open @template_pack.zip_container.path do |zip_file|
@@ -40,12 +48,16 @@ class TemplatePackProcessor
   end
 
   def create_template_and_template_attributes
-    @template = Template.create! do |template|
+    @template = Template.new do |template|
       template.name = @template_name
       template.template_asset_path = File.join(@template_pack.path_to_extracted_container, 'assets')
       template.content = @template_content
       template.template_pack = @template_pack
       template.template_fields_attributes = @template_fields_attributes
     end
+  end
+
+  def save_template
+    @template.save
   end
 end

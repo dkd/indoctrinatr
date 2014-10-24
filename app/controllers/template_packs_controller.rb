@@ -1,11 +1,16 @@
 class TemplatePacksController < ApplicationController
   def new
+    @template = Template.new
     @template_pack = TemplatePack.new
   end
 
   def create
-    @template_pack = TemplatePack.new(template_pack_params)
-    if @template_pack.save!
+    processor = TemplatePackProcessor.new(template_pack_params)
+    result = processor.run
+    @template = processor.template
+    @template_pack = processor.template_pack
+
+    if result
       redirect_to templates_path, notice: 'Template was successfully created out of suppplied template pack.'
     else
       render action: 'new'

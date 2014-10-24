@@ -1,8 +1,22 @@
 <div class="row">
   <div class="large-12 columns">
     <h1><%= t(:new_template_pack) %></h1>
-    <%= simple_form_for(@template_pack, html: { :multipart => true }) do |f| %>
-      <%= f.error_notification %>
+    <%= simple_form_for(TemplatePack.new, html: { :multipart => true }) do |f| %>
+      <% if @template_pack.errors.any? %>
+        <ul>
+          <% @template_pack.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% if @template.errors.any? %>
+        <ul>
+          <% @template.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <div class="row">
         <div class="large-12 columns">
           <label><%= f.file_field :zip_container %></label>

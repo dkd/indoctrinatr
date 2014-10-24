@@ -22,13 +22,13 @@ class TemplatePack < ActiveRecord::Base
   # associations
   belongs_to :template, dependent: :destroy
 
-  # callbacks
-  after_save :process_zip_container
+  # # callbacks
+  # after_save :process_zip_container
 
-  def process_zip_container
-    return true if template.present?
-    TemplatePackProcessor.new(self).run
-  end
+  # def process_zip_container
+  #   return true if template.present?
+  #   TemplatePackProcessor.new(self).run
+  # end
 
   def path_to_config_file
     File.join(path_to_extracted_container, 'configuration.yaml')
