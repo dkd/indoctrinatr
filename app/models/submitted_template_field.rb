@@ -19,7 +19,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   delegate :name, to: :template_field
 
   def value_or_default
-    value.blank? ? template_field.default_value : value
+    value || template_field.default_value
   end
 
   def to_form_label
