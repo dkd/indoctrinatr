@@ -38,15 +38,15 @@ class DocumentSubmission < ActiveRecord::Base
   # add methods for each field
   def initialize_fields
     submitted_template_fields.each do |submitted_template_field|
-      define_singleton_method submitted_template_field.name.to_sym do
-        instance_variable_get("@#{submitted_template_field.name}").to_latex
-      end
+      instance_variable_set("@#{submitted_template_field.name}", submitted_template_field.value_or_default)
 
       define_singleton_method "raw_#{submitted_template_field.name}".to_sym do
         instance_variable_get("@#{submitted_template_field.name}")
       end
 
-      instance_variable_set("@#{submitted_template_field.name}", submitted_template_field.value_or_default)
+      define_singleton_method submitted_template_field.name.to_sym do
+        instance_variable_get("@#{submitted_template_field.name}").to_latex
+      end
     end
   end
 end
