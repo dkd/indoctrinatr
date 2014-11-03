@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/ncreuschling/rails-latex.git
+  revision: 4bba7bb79a7c748f69ccacb5e92e4f34ca9fdc5d
+  specs:
+    rails-latex (1.0.12)
+      rails (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -144,8 +151,6 @@ GEM
       activesupport (>= 3.0)
       choice (~> 0.1.6)
       ruby-graphviz (~> 1.0.4)
-    rails-latex (1.0.12)
-      rails (>= 3.0.0)
     rails_layout (1.0.23)
     railties (4.1.7)
       actionpack (= 4.1.7)
@@ -259,7 +264,7 @@ DEPENDENCIES
   quiet_assets (~> 1.0.3)
   rails (~> 4.1.6)
   rails-erd (~> 1.1.0)
-  rails-latex (~> 1.0.12)
+  rails-latex!
   rails_layout (~> 1.0.22)
   rspec (~> 3.1.0)
   rspec-rails (~> 3.1.0)
