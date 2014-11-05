@@ -9,7 +9,7 @@ gem 'sass-rails', '~> 4.0.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -50,7 +50,7 @@ group :development, :test do
   gem 'rspec', '~> 3.1.0'
   gem 'guard-rspec', '~> 4.3.1', require: false
   gem 'growl', '~> 1.0.3' # OR use: gem 'terminal-notifier-guard'
-  gem 'factory_girl_rails', '~> 4.4.0'
+  gem 'factory_girl_rails', '~> 4.5.0'
   gem 'shoulda', '~> 3.5.0'
   gem 'listen', '~> 2.7.11'
 end
@@ -64,7 +64,7 @@ group :development do
   gem 'sqlite3', '~> 1.3.9'
   gem 'rails-erd', '~> 1.1.0'
   gem 'annotate', '~> 2.6.5'
-  gem 'rubocop', '~> 0.26.1'
+  gem 'rubocop', '~> 0.27.0'
 end
 
 gem 'rails-latex', github: 'ncreuschling/rails-latex'
