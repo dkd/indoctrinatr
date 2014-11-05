@@ -1,1 +1,1 @@
-<%= raw Erubis::Eruby.new(@document_submission.content).result(@document_submission.retrieve_binding) -%>
+<%= raw Erubis::Eruby.new(@document_submission.content).result(@submitted_values.retrieve_binding) -%>

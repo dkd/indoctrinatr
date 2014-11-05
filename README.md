@@ -73,9 +73,9 @@ Please note: The values of the template fields are LaTeX safe strings (Ruby clas
 
 #### Textile Support
 
-If you want to convert (user supplied) values formatted in [Textile](http://txstyle.org/) to XeTeX wrap the variable name as follows:
+If you want to convert (user supplied) values formatted in [Textile](http://txstyle.org/) to XeTeX wrap the variable name as follows (works best with the prefix `raw_`):
 
-    <%= textilize(template_field_name) %>
+    <%= textile2latex(raw_template_field_name) %>
 
 ### Indoctrinatr Template Packs
 

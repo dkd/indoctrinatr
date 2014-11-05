@@ -24,29 +24,7 @@ class DocumentSubmission < ActiveRecord::Base
   # scopes
   scope :recent_first, -> { order(created_at: :desc) }
 
-  # callbacks
-  after_initialize :initialize_fields
-
-  def retrieve_binding
-    binding
-  end
-
-  def textilize textile
-    RedCloth.new(textile).to_latex
-  end
-
-  # add methods for each field
-  def initialize_fields
-    submitted_template_fields.each do |submitted_template_field|
-      instance_variable_set("@#{submitted_template_field.name}", submitted_template_field.value_or_default)
-
-      define_singleton_method "raw_#{submitted_template_field.name}".to_sym do
-        instance_variable_get("@#{submitted_template_field.name}")
-      end
-
-      define_singleton_method submitted_template_field.name.to_sym do
-        instance_variable_get("@#{submitted_template_field.name}").to_latex
-      end
-    end
+  def submitted_values
+    SubmittedValues.new(self.template_asset_path, submitted_template_fields)
   end
 end

@@ -13,10 +13,10 @@ module Api
       def generate
         @template = Template.find params[:id]
         @document_submission = DocumentSubmissionBuilder.build_via_api @template, params
-        @document_submission.initialize_fields
+        @submitted_values = @document_submission.submitted_values
 
         if params[:debug].present? && params[:debug] == 'true'
-          render text: ERB.new(@document_submission.content, nil, '-').result(@document_submission.retrieve_binding), content_type: 'text/plain'
+          render text: ERB.new(@document_submission.content, nil, '-').result(@submitted_values.retrieve_binding), content_type: 'text/plain'
         else
           render
         end
