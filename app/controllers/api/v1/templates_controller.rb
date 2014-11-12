@@ -10,7 +10,7 @@ module Api
 
       before_action :authenticate_api
 
-      def generate
+      def generate # rubocop:disable Metrics/AbcSize
         @template = Template.find params[:id]
         @document_submission = DocumentSubmissionBuilder.build_via_api @template, params
         @submitted_values = @document_submission.submitted_values

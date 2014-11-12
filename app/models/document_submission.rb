@@ -25,6 +25,6 @@ class DocumentSubmission < ActiveRecord::Base
   scope :recent_first, -> { order(created_at: :desc) }
 
   def submitted_values
-    SubmittedValues.new(self.template_asset_path, submitted_template_fields)
+    SubmittedValues.new(template_asset_path, submitted_template_fields)
   end
 end

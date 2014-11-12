@@ -1,6 +1,5 @@
 class SubmittedValues
-
-  def initialize template_asset_path, submitted_template_fields
+  def initialize template_asset_path, submitted_template_fields # rubocop:disable Metrics/AbcSize
     @_template_asset_path = template_asset_path
 
     submitted_template_fields.each do |submitted_template_field|
@@ -24,7 +23,7 @@ class SubmittedValues
     RedCloth.new(textile).to_latex
   end
 
-  def template_asset_path
+  def template_asset_path # rubocop:disable Style/TrivialAccessors
     @_template_asset_path
   end
 end

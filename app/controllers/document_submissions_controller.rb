@@ -7,7 +7,7 @@ class DocumentSubmissionsController < ApplicationController
     @document_submissions = DocumentSubmission.all.recent_first.page params[:page]
   end
 
-  def show
+  def show # rubocop:disable Metrics/AbcSize
     @document_submission = DocumentSubmission.find params[:id]
     @submitted_values = @document_submission.submitted_values
     if params[:debug].present? && params[:debug] == 'true'
