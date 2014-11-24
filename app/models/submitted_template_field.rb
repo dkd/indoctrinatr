@@ -17,12 +17,9 @@ class SubmittedTemplateField < ActiveRecord::Base
 
   # delegations
   delegate :name, to: :template_field
+  delegate :to_form_label, to: :template_field
 
   def value_or_default
     value || template_field.default_value
-  end
-
-  def to_form_label
-    template_field.try(:label) || template_field.name
   end
 end

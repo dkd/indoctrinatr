@@ -42,4 +42,8 @@ class TemplateField < ActiveRecord::Base
   def requires_available_options?
     REQUIRES_AVAILABLE_OPTIONS.include? presentation
   end
+
+  def to_form_label
+    label.blank? ? name : label
+  end
 end
