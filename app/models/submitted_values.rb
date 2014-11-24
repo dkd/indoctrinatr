@@ -26,4 +26,8 @@ class SubmittedValues
   def template_asset_path # rubocop:disable Style/TrivialAccessors
     @_template_asset_path
   end
+
+  def customized_output_file_name
+    @_customized_output_file_name ||= eval('"' + @_output_file_name + '"')
+  end
 end
