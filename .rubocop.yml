@@ -23,3 +23,5 @@ Style/NumericLiterals:
 Style/Blocks:
   Exclude:
     - 'spec/**/*'
+Metrics/MethodLength:
+  Max: 12

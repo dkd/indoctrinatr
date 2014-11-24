@@ -29,6 +29,6 @@ class SubmittedValues
   end
 
   def customized_output_file_name
-    @_customized_output_file_name ||= eval('"' + @_output_file_name + '"')
+    @_customized_output_file_name ||= eval('"' + @_output_file_name + '"') # rubocop:disable Lint/Eval
   end
 end
