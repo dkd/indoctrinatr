@@ -23,6 +23,6 @@ class SubmittedTemplateField < ActiveRecord::Base
   end
 
   def to_form_label
-    template_field.name
+    template_field.try(:label) || template_field.name
   end
 end

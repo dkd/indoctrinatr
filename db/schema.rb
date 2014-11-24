@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008091149) do
+ActiveRecord::Schema.define(version: 20141124072333) do
 
   create_table "document_submissions", force: true do |t|
     t.integer  "template_id",              null: false
@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(version: 20141008091149) do
     t.integer  "template_id",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "available_options"
+    t.text     "available_options", default: ""
     t.integer  "start_of_range"
     t.integer  "end_of_range"
+    t.string   "label"
   end
 
   add_index "template_fields", ["template_id"], name: "index_template_fields_on_template_id"
@@ -59,7 +60,7 @@ ActiveRecord::Schema.define(version: 20141008091149) do
 
   create_table "templates", force: true do |t|
     t.string   "name",                default: "", null: false
-    t.text     "content",                          null: false
+    t.text     "content",             default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "template_asset_path"
