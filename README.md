@@ -99,6 +99,7 @@ For each field you need to specify:
 | name | validity | description |
 |----|----|----|
 | `name` | required | Short name for this field. |
+| `label` | optional | Label for input field. Defaults to value of `name`. |
 | `presentation` | required | Choose from this list of valid presentation values (with respect to their respective HTML equivalent for this field): `text`, `textarea`, `checkbox`, `radiobutton`, `dropdown`, `date`, `range` |
 | `default_value` | optional | Default value for this field, which will be used if no value is supplied by the user. Empty string if not specified. |
 | `available_options` | required (for `presentation` of `checkbox`, `radiobutton` or `dropdown`) | List of selectable text options, entries separated by commata. |
