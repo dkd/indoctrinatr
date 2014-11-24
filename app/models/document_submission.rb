@@ -20,11 +20,16 @@ class DocumentSubmission < ActiveRecord::Base
   # delegations
   delegate :name, to: :template, prefix: :template
   delegate :template_asset_path, to: :template # adds method 'template_asset_path' to allow TeX templates to include assets
+  delegate :output_file_name, to: :template
 
   # scopes
   scope :recent_first, -> { order(created_at: :desc) }
 
   def submitted_values
-    SubmittedValues.new(template_asset_path, submitted_template_fields)
+    SubmittedValues.new(template_asset_path, suggested_file_name, submitted_template_fields)
+  end
+
+  def suggested_file_name
+    output_file_name.blank? ? "#{template.name}.pdf" : output_file_name
   end
 end

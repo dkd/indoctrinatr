@@ -1,6 +1,7 @@
 class SubmittedValues
-  def initialize template_asset_path, submitted_template_fields # rubocop:disable Metrics/AbcSize
+  def initialize template_asset_path, output_file_name, submitted_template_fields # rubocop:disable Metrics/AbcSize
     @_template_asset_path = template_asset_path
+    @_output_file_name = output_file_name
 
     submitted_template_fields.each do |submitted_template_field|
       instance_variable_set("@_#{submitted_template_field.name}", submitted_template_field.value_or_default)

@@ -13,9 +13,8 @@ class DocumentSubmissionsController < ApplicationController
     if params[:debug].present? && params[:debug] == 'true'
       render text: ERB.new(@submitted_values, nil, '-').result(@submitted_values.retrieve_binding), content_type: 'text/plain'
     else
-      pdf = LatexToPdf.generate_pdf(ERB.new(@document_submission.content, nil, '-').result(@submitted_values.retrieve_binding), {command: "xelatex", parse_twice: true}) 
+      pdf = LatexToPdf.generate_pdf(ERB.new(@document_submission.content, nil, '-').result(@submitted_values.retrieve_binding), {command: "xelatex", parse_twice: true})
       send_data pdf, filename: @submitted_values.customized_output_file_name
-      # render layout: 'application', format: :pdf
     end
   end
 
