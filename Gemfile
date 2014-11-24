@@ -52,7 +52,7 @@ group :development, :test do
   gem 'growl', '~> 1.0.3' # OR use: gem 'terminal-notifier-guard'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'shoulda', '~> 3.5.0'
-  gem 'listen', '~> 2.7.11'
+  gem 'listen', '~> 2.8.1'
 end
 
 # Development tools
