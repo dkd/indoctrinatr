@@ -68,5 +68,5 @@ $(document).on('nested:fieldAdded', function(event){
 
 
 $(function() {
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({dateFormat: 'yy-mm-dd'});
 });
