@@ -38,8 +38,8 @@ function presentationVisibiltyUpdater()
 }
 
 $(document).ready(function() {
-    $(".presentation").each(presentationVisibiltyUpdater);
-    $('body').on('change', '.presentation', presentationVisibiltyUpdater);
+  $(".presentation").each(presentationVisibiltyUpdater);
+  $('body').on('change', '.presentation', presentationVisibiltyUpdater);
 });
 
 $(document).on('nested:fieldAdded', function(event){
@@ -68,5 +68,10 @@ $(document).on('nested:fieldAdded', function(event){
 
 
 $(function() {
-  $('.datepicker').datepicker({dateFormat: 'yy-mm-dd'});
+  $('.datepicker').datepicker({
+    dateFormat: 'yy-mm-dd',
+    constrainInput: true,
+    showOn: 'both',
+    buttonText: '<i class="fi-calendar"></i>'
+  });
 });

@@ -25,6 +25,7 @@ body {
 
 i {
   font-size: 35px;
+  line-height: 1;
 }
 
 /* Custom Buttons Start */
@@ -283,6 +284,7 @@ footer {
 #ui-datepicker-div {
   background: none $datepicker-bg-dark;
   border: none;
+  z-index: 2 !important;
   .ui-widget-header {
     border: none;
     background: none $datepicker-bg-light;
@@ -346,6 +348,19 @@ footer {
     border: none;
     color: #212121;
     font-weight: normal;
+  }
+}
+
+input.datepicker {
+  float: left;
+  width: 60%;
+  margin-right: 1px;
+}
+button.ui-datepicker-trigger {
+  padding: 0 11px;
+  border-bottom: 1px solid;
+  i {
+    color: #ffffff;
   }
 }
 
