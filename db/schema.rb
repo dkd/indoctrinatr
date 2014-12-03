@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20141124142315) do
     t.integer  "template_id",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "content",     default: "", null: false
+    t.text     "content",                  null: false
   end
 
   add_index "document_submissions", ["template_id"], name: "index_document_submissions_on_template_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20141124142315) do
     t.integer  "template_id",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "available_options", default: ""
+    t.text     "available_options"
     t.integer  "start_of_range"
     t.integer  "end_of_range"
     t.string   "label"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20141124142315) do
 
   create_table "templates", force: true do |t|
     t.string   "name",                default: "", null: false
-    t.text     "content",             default: "", null: false
+    t.text     "content",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "template_asset_path"
