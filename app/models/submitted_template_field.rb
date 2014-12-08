@@ -27,6 +27,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   end
 
   def value_or_default
-    value || template_field.default_value
+    return template_field.default_value if value.blank?
+    value
   end
 end
