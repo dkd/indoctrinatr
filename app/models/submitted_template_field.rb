@@ -23,11 +23,12 @@ class SubmittedTemplateField < ActiveRecord::Base
   after_initialize :set_value_to_empty_string
 
   def set_value_to_empty_string
+    return value if value.present?
     self.value = ''
   end
 
   def value_or_default
-    return template_field.default_value if value.blank?
-    value
+    return value if value.present?
+    template_field.default_value
   end
 end
