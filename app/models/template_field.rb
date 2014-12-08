@@ -31,6 +31,13 @@ class TemplateField < ActiveRecord::Base
   validates :start_of_range, presence: true, if: :range?
   validates :end_of_range, presence: true, if: :range?
 
+  # Callbacks
+  after_initialize :set_default_value_to_empty_string
+
+  def set_default_value_to_empty_string
+    self.default_value = ""
+  end
+
   def available_options_as_collection
     available_options.split(',').map(&:strip)
   end
