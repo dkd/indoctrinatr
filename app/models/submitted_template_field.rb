@@ -23,7 +23,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   after_initialize :set_value_to_empty_string
 
   def set_value_to_empty_string
-    self.value = ""
+    self.value = ''
   end
 
   def value_or_default
