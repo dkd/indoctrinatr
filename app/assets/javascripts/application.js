@@ -51,21 +51,20 @@ $(document).on('nested:fieldAdded', function(event){
   presentationVisibiltyUpdater.call($("#field-wrapper .fields:last .input .presentation"));
 })
 
-  function showTextField (panel) {
-    panel.find(".textfield").show();
-    panel.find(".rangefield").hide();
-  }
+function showTextField (panel) {
+  panel.find(".textfield").show();
+  panel.find(".rangefield").hide();
+}
 
-  function showRangeField (panel) {
-    panel.find(".textfield").hide();
-    panel.find(".rangefield").show();
-  }
+function showRangeField (panel) {
+  panel.find(".textfield").hide();
+  panel.find(".rangefield").show();
+}
 
-  function hideAllField(panel) {
-    panel.find(".textfield").hide();
-    panel.find(".rangefield").hide();
-  }
-
+function hideAllField(panel) {
+  panel.find(".textfield").hide();
+  panel.find(".rangefield").hide();
+}
 
 $(function() {
   $('.datepicker').datepicker({
