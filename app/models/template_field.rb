@@ -36,7 +36,7 @@ class TemplateField < ActiveRecord::Base
   before_validation :set_default_value_to_empty_string
 
   def set_default_value_to_empty_string
-    self.default_value = self.default_value || '' # MySQL sucks!
+    self.default_value ||= '' # MySQL sucks!
   end
 
   def available_options_as_collection
