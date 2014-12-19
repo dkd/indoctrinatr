@@ -9,6 +9,7 @@ module Api
       protect_from_forgery with: :null_session
 
       before_action :authenticate_api
+      skip_before_action :set_locale
 
       def generate # rubocop:disable Metrics/AbcSize
         @template = Template.find params[:id]
