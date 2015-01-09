@@ -4,7 +4,7 @@
 #
 #  id                :integer          not null, primary key
 #  name              :string(255)      default(""), not null
-#  default_value     :string(255)      default(""), not null
+#  default_value     :text             not null
 #  presentation      :string(255)      default("text"), not null
 #  template_id       :integer          not null
 #  created_at        :datetime
@@ -12,6 +12,7 @@
 #  available_options :text
 #  start_of_range    :integer
 #  end_of_range      :integer
+#  label             :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

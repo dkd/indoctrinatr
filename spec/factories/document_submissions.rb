@@ -6,7 +6,7 @@
 #  template_id :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime
-#  content     :text             default(""), not null
+#  content     :text
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

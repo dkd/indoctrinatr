@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20141124142315) do
   add_index "document_submissions", ["template_id"], name: "index_document_submissions_on_template_id"
 
   create_table "submitted_template_fields", force: true do |t|
-    t.integer  "document_submission_id",              null: false
-    t.integer  "template_field_id",                   null: false
-    t.string   "value",                  default: "", null: false
+    t.integer  "document_submission_id", null: false
+    t.integer  "template_field_id",      null: false
+    t.text     "value",                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20141124142315) do
 
   create_table "template_fields", force: true do |t|
     t.string   "name",              default: "",     null: false
-    t.string   "default_value",     default: "",     null: false
+    t.text     "default_value",                      null: false
     t.string   "presentation",      default: "text", null: false
     t.integer  "template_id",                        null: false
     t.datetime "created_at"

@@ -4,11 +4,12 @@
 #
 #  id                  :integer          not null, primary key
 #  name                :string(255)      default(""), not null
-#  content             :text             default(""), not null
+#  content             :text             not null
 #  created_at          :datetime
 #  updated_at          :datetime
 #  template_asset_path :string(255)
 #  template_pack_id    :integer
+#  output_file_name    :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

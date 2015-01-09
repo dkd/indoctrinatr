@@ -5,7 +5,7 @@
 #  id                     :integer          not null, primary key
 #  document_submission_id :integer          not null
 #  template_field_id      :integer          not null
-#  value                  :string(255)      default(""), not null
+#  value                  :text             not null
 #  created_at             :datetime
 #  updated_at             :datetime
 #
