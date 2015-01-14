@@ -3,9 +3,9 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.1.9'
+gem 'rails', '~> 4.2.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.1'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -36,7 +36,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Frontend stuff
 gem 'foundation-rails', '~> 5.5.0'
-gem 'simple_form', '~> 3.0.2'
+gem 'simple_form', '~> 3.1.0'
 gem 'nested_form', '~> 0.3.2'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
 gem 'kaminari', '~> 0.16.1'
@@ -58,11 +58,10 @@ end
 # Development tools
 group :development do
   gem 'rails_layout', '~> 1.0.22'
-  gem 'better_errors', '~> 2.0.0'
+  gem 'better_errors', '~> 2.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'quiet_assets', '~> 1.1.0'
   gem 'sqlite3', '~> 1.3.9'
-  gem 'rails-erd', '~> 1.1.0'
   gem 'annotate', '~> 2.6.5'
   gem 'rubocop', '~> 0.28.0'
 end
