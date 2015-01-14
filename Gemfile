@@ -35,7 +35,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 # Frontend stuff
-gem 'foundation-rails', '~> 5.4.5'
+gem 'foundation-rails', '~> 5.5.0'
 gem 'simple_form', '~> 3.0.2'
 gem 'nested_form', '~> 0.3.2'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
@@ -48,7 +48,7 @@ group :development, :test do
   gem 'spring-commands-rspec', '~> 1.0.2'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'rspec', '~> 3.1.0'
-  gem 'guard-rspec', '~> 4.3.1', require: false
+  gem 'guard-rspec', '~> 4.5.0', require: false
   gem 'growl', '~> 1.0.3' # OR use: gem 'terminal-notifier-guard'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'shoulda', '~> 3.5.0'
@@ -60,11 +60,11 @@ group :development do
   gem 'rails_layout', '~> 1.0.22'
   gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller', '~> 0.7.2'
-  gem 'quiet_assets', '~> 1.0.3'
+  gem 'quiet_assets', '~> 1.1.0'
   gem 'sqlite3', '~> 1.3.9'
   gem 'rails-erd', '~> 1.1.0'
   gem 'annotate', '~> 2.6.5'
-  gem 'rubocop', '~> 0.27.0'
+  gem 'rubocop', '~> 0.28.0'
 end
 
 gem 'rails-latex', github: 'ncreuschling/rails-latex'
