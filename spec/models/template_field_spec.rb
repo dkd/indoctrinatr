@@ -25,7 +25,6 @@ describe TemplateField do
   it { should have_many(:document_submissions).through(:submitted_template_fields) }
 
   it { should validate_presence_of :name }
-  # it { expect(TemplateField.new).to validate_uniqueness_of(:name).scoped_to(:template_id) }
   it { should validate_inclusion_of(:presentation).in_array(valid_presentations) }
 
   describe 'valid presentations' do
@@ -38,10 +37,6 @@ describe TemplateField do
         expect(valid_presentations).to include expected_presentation
       end
     end
-  end
-
-  it 'has an empty string as default value' do
-    expect(subject.default_value).to eq ''
   end
 
   describe 'requires presence of available_options' do
