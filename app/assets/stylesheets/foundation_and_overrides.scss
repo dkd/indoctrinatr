@@ -1150,7 +1150,7 @@ $topbar-bg-color: $top-nav-bg;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 104px;
+$topbar-height: rem-calc(104);
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
