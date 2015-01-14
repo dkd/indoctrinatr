@@ -3,12 +3,11 @@ require 'zip'
 class TemplatePackProcessor
   attr_reader :template_pack, :template
 
-  def initialize template_pack_attributes
-    @template_pack_attributes = template_pack_attributes
+  def initialize template_pack
+    @template_pack = template_pack
   end
 
   def run
-    create_template_pack
     unzip_container
     process_configuration_file
     extract_tex_template
@@ -18,10 +17,6 @@ class TemplatePackProcessor
   end
 
   private
-
-  def create_template_pack
-    @template_pack = TemplatePack.create @template_pack_attributes
-  end
 
   def unzip_container
     Zip::File.open @template_pack.zip_container.path do |zip_file|
@@ -37,7 +32,7 @@ class TemplatePackProcessor
     config_file_content = File.read @template_pack.path_to_config_file
     @template_config = YAML.load config_file_content
     @template_name = @template_config.fetch 'template_name', @template_name
-    @output_file_name = @template_config.fetch 'output_file_name', @template_name
+    @output_file_name = @template_config.fetch 'output_file_name', "#@template_name.pdf"
   end
 
   def extract_tex_template
@@ -60,6 +55,6 @@ class TemplatePackProcessor
   end
 
   def save_template
-    @template.save
+    @template.save!
   end
 end

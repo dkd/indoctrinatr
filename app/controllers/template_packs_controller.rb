@@ -5,10 +5,10 @@ class TemplatePacksController < ApplicationController
   end
 
   def create
-    processor = TemplatePackProcessor.new(template_pack_params)
+    @template_pack = TemplatePack.create! template_pack_params
+    processor = TemplatePackProcessor.new(@template_pack)
     result = processor.run
     @template = processor.template
-    @template_pack = processor.template_pack
 
     if result
       redirect_to templates_path, notice: 'Template was successfully created out of suppplied template pack.'
