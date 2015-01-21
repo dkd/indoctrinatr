@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   end
 
   def extract_certain_locales_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'][VALID_LOCALES_AS_REGEX]
+    request.env.fetch('HTTP_ACCEPT_LANGUAGE', '')[VALID_LOCALES_AS_REGEX]
   end
 end
