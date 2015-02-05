@@ -5,7 +5,7 @@
                 <label><%= submitted_template_fields_form.object.to_form_label %></label>
                 <div class="small-9 columns">
                     <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
-                    <%= submitted_template_fields_form.input :value, label: false, input_html: { class: 'datepicker' } %>
+                    <%= submitted_template_fields_form.input :value, as: :string, label: false, input_html: { class: 'datepicker' } %>
                 </div>
             </div>
         </div>
