@@ -29,6 +29,6 @@ class Template < ActiveRecord::Base
   end
 
   def allow_rendering_with_defaults?
-    template_fields.none? { |field| field.file? }
+    template_fields.none?(&:file?)
   end
 end
