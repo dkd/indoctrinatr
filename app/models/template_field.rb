@@ -17,7 +17,7 @@
 
 class TemplateField < ActiveRecord::Base
   # class wide constants
-  VALID_PRESENTATIONS = %w(text textarea checkbox radiobutton dropdown date range)
+  VALID_PRESENTATIONS = %w(text textarea checkbox radiobutton dropdown date range file)
   REQUIRES_AVAILABLE_OPTIONS = %w(dropdown checkbox radiobutton)
 
   # associations
@@ -46,6 +46,10 @@ class TemplateField < ActiveRecord::Base
 
   def range?
     'range' == presentation
+  end
+
+  def file?
+    'file' == presentation
   end
 
   def requires_available_options?

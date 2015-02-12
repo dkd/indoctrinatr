@@ -11,6 +11,10 @@
 #
 
 class SubmittedTemplateField < ActiveRecord::Base
+  # paperclip attachment
+  has_attached_file :file_upload
+  do_not_validate_attachment_file_type :file_upload
+
   # associations
   belongs_to :document_submission
   belongs_to :template_field
@@ -28,6 +32,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   end
 
   def value_or_default
+    return file_upload.path if template_field.file?
     return value if value.present?
     template_field.default_value
   end

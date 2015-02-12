@@ -29,11 +29,11 @@ describe TemplateField do
 
   describe 'valid presentations' do
     specify '5 presentations' do
-      expect(valid_presentations.size).to eql 7
+      expect(valid_presentations.size).to eql 8
     end
 
     it 'includes text, textarea, checkbox, radiobutton, dropdown, date and range' do
-      %w(text textarea checkbox radiobutton dropdown date range).each do |expected_presentation|
+      %w(text textarea checkbox radiobutton dropdown date range file).each do |expected_presentation|
         expect(valid_presentations).to include expected_presentation
       end
     end

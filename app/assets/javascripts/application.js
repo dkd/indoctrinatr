@@ -28,12 +28,15 @@ function presentationVisibiltyUpdater()
   var chosen = $(this).val();
   var panel = $(this).closest(".panel");
 
-  hideAllField(panel);
+  hideAllFields(panel);
 
   if (chosen == "checkbox" || chosen == "radiobutton" || chosen == "dropdown" || chosen == "date") {
     showTextField(panel);
-  }else if (chosen == "range") {
+  } else if (chosen == "range") {
     showRangeField(panel);
+  } else if (chosen == "file") {
+    hideAllFields(panel);
+    hideDefaultField(panel);
   }
 }
 
@@ -51,17 +54,21 @@ $(document).on('nested:fieldAdded', function(event){
   presentationVisibiltyUpdater.call($("#field-wrapper .fields:last .input .presentation"));
 })
 
-function showTextField (panel) {
+function showTextField(panel) {
   panel.find(".textfield").show();
   panel.find(".rangefield").hide();
 }
 
-function showRangeField (panel) {
+function showRangeField(panel) {
   panel.find(".textfield").hide();
   panel.find(".rangefield").show();
 }
 
-function hideAllField(panel) {
+function hideDefaultField(panel) {
+  panel.find(".text").hide();
+}
+
+function hideAllFields(panel) {
   panel.find(".textfield").hide();
   panel.find(".rangefield").hide();
 }
