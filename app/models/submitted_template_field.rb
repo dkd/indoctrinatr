@@ -32,7 +32,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   end
 
   def value_or_default
-    return file_upload.path if template_field.file?
+    return file_upload.path if template_field.file? && file_upload.present?
     return value if value.present?
     template_field.default_value
   end
