@@ -21,7 +21,8 @@ class DocumentSubmissionsController < ApplicationController
   def show # rubocop:disable Metrics/AbcSize
     @document_submission = DocumentSubmission.find params[:id]
     @submitted_values = @document_submission.submitted_values
-    @tex_template = ERBRendering.new(@document_submission.content, @submitted_values.retrieve_binding).call
+    @erb_template = @document_submission.content
+    @tex_template = ERBRendering.new(@erb_template, @submitted_values.retrieve_binding).call
 
     if params[:debug].present? && params[:debug] == 'true'
       render text: @tex_template, content_type: 'text/plain'
