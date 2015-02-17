@@ -136,14 +136,14 @@ $primary-color: $primary-text-color;
 // $header-font-weight: 200;
 // $header-font-style: normal;
 $header-font-color: $secondary-text-color;
-$header-line-height: 1.2rem;
+$header-line-height: 1.8rem;
 $header-top-margin: 3.5rem;
 $header-bottom-margin: 3rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
 $h1-font-size: rem-calc(28);
-// $h2-font-size: rem-calc(37);
+$h2-font-size: rem-calc(24);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
