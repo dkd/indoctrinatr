@@ -1,1 +1,1 @@
-class TexRenderingError < StandardError; end
+class TeXRenderingError < StandardError; end
