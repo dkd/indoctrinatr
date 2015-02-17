@@ -1,9 +1,14 @@
 <div class='row'>
   <div class='large-12 column'>
     <h1>Error while ERB rendering</h1>
-    <h2>Error Message</h2>
+    <dl class="sub-nav">
+      <dt>Jump to:</dt>
+      <dd><%= link_to 'Error Message', '#error_message' %></dd>
+      <dd><%= link_to 'ERB Template', '#erb_template' %></dd>
+    </dl>
+    <h2><a name="error_message">Error Message</a></h2>
     <pre><%= @error_message %></pre>
-    <h2>ERB Template</h2>
+    <h2><a name="erb_template">ERB Template</a></h2>
     <pre><%= @document_submission.content %></pre>
   </div>
 </div>
