@@ -10,14 +10,14 @@ class DocumentSubmissionsController < ApplicationController
   def show # rubocop:disable Metrics/AbcSize
     @document_submission = DocumentSubmission.find params[:id]
     @submitted_values = @document_submission.submitted_values
+    tex_template = ERBRendering.new(@document_submission.content, @submitted_values.retrieve_binding).call
+
     if params[:debug].present? && params[:debug] == 'true'
-      render text: ERB.new(@submitted_values, nil, '-').result(@submitted_values.retrieve_binding), content_type: 'text/plain'
+      render text: tex_template, content_type: 'text/plain'
       return
     end
 
-    tex_template = ERBRendering.new(@document_submission.content, @submitted_values.retrieve_binding).call
     pdf = TexRendering.new(tex_template).call
-
     send_data pdf, filename: @submitted_values.customized_output_file_name
   end
 

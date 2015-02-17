@@ -14,15 +14,15 @@ module Api
       def generate # rubocop:disable Metrics/AbcSize
         @template = Template.find params[:id]
         @document_submission = DocumentSubmissionBuilder.build_via_api @template, params
-        #@document_submission.save
         @submitted_values = @document_submission.submitted_values
+        tex_template = ERBRendering.new(@document_submission.content, @submitted_values.retrieve_binding).call
 
         if params[:debug].present? && params[:debug] == 'true'
-          render text: ERB.new(@document_submission.content, nil, '-').result(@submitted_values.retrieve_binding), content_type: 'text/plain'
-        else
-          pdf = LatexToPdf.generate_pdf(ERB.new(@document_submission.content, nil, '-').result(@submitted_values.retrieve_binding), command: 'xelatex', parse_twice: true)
-          send_data pdf, filename: @submitted_values.customized_output_file_name
+          render text: tex_template, content_type: 'text/plain' and return
         end
+
+        pdf = TexRendering.new(tex_template).call
+        send_data pdf, filename: @submitted_values.customized_output_file_name
       end
 
       private
