@@ -2,6 +2,17 @@ class DocumentSubmissionsController < ApplicationController
   before_action :set_template, only: [:with_defaults, :new]
   before_action :set_document_submission, only: [:show, :edit, :update, :destroy]
 
+  rescue_from 'ERBRenderingError' do |exception|
+    @error_message = exception.message
+    render 'errors/erb_rendering_error', status: :internal_server_error, formats: :html
+  end
+
+  rescue_from 'TexRenderingError' do |exception|
+    @error_message = exception.message
+    @tex_log_file = File.read(@error_message[/\/.*\/input\.log/])
+    render 'errors/tex_rendering_error', status: :internal_server_error, formats: :html
+  end
+
   # GET /document_submissions
   def index
     @document_submissions = DocumentSubmission.all.recent_first.page params[:page]
@@ -10,14 +21,14 @@ class DocumentSubmissionsController < ApplicationController
   def show # rubocop:disable Metrics/AbcSize
     @document_submission = DocumentSubmission.find params[:id]
     @submitted_values = @document_submission.submitted_values
-    tex_template = ERBRendering.new(@document_submission.content, @submitted_values.retrieve_binding).call
+    @tex_template = ERBRendering.new(@document_submission.content, @submitted_values.retrieve_binding).call
 
     if params[:debug].present? && params[:debug] == 'true'
-      render text: tex_template, content_type: 'text/plain'
+      render text: @tex_template, content_type: 'text/plain'
       return
     end
 
-    pdf = TexRendering.new(tex_template).call
+    pdf = TexRendering.new(@tex_template).call
     send_data pdf, filename: @submitted_values.customized_output_file_name
   end
 

@@ -1,0 +1,12 @@
+<div class='row'>
+  <div class='large-12 column'><h1>Error while TeX rendering</h1>
+    <h2>Error Message</h2>
+    <%= @error_message %>
+    <h2>TeX Log File</h2>
+    <pre><%= @tex_log_file %></pre>
+    <h2>TeX Template</h2>
+    <pre><%= @tex_template %></pre>
+    <h2>ERB Template</h2>
+    <pre><%= @document_submission.content %></pre>
+  </div>
+</div>
