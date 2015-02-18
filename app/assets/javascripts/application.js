@@ -23,7 +23,7 @@ $(function() {
   $(document).foundation();
 });
 
-function presentationVisibiltyUpdater()
+function presentationVisibilityUpdater()
 {
   var chosen = $(this).val();
   var panel = $(this).closest(".panel");
@@ -41,8 +41,8 @@ function presentationVisibiltyUpdater()
 }
 
 $(document).ready(function() {
-  $(".presentation").each(presentationVisibiltyUpdater);
-  $('body').on('change', '.presentation', presentationVisibiltyUpdater);
+  $(".presentation").each(presentationVisibilityUpdater);
+  $('body').on('change', '.presentation', presentationVisibilityUpdater);
 });
 
 $(document).on('nested:fieldAdded', function(event){
@@ -51,7 +51,7 @@ $(document).on('nested:fieldAdded', function(event){
   panel.val($("#attr-name").val());
   $("#attr-name").val("");
   $('#add-panel').show();
-  presentationVisibiltyUpdater.call($("#field-wrapper .fields:last .input .presentation"));
+  presentationVisibilityUpdater.call($("#field-wrapper .fields:last .input .presentation"));
 })
 
 function showTextField(panel) {
