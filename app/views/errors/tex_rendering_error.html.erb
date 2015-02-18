@@ -8,12 +8,20 @@
       <dd><%= link_to 'ERB Template', '#erb_template' %></dd>
     </dl>
     <h2><a name="error_message">Error Message</a></h2>
-    <pre><%= @error_message %></pre>
+    <div class="panel">
+      <pre><%= @error_message %></pre>
+    </div>
     <h2><a name="tex_log_file">TeX Log File</a></h2>
-    <pre><%= @tex_log_file %></pre>
+    </div>
     <h2><a name="tex_template">TeX Template</a></h2>
-    <pre><%= @tex_template %></pre>
+    <div class="panel">
+      <pre><%= @tex_template %></pre>
+    </div>
     <h2><a name="erb_template">ERB Template</a></h2>
-    <pre><%= @erb_template %></pre>
-  </div>
+    <div class="panel">
+      <pre><%= @erb_template %></pre>
+    </div>
+    <div class="panel">
+      <pre><%= @tex_log_file %></pre>
+    </div>
 </div>
