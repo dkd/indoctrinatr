@@ -21,7 +21,7 @@ module Api
           render text: tex_template, content_type: 'text/plain' and return
         end
 
-        pdf = TeXRendering.new(tex_template).call
+        pdf = TexRendering.new(tex_template).call
         send_data pdf, filename: @submitted_values.customized_output_file_name
       end
 
