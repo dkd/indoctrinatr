@@ -7,9 +7,9 @@ class DocumentSubmissionsController < ApplicationController
     render 'errors/erb_rendering_error', status: :internal_server_error, formats: :html
   end
 
-  rescue_from 'TeXRenderingError' do |exception|
+  rescue_from 'TexRenderingError' do |exception|
     @error_message = exception.message
-    @tex_log_file = File.read(@error_message[/\/.*\/input\.log/])
+    @tex_log_file = File.read(@error_message[%r{\/.*\/input\.log}])
     render 'errors/tex_rendering_error', status: :internal_server_error, formats: :html
   end
 
@@ -28,7 +28,7 @@ class DocumentSubmissionsController < ApplicationController
       render text: @tex_template, content_type: 'text/plain' and return
     end
 
-    pdf = TeXRendering.new(@tex_template).call
+    pdf = TexRendering.new(@tex_template).call
     send_data pdf, filename: @submitted_values.customized_output_file_name
   end
 
