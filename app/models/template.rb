@@ -27,8 +27,4 @@ class Template < ActiveRecord::Base
   def template_package?
     template_pack.present?
   end
-
-  def allow_rendering_with_defaults?
-    template_fields.none?(&:file?)
-  end
 end
