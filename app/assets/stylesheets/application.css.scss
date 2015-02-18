@@ -27,6 +27,12 @@ i {
   line-height: 1;
 }
 
+h2 {
+  a {
+    color: $secondary-text-color;
+  }
+}
+
 /* Custom Buttons Start */
 
 .primary-btn {
