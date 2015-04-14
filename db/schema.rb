@@ -11,21 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212084746) do
-
+ActiveRecord::Schema.define(version: 20150414084942) do
   create_table "document_submissions", force: :cascade do |t|
-    t.integer  "template_id",              null: false
+    t.integer  "template_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "content",     default: "", null: false
+    t.text     "content"
   end
 
   add_index "document_submissions", ["template_id"], name: "index_document_submissions_on_template_id"
 
+  create_table "documents", force: :cascade do |t|
+    t.integer  "document_submission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "documents", ["document_submission_id"], name: "index_documents_on_document_submission_id"
+
   create_table "submitted_template_fields", force: :cascade do |t|
-    t.integer  "document_submission_id",                            null: false
-    t.integer  "template_field_id",                                 null: false
-    t.string   "value",                    limit: 255, default: "", null: false
+    t.integer  "document_submission_id",   null: false
+    t.integer  "template_field_id",        null: false
+    t.text     "value",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "file_upload_file_name"
@@ -39,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150212084746) do
 
   create_table "template_fields", force: :cascade do |t|
     t.string   "name",              limit: 255, default: "",     null: false
-    t.string   "default_value",     limit: 255, default: "",     null: false
+    t.text     "default_value",                                  null: false
     t.string   "presentation",      limit: 255, default: "text", null: false
     t.integer  "template_id",                                    null: false
     t.datetime "created_at"
@@ -70,6 +77,8 @@ ActiveRecord::Schema.define(version: 20150212084746) do
     t.string   "template_asset_path", limit: 255
     t.integer  "template_pack_id"
     t.string   "output_file_name",    limit: 255
+    t.text     "textual_description"
   end
 
+  add_index "templates", ["template_pack_id"], name: "index_templates_on_template_pack_id"
 end

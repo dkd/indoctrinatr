@@ -33,6 +33,7 @@ class TemplatePackProcessor
     @template_config = YAML.load config_file_content
     @template_name = @template_config.fetch 'template_name', @template_name
     @output_file_name = @template_config.fetch 'output_file_name', "#{@template_name}.pdf"
+    @textual_description = @template_config.fetch 'textual_description', ''
   end
 
   def extract_tex_template
@@ -49,6 +50,7 @@ class TemplatePackProcessor
       template.template_asset_path = File.join(@template_pack.path_to_extracted_container, 'assets')
       template.output_file_name = @output_file_name
       template.content = @template_content
+      template.textual_description = @textual_description
       template.template_pack = @template_pack
       template.template_fields_attributes = @template_fields_attributes
     end

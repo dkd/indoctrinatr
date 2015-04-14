@@ -2,12 +2,16 @@
 #
 # Table name: submitted_template_fields
 #
-#  id                     :integer          not null, primary key
-#  document_submission_id :integer          not null
-#  template_field_id      :integer          not null
-#  value                  :text             not null
-#  created_at             :datetime
-#  updated_at             :datetime
+#  id                       :integer          not null, primary key
+#  document_submission_id   :integer          not null
+#  template_field_id        :integer          not null
+#  value                    :text             not null
+#  created_at               :datetime
+#  updated_at               :datetime
+#  file_upload_file_name    :string
+#  file_upload_content_type :string
+#  file_upload_file_size    :integer
+#  file_upload_updated_at   :datetime
 #
 
 require 'spec_helper'

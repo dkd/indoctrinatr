@@ -1,6 +1,16 @@
 <%= simple_form_for(@document_submission) do |f| %>
   <%= f.error_notification %>
 
+  <% if @document_submission.template.textual_description.present? %>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel">
+          <p><%= @document_submission.template.textual_description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
   <div class="form-inputs">
     <%= f.input :template_id, as: :hidden %>
   </div>

@@ -25,7 +25,8 @@ class DocumentSubmissionsController < ApplicationController
     @tex_template = ERBRendering.new(@erb_template, @submitted_values.retrieve_binding).call
 
     if params[:debug].present? && params[:debug] == 'true'
-      render text: @tex_template, content_type: 'text/plain' and return
+      render text: @tex_template, content_type: 'text/plain'
+      return
     end
 
     pdf = TexRendering.new(@tex_template).call

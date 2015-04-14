@@ -10,6 +10,7 @@
 #  template_asset_path :string(255)
 #  template_pack_id    :integer
 #  output_file_name    :string(255)
+#  textual_description :text
 #
 
 require 'spec_helper'

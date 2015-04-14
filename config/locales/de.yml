@@ -33,6 +33,7 @@ de:
         name: Name
         content: Inhalt
         template_type: Vorlagen-Art
+        textual_description: Beschreibung
       template_field:
         name: Name
         default_value: Standardwert

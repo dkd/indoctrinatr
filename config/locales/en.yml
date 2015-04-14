@@ -29,6 +29,7 @@ en:
         name: Name
         content: Content
         template_type: Template Type
+        textual_description: Description
       template_field:
         default_value: Default Value
         presentation: Presentation

@@ -4,7 +4,7 @@ AllCops:
     - 'bin/*'
     - 'public/system/**/*'
 Metrics/LineLength:
-  Max: 200
+  Max: 220
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 Style/RegexpLiteral:
