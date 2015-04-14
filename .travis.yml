@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - "2.1"
+cache:
+  - bundler
+  - apt
+before_install:
+  - gem install bundler
+script:
+  - bundle exec rubocop 
+  - bundle exec rake spec
