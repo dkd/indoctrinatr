@@ -93,6 +93,7 @@ The file `configuration.yaml` contains all relevant information (in [YAML](http:
 |----|----|----|
 | `template_name` | required | Short name for your template. |
 | `output_file_name` | optional | Allows to specify a custom file name. Evaluates Ruby expressions (including variables). Be careful to define this setting with single quotes: `output_file_name: 'important_file_#{Time.now.year}_#{raw_template_field_name}.pdf'`. Don't forget to end the value of `output_file_name` in `.pdf`. Defaults to `template_name.pdf`. |
+| `textual_description` | optional | Allows to add a description about your template. Textile markup is available here. |
 | `fields` | optional | List of template fields you want to use with your template. Empty list if not specified. |
 
 For each field you need to specify:
