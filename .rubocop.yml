@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - 'bin/*'
     - 'public/system/**/*'
+    - 'vendor/bundle/**/*'
 Metrics/LineLength:
   Max: 220
 Style/MethodDefParentheses:
