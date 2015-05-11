@@ -30,7 +30,7 @@ class Template < ActiveRecord::Base
   end
 
   def template_asset_path
-    return '' if template_package?
+    return '' unless template_package?
     File.join(template_pack.path_to_extracted_container, 'assets')
   end
 end
