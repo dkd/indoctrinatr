@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.0'
 # Use SCSS for stylesheets
@@ -35,7 +33,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'debugger', group: [:development, :test]
 
 # Frontend stuff
-gem 'foundation-rails', '~> 5.5.0'
+gem 'foundation-rails', '~> 5.5'
 gem 'simple_form', '~> 3.1.0'
 gem 'nested_form', '~> 0.3.2'
 gem 'foundation-icons-sass-rails', '~> 3.0.0'
@@ -52,7 +50,7 @@ group :development, :test do
   gem 'growl', '~> 1.0.3' # OR use: gem 'terminal-notifier-guard'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'shoulda', '~> 3.5.0'
-  gem 'listen', '~> 2.8.1'
+  gem 'listen', '~> 2.10.0'
 end
 
 # Development tools

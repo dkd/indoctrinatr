@@ -47,7 +47,6 @@ class TemplatePackProcessor
   def create_template_and_template_attributes
     @template = Template.new do |template|
       template.name = @template_name
-      template.template_asset_path = File.join(@template_pack.path_to_extracted_container, 'assets')
       template.output_file_name = @output_file_name
       template.content = @template_content
       template.textual_description = @textual_description

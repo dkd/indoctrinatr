@@ -28,4 +28,9 @@ class Template < ActiveRecord::Base
   def template_package?
     template_pack.present?
   end
+
+  def template_asset_path
+    return '' if template_package?
+    File.join(template_pack.path_to_extracted_container, 'assets')
+  end
 end
