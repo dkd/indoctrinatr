@@ -12,7 +12,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20150511070914) do
-
   create_table "document_submissions", force: :cascade do |t|
     t.integer  "template_id", null: false
     t.datetime "created_at"
@@ -73,5 +72,4 @@ ActiveRecord::Schema.define(version: 20150511070914) do
   end
 
   add_index "templates", ["template_pack_id"], name: "index_templates_on_template_pack_id"
-
 end
