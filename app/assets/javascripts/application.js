@@ -43,7 +43,13 @@ function presentationVisibilityUpdater() {
 
 $(document).ready(function () {
     $(".presentation").each(presentationVisibilityUpdater);
+
     $('body').on('change', '.presentation', presentationVisibilityUpdater);
+
+    $('#template_search input').keyup(function() {
+      $.get($('#template_search').attr('action'), $('#template_search').serialize(), null, 'script');
+      return false;
+    });
 });
 
 $(document).on('nested:fieldAdded', function (event) {

@@ -1,0 +1,10 @@
+{
+  "phabricator.uri": "https://phabricator.dkd.de/",
+  "project.name": "INDOCTRINATR",
+  "arc.feature.start.default": "development",
+  "arc.land.onto.default": "development",
+  "history.immutable": true,
+  "base": "git:merge-base(development),arc:upstream",
+  "load": [
+  ]
+}
