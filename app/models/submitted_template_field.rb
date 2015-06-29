@@ -29,10 +29,18 @@ class SubmittedTemplateField < ActiveRecord::Base
 
   # Callbacks
   after_initialize :set_value_to_empty_string
+  validate :template_field_required?
 
   def set_value_to_empty_string
+    return nil if template_field.required? && value.blank?
     return value if value.present?
     self.value = ''
+  end
+
+  def template_field_required?
+    if template_field.required? && value.blank?
+      errors.add :value, 'Wert muss vorhanden sein!'
+    end
   end
 
   def value_or_default

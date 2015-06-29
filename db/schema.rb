@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511070914) do
+ActiveRecord::Schema.define(version: 20150629115827) do
 
   create_table "document_submissions", force: :cascade do |t|
-    t.integer  "template_id",              null: false
+    t.integer  "template_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "content",     default: "", null: false
+    t.text     "content"
   end
 
   add_index "document_submissions", ["template_id"], name: "index_document_submissions_on_template_id"
 
   create_table "submitted_template_fields", force: :cascade do |t|
-    t.integer  "document_submission_id",                            null: false
-    t.integer  "template_field_id",                                 null: false
-    t.string   "value",                    limit: 255, default: "", null: false
+    t.integer  "document_submission_id",   null: false
+    t.integer  "template_field_id",        null: false
+    t.text     "value",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "file_upload_file_name"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150511070914) do
 
   create_table "template_fields", force: :cascade do |t|
     t.string   "name",              limit: 255, default: "",     null: false
-    t.string   "default_value",     limit: 255, default: "",     null: false
+    t.text     "default_value",                                  null: false
     t.string   "presentation",      limit: 255, default: "text", null: false
     t.integer  "template_id",                                    null: false
     t.datetime "created_at"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150511070914) do
     t.integer  "start_of_range"
     t.integer  "end_of_range"
     t.string   "label",             limit: 255
+    t.boolean  "required",                      default: false
   end
 
   add_index "template_fields", ["template_id"], name: "index_template_fields_on_template_id"
@@ -71,5 +72,7 @@ ActiveRecord::Schema.define(version: 20150511070914) do
     t.string   "output_file_name",    limit: 255
     t.text     "textual_description"
   end
+
+  add_index "templates", ["template_pack_id"], name: "index_templates_on_template_pack_id"
 
 end
