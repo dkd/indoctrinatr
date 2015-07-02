@@ -2,5 +2,5 @@
   <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
   <%= submitted_template_fields_form.input :value, label: submitted_template_fields_form.object.to_form_label,
     collection: submitted_template_fields_form.object.template_field.available_options_as_collection,
-    as: :check_boxes, include_blank: false %>
+    as: :check_boxes, include_blank: false, required: submitted_template_fields_form.object.template_field.required? %>
 </div>

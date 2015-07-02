@@ -1,5 +1,6 @@
 <div class="panel" id="<%= submitted_template_fields_form.object.template_field.id %>">
   <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
+  <label class="select <%= submitted_template_fields_form.object.template_field.required? ? 'required' : 'optional' %> control-label" for="document_submission_submitted_template_fields_attributes_<%= submitted_template_fields_form.object.template_field.id %>_value"><%= submitted_template_fields_form.object.template_field.required? ? '* ' : '' %><%= submitted_template_fields_form.object.to_form_label %></label>
   <div class="range-slider" data-slider="<%= submitted_template_fields_form.object.template_field.start_of_range %>" data-options="display_selector: #sliderOutput3; start: <%= submitted_template_fields_form.object.template_field.start_of_range %>; end: <%= submitted_template_fields_form.object.template_field.end_of_range %>;">
     <span class="range-slider-handle"></span>
     <span class="range-slider-active-segment"></span>

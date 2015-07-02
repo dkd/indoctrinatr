@@ -1,5 +1,5 @@
 <div class="panel" id="<%= submitted_template_fields_form.object.template_field.id %>">
   <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
   <%= submitted_template_fields_form.input :file_upload, label: submitted_template_fields_form.object.to_form_label,
-    as: :file %>
+    as: :file, required: submitted_template_fields_form.object.template_field.required? %>
 </div>

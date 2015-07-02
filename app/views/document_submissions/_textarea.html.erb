@@ -1,4 +1,4 @@
 <div id="<%= submitted_template_fields_form.object.template_field.id %>" class="panel">
   <%= submitted_template_fields_form.input :template_field_id, as: :hidden %>
-  <%= submitted_template_fields_form.input :value, as: :text , label: submitted_template_fields_form.object.to_form_label, input_html: {rows: 10} %>
+  <%= submitted_template_fields_form.input :value, as: :text , label: submitted_template_fields_form.object.to_form_label, input_html: {rows: 10}, required: submitted_template_fields_form.object.template_field.required? %>
 </div>
