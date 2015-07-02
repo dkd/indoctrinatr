@@ -21,7 +21,7 @@ class DocumentSubmissionBuilder
     document_submission = DocumentSubmission.new template: template, content: template.content
     template.template_fields.each do |template_field|
       if template_field.file?
-        document_submission.submitted_template_fields.build template_field: template_field, file_upload: params.fetch(template_field.name, nil)
+        document_submission.submitted_template_fields.build template_field: template_field, file_upload: params.fetch(template_field.name, nil), value: ''
       else
         document_submission.submitted_template_fields.build template_field: template_field, value: params.fetch(template_field.name, nil)
       end

@@ -38,14 +38,36 @@ class SubmittedTemplateField < ActiveRecord::Base
   end
 
   def template_field_required?
-    if template_field.required? && value.blank?
-      errors.add :value, 'Wert muss vorhanden sein!'
+    if template_field.required?
+      if template_field.file?
+        errors.add :file_upload, 'Datei muss vorhanden sein!' if file_upload.blank?
+      else
+        errors.add :file_upload, 'Wert muss vorhanden sein!' if value.blank?
+      end
     end
   end
 
   def value_or_default
-    return file_upload.path if template_field.file? && file_upload.present?
-    return value if value.present?
-    template_field.default_value
+    return file_upload_path_or_empty_string if template_field.file?
+
+    value_or_default_value
+  end
+
+  private
+
+  def file_upload_path_or_empty_string
+    if file_upload.present?
+      file_upload.path
+    else
+      ''
+    end
+  end
+
+  def value_or_default_value
+    if value.present?
+      value
+    else
+      template_field.default_value
+    end
   end
 end
