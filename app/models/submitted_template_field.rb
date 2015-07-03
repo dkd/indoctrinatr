@@ -56,6 +56,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   private
 
   def file_upload_path_or_empty_string
+    self.value = ''
     if file_upload.present?
       file_upload.path
     else
