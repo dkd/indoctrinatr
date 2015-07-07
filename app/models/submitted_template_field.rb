@@ -32,6 +32,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   validate :template_field_required?
 
   def set_value_to_empty_string
+    self.value = '' if template_field.file?
     return nil if template_field.required? && value.blank?
     return value if value.present?
     self.value = ''
@@ -56,7 +57,6 @@ class SubmittedTemplateField < ActiveRecord::Base
   private
 
   def file_upload_path_or_empty_string
-    self.value = ''
     if file_upload.present?
       file_upload.path
     else
