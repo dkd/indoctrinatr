@@ -59,4 +59,10 @@ class TemplateField < ActiveRecord::Base
   def to_form_label
     label.blank? ? name : label
   end
+
+  def evaled_default_value
+    eval('"' + default_value + '"') # rubocop:disable Lint/Eval
+  rescue
+    default_value
+  end
 end

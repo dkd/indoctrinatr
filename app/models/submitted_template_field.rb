@@ -65,10 +65,8 @@ class SubmittedTemplateField < ActiveRecord::Base
   end
 
   def value_or_default_value
-    if value.present?
-      value
-    else
-      template_field.default_value
-    end
+    return value if value.present?
+      
+    template_field.evaled_default_value
   end
 end
