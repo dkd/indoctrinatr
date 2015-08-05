@@ -32,6 +32,7 @@ class SubmittedTemplateField < ActiveRecord::Base
   validate :template_field_required?
 
   def set_value_to_empty_string
+    return unless template_field
     self.value = '' if template_field.file?
     return nil if template_field.required? && value.blank?
     return value if value.present?
