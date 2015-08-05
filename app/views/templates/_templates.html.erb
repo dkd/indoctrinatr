@@ -26,13 +26,13 @@
       <div class='row-actions large-3 columns'>
         <ul class='button-group right'>
           <% if template.template_fields.any? %>
-            <li><%= link_to('Fill in form', new_document_submission_url(template_id: template), class: 'generatepdf hide-text', title: 'Fill in form') %></li>
+            <li><%= link_to('Fill in form', new_document_submission_url(template_id: template), class: 'generatepdf hide-text', title: 'Create PDF') %></li>
           <% else %>
-            <li><%= link_to 'Generate with defaults', with_defaults_document_submissions_url(template_id: template), class: 'generatepdf hide-text', title: 'Generate with defaults', method: :post %></li>
+            <li><%= link_to 'Generate with defaults', with_defaults_document_submissions_url(template_id: template), class: 'generatepdf hide-text', title: 'Create PDF', method: :post %></li>
           <% end %>
-          <li><%= link_to 'Edit', edit_template_path(template), class: 'editpdf hide-text' %></li>
-          <li><%= link_to 'Submissions', document_submissions_template_url(template), class:'history-icon hide-text' %></li>
-          <li><%= link_to 'Destroy', template, method: :delete, data: { confirm: 'Are you sure?' }, class: 'deletepdf hide-text' %></li>
+          <li><%= link_to 'Edit', edit_template_path(template), class: 'editpdf hide-text', title: 'Edit template' %></li>
+          <li><%= link_to 'Submissions', document_submissions_template_url(template), class:'history-icon hide-text', title: 'Submission History' %></li>
+          <li><%= link_to 'Destroy', template, method: :delete, class: 'deletepdf hide-text', title: 'Delete Template', data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </div>
     </div>

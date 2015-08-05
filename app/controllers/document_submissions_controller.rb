@@ -15,7 +15,7 @@ class DocumentSubmissionsController < ApplicationController
 
   # GET /document_submissions
   def index
-    @document_submissions = DocumentSubmission.all.recent_first.page params[:page]
+    @document_submissions = DocumentSubmission.includes(:template).all.recent_first.page params[:page]
   end
 
   def show # rubocop:disable Metrics/AbcSize

@@ -1,9 +1,9 @@
 en:
   oss_project_by: © Indoctrinatr is an Open Source Software project by
   welcome_to_indoctrinatr: Welcome to Indoctrinatr
-  first_step: 1. Create Indoctrinatr Template Pack (XeTeX plus ERB)
-  second_step: 2. Upload to Template Pack to Indoctrinatr
-  third_step: 3. Generate resulting PDF with user supplied values
+  first_step: 1. Create Indoctrinatr Template Pack
+  second_step: 2. Upload Template Pack to Indoctrinatr
+  third_step: 3. Generate PDF with user supplied values
   get_started_now: Get started now…
   new_template: New Template
   new_template_pack: Upload Template Pack
