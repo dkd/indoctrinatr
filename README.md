@@ -4,6 +4,10 @@
 
 Indoctrinatr is an Open Source Software project by [dkd Internet Service GmbH](https://dkd.de/), Frankfurt (Germany), which renders [eRuby](https://en.wikipedia.org/wiki/ERuby) (more specifically: [Erubis](http://www.kuwata-lab.com/erubis/)) enriched [XeTeX](http://tug.org/xetex/) templates to PDF documents.
 
+## Demo
+
+If you want to try out Indoctrinatr, please go to out [Public Demo Installation](http://public-indoctrinatr-demo.herokuapp.com/).
+
 ## Setup (development environment)
 
 1.  Install XeTeX:
