@@ -64,7 +64,7 @@ group :development do
   gem 'rubocop', '~> 0.28.0'
 end
 
-gem 'rails-latex', github: 'ncreuschling/rails-latex'
+gem 'rails-latex', '~> 1.0'
 gem 'erubis', '~> 2.7.0'
 gem 'paperclip', '~> 4.2.0'
 gem 'rubyzip', '~> 1.1.6'
