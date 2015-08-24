@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/contact' => 'pages#contact'
   get '/documentation' => 'pages#documentation'
 
-  resources :template_packs, only: %i(new create)
+  resources :template_packs, only: %i(new create show)
 
   resources :templates, except: %i(show) do
     member do

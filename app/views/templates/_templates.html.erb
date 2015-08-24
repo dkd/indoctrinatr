@@ -32,6 +32,11 @@
           <% end %>
           <li><%= link_to 'Edit', edit_template_path(template), class: 'editpdf hide-text', title: 'Edit template' %></li>
           <li><%= link_to 'Submissions', document_submissions_template_url(template), class:'history-icon hide-text', title: 'Submission History' %></li>
+          <% if template.template_package? %>
+            <li>
+              <%= link_to 'Download Pack', template.template_pack.zip_container.url, class: 'download-icon hide-text', title: 'Download Template Pack' %>
+            </li>
+          <% end %>
           <li><%= link_to 'Destroy', template, method: :delete, class: 'deletepdf hide-text', title: 'Delete Template', data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </div>
