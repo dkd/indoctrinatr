@@ -3,11 +3,11 @@ require 'redcloth'
 module RedCloth
   module Formatters
     module LATEX
-      { :h1 => 'chapter',
-        :h2 => 'section',
-        :h3 => 'subsection',
-        :h4 => 'subsubsection'
-      }.each do |m,tag|
+      { h1: 'chapter',
+        h2: 'section',
+        h3: 'subsection',
+        h4: 'subsubsection'
+      }.each do |m, tag|
         define_method(m) do |opts|
           case opts[:align]
           when 'left' then
@@ -22,12 +22,18 @@ module RedCloth
         end
       end
 
-      def table_close(opts)
-        output  = "\\begin{tabu}{ #{"l " * @table[0].size }}\n"
-        @table.each do |row|
-          output << "    #{row.join(" & ")} \\\\\n"
+      def del opts
+        "\\st{#{opts[:text]}}"
+      end
+
+      def table_close _opts
+        output = "\\begin{tabu}{ #{'l ' * @table[0].size}}\n"
+        output << "    #{@table[0].join(' & ')} \\\\\n"
+        output << "    \\tabletoprule\n"
+        @table[1..-1].each do |row|
+          output << "    #{row.join(' & ')} \\\\\n"
         end
-        output << "\\end{tabu}\n"
+        output << "    \\tablebottomrule\n\\end{tabu}\n"
         output
       end
     end
