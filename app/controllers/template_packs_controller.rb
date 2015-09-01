@@ -17,6 +17,11 @@ class TemplatePacksController < ApplicationController
     end
   end
 
+  def show
+    @template_pack = TemplatePack.find params[:id]
+    send_file @template_pack.zip_container.path
+  end
+
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.
