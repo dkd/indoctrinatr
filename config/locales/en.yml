@@ -1,5 +1,6 @@
 en:
-  oss_project_by: © Indoctrinatr is an Open Source Software project by
+  unknown_revision: unknown
+  oss_project_by: "© Indoctrinatr (rev: %{revision}) is an Open Source Software project by"
   welcome_to_indoctrinatr: Welcome to Indoctrinatr
   first_step: 1. Create Indoctrinatr Template Pack
   second_step: 2. Upload Template Pack to Indoctrinatr
