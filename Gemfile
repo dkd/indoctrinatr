@@ -62,6 +62,7 @@ group :development do
   gem 'sqlite3', '~> 1.3.9'
   gem 'annotate', '~> 2.6.5'
   gem 'rubocop', '~> 0.34'
+  gem 'synvert', '~> 0.5'
 end
 
 gem 'rails-latex', '~> 1.0'
