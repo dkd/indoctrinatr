@@ -34,7 +34,7 @@ class Template < ActiveRecord::Base
     File.join(template_pack.path_to_extracted_container, 'assets')
   end
 
-  def self.search(search)
+  def self.search search
     if search
       where('name LIKE ? OR textual_description LIKE ?', "%#{search}%", "%#{search}%")
     else

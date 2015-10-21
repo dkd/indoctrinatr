@@ -18,7 +18,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -61,7 +61,7 @@ group :development do
   gem 'quiet_assets', '~> 1.1.0'
   gem 'sqlite3', '~> 1.3.9'
   gem 'annotate', '~> 2.6.5'
-  gem 'rubocop', '~> 0.28.0'
+  gem 'rubocop', '~> 0.34'
 end
 
 gem 'rails-latex', '~> 1.0'

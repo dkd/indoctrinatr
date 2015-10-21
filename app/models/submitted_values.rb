@@ -24,7 +24,7 @@ class SubmittedValues
     RedCloth.new(textile).to_latex
   end
 
-  def template_asset_path # rubocop:disable Style/TrivialAccessors
+  def template_asset_path
     @_template_asset_path
   end
 

@@ -11,10 +11,9 @@ module Api
       before_action :authenticate_api
       skip_before_action :set_locale
 
-      def generate # rubocop:disable Metrics/AbcSize
+      def generate # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         @template = Template.find params[:id]
         @document_submission = DocumentSubmissionBuilder.build_via_api @template, params
-
 
         unless @document_submission.save
           render text: @document_submission.errors.full_messages, status: 400

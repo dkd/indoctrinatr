@@ -29,7 +29,7 @@ class SubmittedTemplateField < ActiveRecord::Base
 
   # Callbacks
   after_initialize :set_value_to_empty_string
-  validate :template_field_required?
+  validate :check_presence_of_template_field
 
   def set_value_to_empty_string
     return unless template_field
@@ -39,14 +39,14 @@ class SubmittedTemplateField < ActiveRecord::Base
     self.value = ''
   end
 
-  def template_field_required?
-    if template_field.required?
-      if template_field.file?
-        errors.add :file_upload, 'Datei muss vorhanden sein!' if file_upload.blank?
-      else
-        errors.add :file_upload, 'Wert muss vorhanden sein!' if value.blank?
-      end
+  def check_presence_of_template_field
+    return true unless template_field.required?
+    if template_field.file?
+      errors.add :file_upload, 'Datei muss vorhanden sein!' if file_upload.blank?
+    else
+      errors.add :file_upload, 'Wert muss vorhanden sein!' if value.blank?
     end
+    false
   end
 
   def value_or_default
@@ -67,7 +67,6 @@ class SubmittedTemplateField < ActiveRecord::Base
 
   def value_or_default_value
     return value if value.present?
-      
     template_field.evaled_default_value
   end
 end

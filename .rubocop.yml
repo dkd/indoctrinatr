@@ -4,12 +4,12 @@ AllCops:
     - 'bin/*'
     - 'public/system/**/*'
     - 'vendor/bundle/**/*'
+    - 'db/schema.rb'
+    - 'Guardfile'
 Metrics/LineLength:
   Max: 220
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
-Style/RegexpLiteral:
-  MaxSlashes: 0
 Style/Documentation:
   Enabled: false
 Style/SingleSpaceBeforeFirstArg:
@@ -21,8 +21,5 @@ Style/StringLiterals:
 Style/NumericLiterals:
   Exclude:
     - 'db/schema.rb'
-Style/Blocks:
-  Exclude:
-    - 'spec/**/*'
 Metrics/MethodLength:
   Max: 12
