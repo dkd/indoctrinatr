@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629115827) do
+ActiveRecord::Schema.define(version: 20151021170627) do
 
   create_table "document_submissions", force: :cascade do |t|
     t.integer  "template_id", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150629115827) do
     t.integer  "end_of_range"
     t.string   "label",             limit: 255
     t.boolean  "required",                      default: false
+    t.text     "description"
   end
 
   add_index "template_fields", ["template_id"], name: "index_template_fields_on_template_id"
