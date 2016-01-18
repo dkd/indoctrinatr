@@ -49,7 +49,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
-    celluloid (0.16.1)
+    celluloid (0.16.0)
       timers (~> 4.0.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
