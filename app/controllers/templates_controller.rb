@@ -4,7 +4,7 @@ class TemplatesController < ApplicationController
   # GET /templates
   # GET /templates.json
   def index
-    @templates = Template.includes(:template_fields).search(params[:search]).page params[:page]
+    @templates = Template.includes(:template_fields, :template_pack).search(params[:search]).page params[:page]
   end
 
   # GET /templates/new

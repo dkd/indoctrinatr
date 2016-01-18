@@ -60,14 +60,14 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'quiet_assets', '~> 1.1.0'
   gem 'sqlite3', '~> 1.3.9'
-  gem 'annotate', '~> 2.6.5'
-  gem 'rubocop', '~> 0.34'
+  gem 'annotate', '~> 2.7.0'
+  gem 'rubocop', '~> 0.36'
   gem 'synvert', '~> 0.5'
 end
 
 gem 'rails-latex', '~> 1.0'
 gem 'erubis', '~> 2.7.0'
-gem 'paperclip', '~> 4.2.0'
+gem 'paperclip', '~> 4.3.0'
 gem 'rubyzip', '~> 1.1.6'
 gem 'to_latex', '~> 0.5.0'
 gem 'RedCloth', '~> 4.2.9'
