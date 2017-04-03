@@ -43,8 +43,8 @@ class SubmittedTemplateField < ActiveRecord::Base
     return true unless template_field.required?
     if template_field.file?
       errors.add :file_upload, 'Datei muss vorhanden sein!' if file_upload.blank?
-    else
-      errors.add :file_upload, 'Wert muss vorhanden sein!' if value.blank?
+    elsif value.blank?
+      errors.add :file_upload, 'Wert muss vorhanden sein!'
     end
     false
   end

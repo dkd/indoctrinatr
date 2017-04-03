@@ -17,8 +17,8 @@
 
 class TemplateField < ActiveRecord::Base
   # class wide constants
-  VALID_PRESENTATIONS = %w(text textarea checkbox radiobutton dropdown date range file)
-  REQUIRES_AVAILABLE_OPTIONS = %w(dropdown checkbox radiobutton)
+  VALID_PRESENTATIONS = %w(text textarea checkbox radiobutton dropdown date range file).map!(&:freeze).freeze
+  REQUIRES_AVAILABLE_OPTIONS = %w(dropdown checkbox radiobutton).map!(&:freeze).freeze
 
   # associations
   belongs_to :template

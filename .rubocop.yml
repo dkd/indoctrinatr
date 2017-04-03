@@ -1,5 +1,6 @@
+Rails:
+  Enabled: True
 AllCops:
-  RunRailsCops: true
   Exclude:
     - 'bin/*'
     - 'public/system/**/*'
@@ -12,7 +13,7 @@ Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 Style/Documentation:
   Enabled: false
-Style/SingleSpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Exclude:
     - 'db/schema.rb'
 Style/StringLiterals:
