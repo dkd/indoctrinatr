@@ -1,18 +1,20 @@
 AllCops:
-  RunRailsCops: true
   Exclude:
     - 'bin/*'
     - 'public/system/**/*'
     - 'vendor/bundle/**/*'
     - 'db/schema.rb'
     - 'Guardfile'
+  TargetRubyVersion: 2.3
+Rails:
+  Enabled: True
 Metrics/LineLength:
   Max: 220
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 Style/Documentation:
   Enabled: false
-Style/SingleSpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Exclude:
     - 'db/schema.rb'
 Style/StringLiterals:
@@ -23,3 +25,7 @@ Style/NumericLiterals:
     - 'db/schema.rb'
 Metrics/MethodLength:
   Max: 12
+Metrics/BlockLength:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false

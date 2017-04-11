@@ -38,25 +38,25 @@ ActiveRecord::Schema.define(version: 20151021170627) do
   add_index "submitted_template_fields", ["template_field_id"], name: "index_submitted_template_fields_on_template_field_id"
 
   create_table "template_fields", force: :cascade do |t|
-    t.string   "name",              limit: 255, default: "",     null: false
-    t.text     "default_value",                                  null: false
-    t.string   "presentation",      limit: 255, default: "text", null: false
-    t.integer  "template_id",                                    null: false
+    t.string   "name",              default: "",     null: false
+    t.text     "default_value",                      null: false
+    t.string   "presentation",      default: "text", null: false
+    t.integer  "template_id",                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "available_options"
     t.integer  "start_of_range"
     t.integer  "end_of_range"
-    t.string   "label",             limit: 255
-    t.boolean  "required",                      default: false
+    t.string   "label"
+    t.boolean  "required",          default: false
     t.text     "description"
   end
 
   add_index "template_fields", ["template_id"], name: "index_template_fields_on_template_id"
 
   create_table "template_packs", force: :cascade do |t|
-    t.string   "zip_container_file_name",    limit: 255
-    t.string   "zip_container_content_type", limit: 255
+    t.string   "zip_container_file_name"
+    t.string   "zip_container_content_type"
     t.integer  "zip_container_file_size"
     t.datetime "zip_container_updated_at"
     t.integer  "template_id"
@@ -65,12 +65,12 @@ ActiveRecord::Schema.define(version: 20151021170627) do
   end
 
   create_table "templates", force: :cascade do |t|
-    t.string   "name",                limit: 255, default: "", null: false
-    t.text     "content",                                      null: false
+    t.string   "name",                default: "", null: false
+    t.text     "content",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "template_pack_id"
-    t.string   "output_file_name",    limit: 255
+    t.string   "output_file_name"
     t.text     "textual_description"
   end
 

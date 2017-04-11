@@ -6,8 +6,7 @@ module RedCloth
       { h1: 'chapter',
         h2: 'section',
         h3: 'subsection',
-        h4: 'subsubsection'
-      }.each do |m, tag|
+        h4: 'subsubsection' }.each do |m, tag|
         define_method(m) do |opts|
           case opts[:align]
           when 'left' then
