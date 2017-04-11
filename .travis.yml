@@ -1,14 +1,15 @@
+sudo: false
 language: ruby
+cache: bundler
 rvm:
-  - "2.1"
-  - "2.2"
-  - "2.3"
-cache:
-  - bundler
-  - apt
+  - 2.2
+  - 2.3
+  - 2.4
+
 before_install:
-  - gem install bundler
+  - gem install bundler --no-document
+
 script:
-  - bundle exec rubocop
+  - bundle exec rubocop --display-cop-names --extra-details
   - bundle exec rake db:migrate RAILS_ENV=test
   - bundle exec rake spec
