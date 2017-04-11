@@ -1,6 +1,6 @@
 class DocumentSubmissionsController < ApplicationController
-  before_action :set_template, only: [:with_defaults, :new]
-  before_action :set_document_submission, only: [:show, :edit, :update, :destroy]
+  before_action :set_template, only: %i[with_defaults new]
+  before_action :set_document_submission, only: %i[show edit update destroy]
 
   rescue_from 'ERBRenderingError' do |exception|
     @error_message = exception.message
@@ -79,6 +79,6 @@ class DocumentSubmissionsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def document_submission_params
-    params.require(:document_submission).permit(:template_id, submitted_template_fields_attributes: [:id, :value, :template_field_id, :start_of_range, :end_of_range, :file_upload])
+    params.require(:document_submission).permit(:template_id, submitted_template_fields_attributes: %i[id value template_field_id start_of_range end_of_range file_upload])
   end
 end

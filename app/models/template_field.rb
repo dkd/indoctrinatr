@@ -17,8 +17,8 @@
 
 class TemplateField < ActiveRecord::Base
   # class wide constants
-  VALID_PRESENTATIONS = %w(text textarea checkbox radiobutton dropdown date range file).map!(&:freeze).freeze
-  REQUIRES_AVAILABLE_OPTIONS = %w(dropdown checkbox radiobutton).map!(&:freeze).freeze
+  VALID_PRESENTATIONS = %w[text textarea checkbox radiobutton dropdown date range file].map!(&:freeze).freeze
+  REQUIRES_AVAILABLE_OPTIONS = %w[dropdown checkbox radiobutton].map!(&:freeze).freeze
 
   # associations
   belongs_to :template
@@ -61,7 +61,7 @@ class TemplateField < ActiveRecord::Base
   end
 
   def evaled_default_value
-    eval('"' + default_value + '"') # rubocop:disable Lint/Eval
+    eval('"' + default_value + '"') # rubocop:disable Security/Eval
   rescue
     default_value
   end

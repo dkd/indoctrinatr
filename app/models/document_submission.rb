@@ -23,7 +23,7 @@ class DocumentSubmission < ActiveRecord::Base
   delegate :output_file_name, to: :template
 
   # scopes
-  scope :recent_first, -> { order(created_at: :desc) }
+  scope(:recent_first, -> { order(created_at: :desc) })
 
   def submitted_values
     SubmittedValues.new(template_asset_path, suggested_file_name, submitted_template_fields)

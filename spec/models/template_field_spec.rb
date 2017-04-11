@@ -33,7 +33,7 @@ describe TemplateField do
     end
 
     it 'includes text, textarea, checkbox, radiobutton, dropdown, date and range' do
-      %w(text textarea checkbox radiobutton dropdown date range file).each do |expected_presentation|
+      %w[text textarea checkbox radiobutton dropdown date range file].each do |expected_presentation|
         expect(valid_presentations).to include expected_presentation
       end
     end
@@ -57,7 +57,7 @@ describe TemplateField do
     tf = TemplateField.new available_options: ' aa,   bb  , cc '
 
     expect(tf.available_options_as_collection.size).to eql 3
-    %w(aa bb cc).each do |expected_option|
+    %w[aa bb cc].each do |expected_option|
       expect(tf.available_options_as_collection).to include expected_option
     end
   end

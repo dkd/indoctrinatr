@@ -1,5 +1,3 @@
-Rails:
-  Enabled: True
 AllCops:
   Exclude:
     - 'bin/*'
@@ -7,6 +5,9 @@ AllCops:
     - 'vendor/bundle/**/*'
     - 'db/schema.rb'
     - 'Guardfile'
+  TargetRubyVersion: 2.3
+Rails:
+  Enabled: True
 Metrics/LineLength:
   Max: 220
 Style/MethodDefParentheses:
@@ -24,3 +25,7 @@ Style/NumericLiterals:
     - 'db/schema.rb'
 Metrics/MethodLength:
   Max: 12
+Metrics/BlockLength:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false

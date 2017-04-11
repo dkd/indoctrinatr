@@ -30,7 +30,7 @@ class TemplatePackProcessor
 
   def process_configuration_file
     config_file_content = File.read @template_pack.path_to_config_file
-    @template_config = YAML.load config_file_content
+    @template_config = YAML.safe_load config_file_content
     @template_name = @template_config.fetch 'template_name', @template_name
     @output_file_name = @template_config.fetch 'output_file_name', "#{@template_name}.pdf"
     @textual_description = @template_config.fetch 'textual_description', ''

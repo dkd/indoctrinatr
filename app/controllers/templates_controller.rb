@@ -1,5 +1,5 @@
 class TemplatesController < ApplicationController
-  before_action :set_template, only: [:document_submissions, :edit, :update, :destroy]
+  before_action :set_template, only: %i[document_submissions edit update destroy]
 
   # GET /templates
   # GET /templates.json
@@ -13,8 +13,7 @@ class TemplatesController < ApplicationController
   end
 
   # GET /templates/1/edit
-  def edit
-  end
+  def edit; end
 
   # GET /templates/1/document_submission
   def document_submissions
@@ -59,6 +58,6 @@ class TemplatesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def template_params
-    params.require(:template).permit(:name, :content, :textual_description, template_fields_attributes: [:id, :name, :label, :start_of_range, :end_of_range, :required, :default_value, :available_options, :presentation, :_destroy]) # rubocop:disable Metrics/LineLength
+    params.require(:template).permit(:name, :content, :textual_description, template_fields_attributes: %i[id name label start_of_range end_of_range required default_value available_options presentation _destroy]) # rubocop:disable Metrics/LineLength
   end
 end
