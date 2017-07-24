@@ -47,8 +47,8 @@ group :development, :test do
   gem 'growl', '~> 1.0.3' # OR use: gem 'terminal-notifier-guard'
   gem 'guard-rspec', '~> 4.7.0', require: false
   gem 'listen', '~> 2.10.0'
-  gem 'rspec', '~> 3.5.0'
-  gem 'rspec-rails', '~> 3.5.0'
+  gem 'rspec', '~> 3.6.0'
+  gem 'rspec-rails', '~> 3.6.0'
   gem 'shoulda', '~> 3.5.0'
   gem 'spring-commands-rspec', '~> 1.0.2'
 end
