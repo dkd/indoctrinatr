@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20151021170627) do
 
   create_table "document_submissions", force: :cascade do |t|
     t.integer  "template_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "content"
   end
 
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20151021170627) do
     t.integer  "document_submission_id",   null: false
     t.integer  "template_field_id",        null: false
     t.text     "value",                    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "file_upload_file_name"
     t.string   "file_upload_content_type"
     t.integer  "file_upload_file_size"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20151021170627) do
     t.text     "default_value",                      null: false
     t.string   "presentation",      default: "text", null: false
     t.integer  "template_id",                        null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.text     "available_options"
     t.integer  "start_of_range"
     t.integer  "end_of_range"
@@ -60,15 +60,15 @@ ActiveRecord::Schema.define(version: 20151021170627) do
     t.integer  "zip_container_file_size"
     t.datetime "zip_container_updated_at"
     t.integer  "template_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "templates", force: :cascade do |t|
     t.string   "name",                default: "", null: false
     t.text     "content",                          null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "template_pack_id"
     t.string   "output_file_name"
     t.text     "textual_description"

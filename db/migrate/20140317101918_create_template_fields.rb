@@ -6,7 +6,7 @@ class CreateTemplateFields < ActiveRecord::Migration
       t.string :presentation, default: 'text', null: false
       t.references :template, index: true, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
