@@ -4,7 +4,7 @@ class CreateTemplates < ActiveRecord::Migration
       t.string :name, default: '', null: false
       t.text :content, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

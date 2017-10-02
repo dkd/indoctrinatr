@@ -7,7 +7,7 @@ gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -56,17 +56,17 @@ end
 # Development tools
 group :development do
   gem 'annotate', '~> 2.7.0'
-  gem 'better_errors', '~> 2.1.0'
+  gem 'better_errors', '~> 2.1'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'quiet_assets', '~> 1.1.0'
   gem 'rails_layout', '~> 1.0.22'
-  gem 'rubocop', '~> 0.36'
+  gem 'rubocop', '~> 0.50'
   gem 'sqlite3', '~> 1.3.9'
   gem 'synvert', '~> 0.5'
 end
 
 gem 'erubis', '~> 2.7.0'
-gem 'kramdown', '~> 1.9.0'
+gem 'kramdown', '~> 1.9'
 gem 'paperclip', '~> 4.3.0'
 gem 'rails-latex', '~> 1.0'
 gem 'RedCloth', '~> 4.3'

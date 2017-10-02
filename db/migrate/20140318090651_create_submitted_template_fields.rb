@@ -5,7 +5,7 @@ class CreateSubmittedTemplateFields < ActiveRecord::Migration
       t.references :template_field, index: true, null: false
       t.text :value, null: false
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

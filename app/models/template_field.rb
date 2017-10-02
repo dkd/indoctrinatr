@@ -23,7 +23,7 @@ class TemplateField < ActiveRecord::Base
   # associations
   belongs_to :template
   has_many :submitted_template_fields, dependent: :destroy
-  has_many :document_submissions, through: :submitted_template_fields
+  has_many :document_submissions, through: :submitted_template_fields, dependent: :destroy
 
   # validations
   validates :name, presence: true, uniqueness: { scope: :template_id }
@@ -45,11 +45,11 @@ class TemplateField < ActiveRecord::Base
   end
 
   def range?
-    'range' == presentation
+    presentation == 'range'
   end
 
   def file?
-    'file' == presentation
+    presentation == 'file'
   end
 
   def requires_available_options?
@@ -62,7 +62,7 @@ class TemplateField < ActiveRecord::Base
 
   def evaled_default_value
     eval('"' + default_value + '"') # rubocop:disable Security/Eval
-  rescue
+  rescue StandardError
     default_value
   end
 end

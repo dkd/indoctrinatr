@@ -6,6 +6,7 @@ AllCops:
     - 'db/schema.rb'
     - 'Guardfile'
   TargetRubyVersion: 2.3
+  TargetRailsVersion: 4.2
 Rails:
   Enabled: True
 Metrics/LineLength:
