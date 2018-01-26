@@ -7,6 +7,9 @@ AllCops:
     - 'Guardfile'
   TargetRubyVersion: 2.3
   TargetRailsVersion: 4.2
+  ExtraDetails: true
+  DisplayStyleGuide: true
+  DisplayCopNames: true
 Rails:
   Enabled: True
 Metrics/LineLength:
@@ -15,7 +18,7 @@ Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
 Style/Documentation:
   Enabled: false
-Style/SpaceBeforeFirstArg:
+Layout/SpaceBeforeFirstArg:
   Exclude:
     - 'db/schema.rb'
 Style/StringLiterals:

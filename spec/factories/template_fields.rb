@@ -15,9 +15,9 @@
 #  label             :string(255)
 #
 
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :template_field do
     name 'MyString'
     default_value 'MyString'

@@ -9,9 +9,9 @@
 #  content     :text
 #
 
-# Read about factories at https://github.com/thoughtbot/factory_girl
+# Read about factories at https://github.com/thoughtbot/factory_bot
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :document_submission do
     template factory: :template
   end

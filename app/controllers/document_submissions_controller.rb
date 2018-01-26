@@ -1,6 +1,6 @@
 class DocumentSubmissionsController < ApplicationController
   before_action :set_template, only: %i[with_defaults new]
-  before_action :set_document_submission, only: %i[show edit update destroy]
+  before_action :set_document_submission, only: %i[show destroy]
 
   rescue_from 'ERBRenderingError' do |exception|
     @error_message = exception.message
