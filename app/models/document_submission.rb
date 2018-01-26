@@ -30,6 +30,6 @@ class DocumentSubmission < ActiveRecord::Base
   end
 
   def suggested_file_name
-    output_file_name.blank? ? "#{template.name}.pdf" : output_file_name
+    output_file_name.presence || "#{template.name}.pdf"
   end
 end

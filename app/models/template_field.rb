@@ -57,7 +57,7 @@ class TemplateField < ActiveRecord::Base
   end
 
   def to_form_label
-    label.blank? ? name : label
+    label.presence || name
   end
 
   def evaled_default_value
