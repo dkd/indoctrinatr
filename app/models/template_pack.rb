@@ -20,7 +20,7 @@ class TemplatePack < ActiveRecord::Base
   do_not_validate_attachment_file_type :zip_container
 
   # associations
-  belongs_to :template, dependent: :destroy
+  belongs_to :template
 
   def path_to_config_file
     File.join(path_to_extracted_container, 'configuration.yaml')
