@@ -12,8 +12,8 @@
 class DocumentSubmission < ActiveRecord::Base
   # associations
   belongs_to :template
-  has_many :submitted_template_fields, dependent: :destroy
-  has_many :template_fields, through: :submitted_template_fields, dependent: :destroy
+  has_many :submitted_template_fields
+  has_many :template_fields, through: :submitted_template_fields
 
   accepts_nested_attributes_for :submitted_template_fields
 
