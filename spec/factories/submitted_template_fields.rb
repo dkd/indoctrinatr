@@ -6,11 +6,11 @@
 #  document_submission_id   :integer          not null
 #  template_field_id        :integer          not null
 #  value                    :text             not null
-#  created_at               :datetime
-#  updated_at               :datetime
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
 #  file_upload_file_name    :string
 #  file_upload_content_type :string
-#  file_upload_file_size    :integer
+#  file_upload_file_size    :bigint
 #  file_upload_updated_at   :datetime
 #
 
@@ -20,6 +20,6 @@ FactoryBot.define do
   factory :submitted_template_field do
     document_submission factory: :document_submission
     template_field factory: :template_field
-    value 'MyString'
+    value { 'MyString' }
   end
 end

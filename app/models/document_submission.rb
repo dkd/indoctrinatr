@@ -4,15 +4,15 @@
 #
 #  id          :integer          not null, primary key
 #  template_id :integer          not null
-#  created_at  :datetime
-#  updated_at  :datetime
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #  content     :text
 #
 
-class DocumentSubmission < ActiveRecord::Base
+class DocumentSubmission < ApplicationRecord
   # associations
   belongs_to :template
-  has_many :submitted_template_fields
+  has_many :submitted_template_fields # rubocop:disable Rails/HasManyOrHasOneDependent
   has_many :template_fields, through: :submitted_template_fields
 
   accepts_nested_attributes_for :submitted_template_fields

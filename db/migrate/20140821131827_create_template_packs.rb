@@ -1,4 +1,4 @@
-class CreateTemplatePacks < ActiveRecord::Migration
+class CreateTemplatePacks < ActiveRecord::Migration[4.2]
   def change
     create_table :template_packs do |t|
       t.attachment :zip_container

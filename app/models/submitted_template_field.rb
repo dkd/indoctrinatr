@@ -6,15 +6,15 @@
 #  document_submission_id   :integer          not null
 #  template_field_id        :integer          not null
 #  value                    :text             not null
-#  created_at               :datetime
-#  updated_at               :datetime
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
 #  file_upload_file_name    :string
 #  file_upload_content_type :string
-#  file_upload_file_size    :integer
+#  file_upload_file_size    :bigint
 #  file_upload_updated_at   :datetime
 #
 
-class SubmittedTemplateField < ActiveRecord::Base
+class SubmittedTemplateField < ApplicationRecord
   # paperclip attachment
   has_attached_file :file_upload
   do_not_validate_attachment_file_type :file_upload
@@ -33,14 +33,17 @@ class SubmittedTemplateField < ActiveRecord::Base
 
   def set_value_to_empty_string
     return unless template_field
+
     self.value = '' if template_field.file?
     return nil if template_field.required? && value.blank?
     return value if value.present?
+
     self.value = ''
   end
 
   def check_presence_of_template_field
     return true unless template_field.required?
+
     if template_field.file?
       errors.add :file_upload, 'Datei muss vorhanden sein!' if file_upload.blank?
     elsif value.blank?
@@ -67,6 +70,7 @@ class SubmittedTemplateField < ActiveRecord::Base
 
   def value_or_default_value
     return value if value.present?
+
     template_field.evaled_default_value
   end
 end

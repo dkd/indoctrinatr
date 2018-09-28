@@ -3,13 +3,12 @@
 # Table name: templates
 #
 #  id                  :integer          not null, primary key
-#  name                :string(255)      default(""), not null
+#  name                :string           default(""), not null
 #  content             :text             not null
-#  created_at          :datetime
-#  updated_at          :datetime
-#  template_asset_path :string(255)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
 #  template_pack_id    :integer
-#  output_file_name    :string(255)
+#  output_file_name    :string
 #  textual_description :text
 #
 
@@ -20,6 +19,6 @@ FactoryBot.define do
     sequence :name do |n|
       "Name #{n}"
     end
-    content 'MyText'
+    content { 'MyText' }
   end
 end
