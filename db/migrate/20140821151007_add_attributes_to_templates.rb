@@ -1,4 +1,4 @@
-class AddAttributesToTemplates < ActiveRecord::Migration
+class AddAttributesToTemplates < ActiveRecord::Migration[4.2]
   def change
     add_column :templates, :asset_path, :string
     add_column :templates, :template_asset_path, :string

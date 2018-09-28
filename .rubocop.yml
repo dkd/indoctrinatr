@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 AllCops:
   Exclude:
     - 'bin/*'
@@ -5,8 +7,8 @@ AllCops:
     - 'vendor/bundle/**/*'
     - 'db/schema.rb'
     - 'Guardfile'
-  TargetRubyVersion: 2.3
-  TargetRailsVersion: 4.2
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
   ExtraDetails: true
   DisplayStyleGuide: true
   DisplayCopNames: true

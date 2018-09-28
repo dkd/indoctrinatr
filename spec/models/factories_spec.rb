@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 FactoryBot.factories.map(&:name).each do |factory_name|
   describe "factory #{factory_name}" do

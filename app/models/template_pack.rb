@@ -3,16 +3,16 @@
 # Table name: template_packs
 #
 #  id                         :integer          not null, primary key
-#  zip_container_file_name    :string(255)
-#  zip_container_content_type :string(255)
-#  zip_container_file_size    :integer
+#  zip_container_file_name    :string
+#  zip_container_content_type :string
+#  zip_container_file_size    :bigint
 #  zip_container_updated_at   :datetime
 #  template_id                :integer
-#  created_at                 :datetime
-#  updated_at                 :datetime
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
 #
 
-class TemplatePack < ActiveRecord::Base
+class TemplatePack < ApplicationRecord
   # paperclip attachment
   has_attached_file :zip_container
   validates_attachment_presence :zip_container
