@@ -1,8 +1,13 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard :rspec, cmd: 'spring rspec spec', all_on_start: true, all_after_pass: true do
-  notification :growl
+guard :rubocop, cmd: 'bundle exec spring rubocop' do
+  watch(%r{.+\.rb$})
+  watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
+end
+
+guard :rspec, cmd: 'bundle exec spring rspec spec', all_on_start: true, all_after_pass: true do
+  notification :terminal_notifier if `uname` =~ /Darwin/
 
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }

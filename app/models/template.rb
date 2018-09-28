@@ -3,17 +3,16 @@
 # Table name: templates
 #
 #  id                  :integer          not null, primary key
-#  name                :string(255)      default(""), not null
+#  name                :string           default(""), not null
 #  content             :text             not null
-#  created_at          :datetime
-#  updated_at          :datetime
-#  template_asset_path :string(255)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
 #  template_pack_id    :integer
-#  output_file_name    :string(255)
+#  output_file_name    :string
 #  textual_description :text
 #
 
-class Template < ActiveRecord::Base
+class Template < ApplicationRecord
   # associations
   has_many :template_fields, dependent: :destroy
   has_many :document_submissions, dependent: :destroy
@@ -31,6 +30,7 @@ class Template < ActiveRecord::Base
 
   def template_asset_path
     return '' unless template_package?
+
     File.join(template_pack.path_to_extracted_container, 'assets')
   end
 

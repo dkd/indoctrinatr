@@ -6,19 +6,19 @@
 #  document_submission_id   :integer          not null
 #  template_field_id        :integer          not null
 #  value                    :text             not null
-#  created_at               :datetime
-#  updated_at               :datetime
+#  created_at               :datetime         not null
+#  updated_at               :datetime         not null
 #  file_upload_file_name    :string
 #  file_upload_content_type :string
-#  file_upload_file_size    :integer
+#  file_upload_file_size    :bigint
 #  file_upload_updated_at   :datetime
 #
 
-require 'spec_helper'
+require 'rails_helper'
 
-describe SubmittedTemplateField do
-  it { should belong_to :document_submission }
-  it { should belong_to :template_field }
+describe SubmittedTemplateField, type: :model do
+  it { is_expected.to belong_to :document_submission }
+  it { is_expected.to belong_to :template_field }
 
-  it { should delegate_method(:name).to(:template_field) }
+  it { is_expected.to delegate_method(:name).to(:template_field) }
 end

@@ -16,7 +16,7 @@ module Api
         @document_submission = DocumentSubmissionBuilder.build_via_api @template, params
 
         unless @document_submission.save
-          render text: @document_submission.errors.full_messages, status: 400
+          render text: @document_submission.errors.full_messages, status: :bad_request
           return
         end
 

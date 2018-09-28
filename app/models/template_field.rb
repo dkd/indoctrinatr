@@ -3,19 +3,21 @@
 # Table name: template_fields
 #
 #  id                :integer          not null, primary key
-#  name              :string(255)      default(""), not null
+#  name              :string           default(""), not null
 #  default_value     :text             not null
-#  presentation      :string(255)      default("text"), not null
+#  presentation      :string           default("text"), not null
 #  template_id       :integer          not null
-#  created_at        :datetime
-#  updated_at        :datetime
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
 #  available_options :text
 #  start_of_range    :integer
 #  end_of_range      :integer
-#  label             :string(255)
+#  label             :string
+#  required          :boolean          default(FALSE)
+#  description       :text
 #
 
-class TemplateField < ActiveRecord::Base
+class TemplateField < ApplicationRecord
   # class wide constants
   VALID_PRESENTATIONS = %w[text textarea checkbox radiobutton dropdown date range file].map!(&:freeze).freeze
   REQUIRES_AVAILABLE_OPTIONS = %w[dropdown checkbox radiobutton].map!(&:freeze).freeze

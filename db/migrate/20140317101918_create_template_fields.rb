@@ -1,4 +1,4 @@
-class CreateTemplateFields < ActiveRecord::Migration
+class CreateTemplateFields < ActiveRecord::Migration[4.2]
   def change
     create_table :template_fields do |t|
       t.string :name, default: '', null: false
