@@ -9,11 +9,11 @@ module RedCloth
         h4: 'subsubsection' }.each do |m, tag|
         define_method(m) do |opts|
           case opts[:align]
-          when 'left' then
+          when 'left'
             "\\begin{flushleft}\\#{tag}{#{opts[:text]}}\\end{flushleft}\n\n"
-          when 'right' then
+          when 'right'
             "\\begin{flushright}\\#{tag}{#{opts[:text]}}\\end{flushright}\n\n"
-          when 'center' then
+          when 'center'
             "\\begin{center}\\#{tag}{#{opts[:text]}}\\end{center}\n\n"
           else
             "\\#{tag}{#{opts[:text]}}\n\n"
