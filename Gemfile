@@ -42,6 +42,7 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'nested_form'
 gem 'simple_form'
+gem 'sprockets', '< 4'
 
 # Testing tools
 group :development, :test do
