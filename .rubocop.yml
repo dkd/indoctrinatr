@@ -17,7 +17,7 @@ AllCops:
   DisplayCopNames: true
 Rails:
   Enabled: True
-Metrics/LineLength:
+Layout/LineLength:
   Max: 220
 Style/MethodDefParentheses:
   EnforcedStyle: require_no_parentheses
