@@ -24,7 +24,7 @@ module Api
         tex_template = ERBRendering.new(@document_submission.content, @submitted_values.retrieve_binding).call
 
         if params[:debug].present? && params[:debug] == 'true'
-          render text: tex_template, content_type: 'text/plain'
+          render plain: tex_template
           return
         end
 

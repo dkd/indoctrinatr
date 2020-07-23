@@ -9,7 +9,7 @@ class DocumentSubmissionsController < ApplicationController
 
   rescue_from 'TexRenderingError' do |exception|
     @error_message = exception.message
-    @tex_log_file = File.read(@error_message[%r{\/.*\/input\.log}])
+    @tex_log_file = File.read(@error_message[%r{/.*/input\.log}])
     render 'errors/tex_rendering_error', status: :internal_server_error, formats: :html
   end
 
@@ -25,7 +25,7 @@ class DocumentSubmissionsController < ApplicationController
     @tex_template = ERBRendering.new(@erb_template, @submitted_values.retrieve_binding).call
 
     if params[:debug].present? && params[:debug] == 'true'
-      render text: @tex_template, content_type: 'text/plain'
+      render plain: @tex_template
       return
     end
 
