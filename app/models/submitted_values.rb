@@ -1,5 +1,5 @@
 class SubmittedValues
-  def initialize template_asset_path, output_file_name, submitted_template_fields # rubocop:disable Metrics/AbcSize
+  def initialize template_asset_path, output_file_name, submitted_template_fields
     @_template_asset_path = template_asset_path
     @_output_file_name = output_file_name
 
@@ -29,6 +29,6 @@ class SubmittedValues
   end
 
   def customized_output_file_name
-    @_customized_output_file_name ||= eval('"' + @_output_file_name + '"') # rubocop:disable Security/Eval,Naming/MemoizedInstanceVariableName
+    @_customized_output_file_name ||= eval("\"#{@_output_file_name}\"", __FILE__, __LINE__) # rubocop:disable Security/Eval,Naming/MemoizedInstanceVariableName
   end
 end
