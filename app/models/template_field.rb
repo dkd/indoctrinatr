@@ -28,7 +28,7 @@ class TemplateField < ApplicationRecord
   has_many :document_submissions, through: :submitted_template_fields, dependent: :destroy
 
   # validations
-  validates :name, presence: true, uniqueness: { scope: :template_id }
+  validates :name, presence: true, uniqueness: { scope: :template_id } # rubocop:disable Rails/UniqueValidationWithoutIndex
   # validates :default_value, presence: true
   validates :presentation, inclusion: VALID_PRESENTATIONS
   validates :available_options, presence: true, if: :requires_available_options?
@@ -63,7 +63,7 @@ class TemplateField < ApplicationRecord
   end
 
   def evaled_default_value
-    eval('"' + default_value + '"') # rubocop:disable Security/Eval
+    eval("\"#{default_value}\"", __FILE__, __LINE__) # rubocop:disable Security/Eval
   rescue StandardError
     default_value
   end
