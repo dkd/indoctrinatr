@@ -155,3 +155,29 @@ Style/SingleArgumentDig:
   Enabled: true
 Style/StringConcatenation:
   Enabled: true
+Lint/DuplicateRequire:
+  Enabled: true
+Lint/EmptyFile:
+  Enabled: true
+Lint/TrailingCommaInAttributeDeclaration:
+  Enabled: true
+Lint/UselessMethodDefinition:
+  Enabled: true
+Style/CombinableLoops:
+  Enabled: true
+Style/KeywordParametersOrder:
+  Enabled: true
+Style/RedundantSelfAssignment:
+  Enabled: true
+Style/SoleNestedConditional:
+  Enabled: true
+Rails/AfterCommitOverride:
+  Enabled: true
+Rails/SquishedSQLHeredocs:
+  Enabled: true
+Rails/WhereNot:
+  Enabled: true
+Performance/Sum:
+  Enabled: true
+Style/EvalWithLocation:
+  Enabled: false
