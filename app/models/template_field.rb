@@ -63,7 +63,7 @@ class TemplateField < ApplicationRecord
   end
 
   def evaled_default_value
-    eval("\"#{default_value}\"") # rubocop:disable Security/Eval
+    eval("\"#{default_value}\"", binding, __FILE__, __LINE__) # rubocop:disable Security/Eval
   rescue StandardError
     default_value
   end

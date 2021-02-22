@@ -29,6 +29,6 @@ class SubmittedValues
   end
 
   def customized_output_file_name
-    @_customized_output_file_name ||= eval("\"#{@_output_file_name}\"") # rubocop:disable Security/Eval,Naming/MemoizedInstanceVariableName
+    @_customized_output_file_name ||= eval("\"#{@_output_file_name}\"", binding, __FILE__, __LINE__) # rubocop:disable Security/Eval,Naming/MemoizedInstanceVariableName
   end
 end
