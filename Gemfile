@@ -60,7 +60,7 @@ group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5'
   gem 'rails_layout'
   gem 'rubocop'
   gem 'rubocop-performance'
