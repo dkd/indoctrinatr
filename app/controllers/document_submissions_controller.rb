@@ -77,7 +77,6 @@ class DocumentSubmissionsController < ApplicationController
     @document_submission = DocumentSubmission.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def document_submission_params
     params.require(:document_submission).permit(:template_id, submitted_template_fields_attributes: %i[id value template_field_id start_of_range end_of_range file_upload])
   end
