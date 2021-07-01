@@ -24,7 +24,6 @@ class TemplatePacksController < ApplicationController
 
   private
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def template_pack_params
     params.require(:template_pack).permit(:zip_container)
   end

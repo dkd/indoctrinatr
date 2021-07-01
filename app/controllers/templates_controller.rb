@@ -56,7 +56,6 @@ class TemplatesController < ApplicationController
     @template = Template.find params[:id]
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def template_params
     params.require(:template).permit(:name, :content, :textual_description, template_fields_attributes: %i[id name label start_of_range end_of_range required default_value available_options presentation _destroy])
   end
