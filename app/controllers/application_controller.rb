@@ -9,11 +9,15 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_locale
-    I18n.locale = extract_certrain_locals_from_params || extract_certain_locales_from_accept_language_header || I18n.default_locale
+  def default_url_options(options = {})
+    options.merge(page: params[:return_to_page])
   end
 
-  def extract_certrain_locals_from_params
+  def set_locale
+    I18n.locale = extract_certain_locals_from_params || extract_certain_locales_from_accept_language_header || I18n.default_locale
+  end
+
+  def extract_certain_locals_from_params
     params.fetch(:locale, '')[VALID_LOCALES_AS_REGEX]
   end
 

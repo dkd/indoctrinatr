@@ -37,7 +37,7 @@
               <%= link_to 'Download Pack', template.template_pack.zip_container.url, class: 'download-icon hide-text', title: 'Download Template Pack' %>
             </li>
           <% end %>
-          <li><%= link_to 'Destroy', template, method: :delete, class: 'deletepdf hide-text', title: 'Delete Template', data: { confirm: 'Are you sure?' } %></li>
+          <li><%= link_to 'Destroy', template_url(template, return_to_page: params[:page]), method: :delete, class: 'deletepdf hide-text', title: 'Delete Template', data: { confirm: 'Are you sure?' } %></li>
         </ul>
       </div>
     </div>
