@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def default_url_options(options = {})
+  def default_url_options options = {}
     options.merge(page: params[:return_to_page])
   end
 
