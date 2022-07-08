@@ -41,3 +41,8 @@ en:
   time:
     formats:
       very_short: ! "%d/%m/%Y %H:%M"
+  document_submission_destroyed: 'Document submission was successfully destroyed.'
+  template_created_from_template_pack: 'Template was successfully created out of suppplied template pack.'
+  template_created: 'Template was successfully created.'
+  template_updated: 'Template was successfully updated.'
+  template_destroyed: 'Template was successfully destroyed.'

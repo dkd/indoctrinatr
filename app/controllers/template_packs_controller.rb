@@ -11,7 +11,7 @@ class TemplatePacksController < ApplicationController
     @template = processor.template
 
     if result
-      redirect_to templates_path, notice: 'Template was successfully created out of suppplied template pack.'
+      redirect_to templates_path, notice: t(:template_created_from_template_pack)
     else
       render action: 'new'
     end
