@@ -239,3 +239,8 @@ de:
       short: ! "%d. %B, %H:%M Uhr"
       very_short: ! "%d.%m.%Y %H:%M"
     pm: nachmittags
+  document_submission_destroyed: 'Eintrag gelöscht.'
+  template_created_from_template_pack: 'Vorlage erfolgreich angelegt.'
+  template_created: 'Vorlage erfolgreich angelegt.'
+  template_updated: 'Vorlage erfolgreich aktualisiert.'
+  template_destroyed: 'Vorlage erfolgreich gelöscht.'

@@ -63,7 +63,7 @@ class DocumentSubmissionsController < ApplicationController
   # DELETE /document_submissions/1
   def destroy
     @document_submission.destroy
-    redirect_to document_submissions_url, notice: 'Document submission was successfully destroyed.'
+    redirect_to document_submissions_url, notice: t(:document_submission_destroyed)
   end
 
   private

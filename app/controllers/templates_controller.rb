@@ -26,7 +26,7 @@ class TemplatesController < ApplicationController
     @template = Template.new(template_params)
 
     if @template.save
-      redirect_to templates_url, notice: 'Template was successfully created.'
+      redirect_to templates_url, notice: t(:template_created)
     else
       render action: 'new'
     end
@@ -36,7 +36,7 @@ class TemplatesController < ApplicationController
   # PATCH/PUT /templates/1.json
   def update
     if @template.update(template_params)
-      redirect_to templates_url, notice: 'Template was successfully updated.'
+      redirect_to templates_url, notice: t(:template_updated)
     else
       render action: 'edit'
     end
@@ -46,7 +46,7 @@ class TemplatesController < ApplicationController
   # DELETE /templates/1.json
   def destroy
     @template.destroy
-    redirect_to templates_url, notice: 'Template was successfully destroyed.'
+    redirect_to templates_url, notice: t(:template_destroyed)
   end
 
   private
